@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Zap, MapPin, Clock, Mail, Search, PhoneCall } from 'lucide-react';
+import { Menu, X, MapPin, Mail, PhoneCall } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';

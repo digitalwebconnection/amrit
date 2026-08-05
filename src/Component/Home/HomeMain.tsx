@@ -10,7 +10,7 @@ import Certifications from './Certifications';
 import RecentProjects from './RecentProjects';
 import Leadership from './Leadership';
 import Testimonials from './Testimonials';
-import BlogPreview from './BlogPreview';
+
 import FAQSection from './FAQSection';
 import CallToAction from './CallToAction';
 
@@ -32,9 +32,9 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <Certifications />
       <Leadership />
       <Testimonials />
-      <BlogPreview />
+
       <FAQSection />
-      <CallToAction onOpenContact={onOpenContact} />
+      <CallToAction />
     </main>
   );
 };
