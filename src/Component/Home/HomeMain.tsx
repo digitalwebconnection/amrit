@@ -23,9 +23,9 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <BusinessVerticals />
       <WhyChooseSection />
       <CompanyHighlights />
+            <ChannelPatner />
       <Leadership />
       <Testimonials />
-      <ChannelPatner />
       <FAQSection />
     </main>
   );

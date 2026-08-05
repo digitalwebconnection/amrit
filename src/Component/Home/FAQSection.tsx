@@ -29,20 +29,21 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="text-center mb-16">
+          
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6">
+            Frequently Asked <span className="text-primary-blue"> <br />Questions</span>
+          </h2>
           <div className="flex justify-center mb-4">
             <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">
-            Frequently Asked <span className="text-primary-blue">Questions</span>
-          </h2>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +60,7 @@ export const FAQSection: React.FC = () => {
                   {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                 </div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
