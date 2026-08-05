@@ -91,7 +91,7 @@ export const CompanyOverview: React.FC = () => {
 
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-[1.15] font-sans tracking-tight">
               Illuminating Spaces, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+              <span className="text-blue-600">
                 Empowering Lives
               </span>
             </h2>

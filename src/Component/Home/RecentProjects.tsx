@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Hospital Backup Systems",
     category: "Critical Infrastructure",
-    image: "https://images.unsplash.com/photo-1516192513930-f772e06b8d6b?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     size: "small"
   },
   {
@@ -31,9 +31,8 @@ const projects = [
 
 export const RecentProjects: React.FC = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        
+    <section className="py-12 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl">  
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div className="max-w-2xl">
@@ -42,9 +41,6 @@ export const RecentProjects: React.FC = () => {
               Transforming Infrastructure with <span className="text-primary-blue">Excellence</span>
             </h2>
           </div>
-          <button className="mt-6 md:mt-0 hidden md:flex items-center gap-2 font-bold text-gray-900 hover:text-[#d46337] transition-colors border-b-2 border-gray-900 hover:border-[#d46337] pb-1">
-            VIEW ALL PROJECTS <ArrowRight size={18} />
-          </button>
         </div>
 
         {/* Grid Layout */}
@@ -54,7 +50,7 @@ export const RecentProjects: React.FC = () => {
           <motion.div 
             whileHover="hover"
             initial="initial"
-            className="md:col-span-2 h-[300px] md:h-full relative rounded-2xl overflow-hidden group cursor-pointer"
+            className="md:col-span-2 h-[300px] md:h-full relative rounded-lg overflow-hidden group"
           >
             <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -81,7 +77,7 @@ export const RecentProjects: React.FC = () => {
                 key={idx}
                 whileHover="hover"
                 initial="initial"
-                className="flex-1 h-[250px] md:h-auto relative rounded-2xl overflow-hidden group cursor-pointer"
+                className="flex-1 h-[250px] md:h-auto relative rounded-lg overflow-hidden group cursor-pointer"
               >
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

@@ -1,41 +1,82 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Award, ShieldCheck, Zap, Sun } from 'lucide-react';
 
 const certificates = [
-  { name: "ISO 9001:2015", desc: "Quality Management Systems" },
-  { name: "ISO 45001:2018", desc: "Occupational Health & Safety" },
-  { name: "A-Class Licensed", desc: "Electrical Contractor" },
-  { name: "MNRE Approved", desc: "Solar Channel Partner" }
+  { 
+    name: "ISO 9001:2015", 
+    desc: "Quality Management Systems",
+    icon: <Award size={32} />,
+    color: "text-blue-600",
+    bg: "bg-blue-50 border border-blue-100"
+  },
+  { 
+    name: "ISO 45001:2018", 
+    desc: "Occupational Health & Safety",
+    icon: <ShieldCheck size={32} />,
+    color: "text-emerald-500",
+    bg: "bg-emerald-50 border border-emerald-100"
+  },
+  { 
+    name: "A-Class Licensed", 
+    desc: "Electrical Contractor",
+    icon: <Zap size={32} />,
+    color: "text-orange-500",
+    bg: "bg-orange-50 border border-orange-100"
+  },
+  { 
+    name: "MNRE Approved", 
+    desc: "Solar Channel Partner",
+    icon: <Sun size={32} />,
+    color: "text-amber-500",
+    bg: "bg-amber-50 border border-amber-100"
+  }
 ];
 
 export const Certifications: React.FC = () => {
   return (
-    <section className="py-16 bg-[#0a0a0a] border-y border-white/5">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Decorative Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
+          {/* Text Content */}
           <div className="lg:w-1/3 text-center lg:text-left">
-            <h3 className="text-2xl font-bold text-white mb-2">Certified for Excellence</h3>
-            <p className="text-gray-400 text-sm">We strictly adhere to national safety standards and quality frameworks to deliver risk-free projects.</p>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+              <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">Compliance & Trust</span>
+            </div>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              Certified for <br className="hidden lg:block" />
+              <span className="text-blue-600">Excellence</span>
+            </h3>
+            <p className="text-slate-600 text-lg leading-relaxed font-light">
+              We strictly adhere to national safety standards and quality frameworks to deliver entirely risk-free, future-proof projects.
+            </p>
           </div>
 
-          <div className="lg:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+          {/* Cards Grid */}
+          <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
             {certificates.map((cert, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-[#181818] border border-white/5 rounded-xl p-6 text-center flex flex-col items-center justify-center hover:bg-[#222] transition-colors"
+                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                className="bg-white border border-slate-100 rounded-3xl p-8 shadow-[0_15px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-blue-100 transition-all duration-500 group"
               >
-                <div className="w-12 h-12 mb-3 bg-[#d46337]/10 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-[#d46337]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="flex items-start gap-6">
+                  <div className={`shrink-0 w-16 h-16 ${cert.bg} ${cert.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500`}>
+                    {cert.icon}
+                  </div>
+                  <div className="pt-1">
+                    <h4 className="text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-600 transition-colors duration-300">{cert.name}</h4>
+                    <p className="text-slate-500 leading-relaxed text-sm font-medium">{cert.desc}</p>
+                  </div>
                 </div>
-                <h4 className="text-white font-bold text-sm mb-1">{cert.name}</h4>
-                <p className="text-gray-500 text-xs">{cert.desc}</p>
               </motion.div>
             ))}
           </div>

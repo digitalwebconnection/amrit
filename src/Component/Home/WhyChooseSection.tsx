@@ -29,15 +29,15 @@ export const WhyChooseSection: React.FC = () => {
   return (
     <section id="why-us" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
           
           {/* Text Side */}
-          <div className="flex-1 lg:pr-8">
+          <div className="flex-1 lg:pr-8 py-4">
             <div className="mb-2 flex items-center gap-2">
               <div className="w-12 h-1 bg-primary-orange rounded-full"></div>
               <h3 className="text-primary-orange font-bold uppercase tracking-wider text-sm">Why Choose Us</h3>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
               The Amrit Electricals <span className="text-primary-blue">Advantage</span>
             </h2>
             <p className="text-gray-600 mb-10 text-lg leading-relaxed">
@@ -72,18 +72,17 @@ export const WhyChooseSection: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1 relative"
+            className="flex-1 w-full flex flex-col mt-8 lg:mt-0"
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl flex-grow min-h-[400px] lg:min-h-0">
               <img 
                 src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Our Team at Work" 
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-primary-blue/20 mix-blend-multiply"></div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

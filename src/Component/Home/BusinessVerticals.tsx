@@ -8,8 +8,8 @@ export const BusinessVerticals: React.FC = () => {
       icon: <Sun size={28} />,
       title: "Solar Solutions",
       description: "End-to-end solar panel installations for residential and commercial properties, reducing your carbon footprint.",
-      accentColor: "bg-amber-500",
-      lightBg: "bg-amber-50 text-amber-600 border-amber-100"
+      accentColor: "bg-orange-500",
+      lightBg: "bg-orange-50 text-orange-600 border-orange-100"
     },
     {
       icon: <Zap size={28} />,
@@ -49,7 +49,7 @@ export const BusinessVerticals: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="services" className="py-12 bg-slate-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none -z-0"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -57,14 +57,14 @@ export const BusinessVerticals: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-[2px] bg-amber-500 rounded-full"></div>
-              <h3 className="text-amber-500 font-bold uppercase tracking-widest text-sm">Our Expertise</h3>
+              <div className="w-12 h-[2px] bg-orange-500 rounded-full"></div>
+              <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm">Our Expertise</h3>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
-              Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Verticals</span>
+              Business <span className="text-blue-600">Verticals</span>
             </h2>
           </div>
-          <p className="text-slate-500 text-lg md:text-xl max-w-md leading-relaxed font-light lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-amber-500/30 pl-6 lg:pl-0 lg:pr-6">
+          <p className="text-slate-500 text-lg md:text-xl max-w-md leading-relaxed font-light lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-orange-500/30 pl-6 lg:pl-0 lg:pr-6">
             Delivering comprehensive energy solutions tailored to your specific needs, powered by innovation.
           </p>
         </div>
