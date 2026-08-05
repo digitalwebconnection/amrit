@@ -126,7 +126,7 @@ export const OurProcess: React.FC = () => {
               return (
                 <div 
                   key={step.id} 
-                  className={`p-4 rounded-2xl cursor-pointer transition-all duration-300 border relative overflow-hidden group ${
+                  className={`p-4 rounded-lg cursor-pointer transition-all duration-300 border relative overflow-hidden group ${
                     isActive 
                       ? 'bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-blue-100 scale-[1.02]' 
                       : 'bg-white/50 border-transparent hover:bg-slate-50 hover:scale-[1.01]'
@@ -143,7 +143,7 @@ export const OurProcess: React.FC = () => {
                   <div className="flex items-start gap-4 relative z-10 pl-2">
                     
                     {/* Icon Container */}
-                    <div className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 ${
+                    <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
                       isActive 
                         ? `bg-gradient-to-br ${step.color} text-white shadow-md shadow-blue-500/20 rotate-0` 
                         : 'bg-slate-100 border border-slate-200 text-slate-400 group-hover:text-blue-500 -rotate-3 group-hover:rotate-0'

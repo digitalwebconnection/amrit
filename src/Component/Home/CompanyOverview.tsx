@@ -106,7 +106,7 @@ export const CompanyOverview: React.FC = () => {
 
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-xl text-blue-600 shrink-0">
+                <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-full text-blue-600 shrink-0">
                   <ShieldCheck size={22} />
                 </div>
                 <div>
@@ -116,7 +116,7 @@ export const CompanyOverview: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-xl text-green-600 shrink-0">
+                <div className="p-3 bg-white shadow-sm border border-slate-100 rounded-full text-green-600 shrink-0">
                   <Zap size={22} />
                 </div>
                 <div>
@@ -127,8 +127,8 @@ export const CompanyOverview: React.FC = () => {
             </div>
 
             <div>
-              <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_10px_20px_-10px_rgba(37,99,235,0.5)] hover:-translate-y-1 overflow-hidden">
-                <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] skew-x-12"></div>
+              <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-[0_10px_20px_-10px_rgba(37,99,235,0.5)] hover:-translate-y-1 overflow-hidden cursor-pointer">
+                <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] skew-x-12 "></div>
                 <span className="relative z-10">Read Our Full Story</span>
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
               </button>

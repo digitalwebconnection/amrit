@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               <div className="hidden lg:block">
                 <button 
                   onClick={onOpenContact}
-                  className="bg-primary-orange hover:bg-orange-600 text-white px-8 py-3.5 font-bold transition-all shadow-md rounded-md transform hover:-translate-y-1 hover:shadow-lg text-sm uppercase tracking-wider"
+                  className="bg-primary-orange hover:bg-orange-600 text-white px-8 py-3.5 font-bold transition-all shadow-md rounded-lg transform hover:-translate-y-1 hover:shadow-lg text-sm uppercase tracking-wider cursor-pointer"
                 >
                   Get A Free Quote
                 </button>
@@ -164,7 +164,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 <PhoneCall className="w-4 h-4 text-primary-orange" />
                 <p className="font-bold text-sm">+91 98765 43210</p>
               </div>
-              <button onClick={onOpenContact} className="bg-primary-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition-all shadow-md transform hover:scale-105 text-sm">
+              <button onClick={onOpenContact} className="bg-primary-orange hover:bg-orange-600 text-white px-5 py-2 rounded-full font-bold transition-all shadow-md transform hover:scale-105 text-sm cursor-pointer">
                 Get A Quote
               </button>
             </div>

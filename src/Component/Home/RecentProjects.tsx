@@ -97,7 +97,7 @@ export const RecentProjects: React.FC = () => {
                 key={idx}
                 whileHover="hover"
                 initial="initial"
-                className="flex-1 h-62.5 md:h-auto relative rounded-lg overflow-hidden group cursor-pointer"
+                className="flex-1 h-[250px] md:h-auto relative rounded-lg overflow-hidden group"
               >
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>

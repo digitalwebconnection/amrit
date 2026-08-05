@@ -89,12 +89,12 @@ export const BusinessVerticals: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group relative bg-white rounded-xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
+              className="group relative bg-white rounded-lg p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
             >
               {/* Colored Top Accent Line */}
               <div className={`absolute top-0 left-0 w-full h-1 ${service.accentColor} opacity-80 group-hover:opacity-100 transition-opacity duration-300`}></div>
               
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300 border ${service.lightBg}`}>
+              <div className={`w-14 h-14 rounded-lg flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300 border ${service.lightBg}`}>
                 {service.icon}
               </div>
               

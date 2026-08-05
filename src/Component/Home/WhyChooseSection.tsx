@@ -56,7 +56,7 @@ export const WhyChooseSection: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex gap-4"
                 >
-                  <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-primary-orange shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center text-primary-orange shrink-0">
                     {reason.icon}
                   </div>
                   <div>

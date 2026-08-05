@@ -71,7 +71,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             >
               <button 
                 onClick={onOpenContact}
-                className="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_-5px_rgba(37,99,235,0.6)] hover:-translate-y-1"
+                className="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_-5px_rgba(37,99,235,0.6)] hover:-translate-y-1 cursor-pointer"
               >
                 <span>Get Free Consultation</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -101,7 +101,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
                 className="md:ml-auto w-full max-w-sm bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-lg p-6 shadow-2xl relative hover:border-blue-500/50 transition-colors"
               >
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl pointer-events-none"></div>
-                <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-5 border border-blue-500/30">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-5 border border-blue-500/30">
                   <Shield className="text-blue-400 w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2 tracking-wide">Trusted Equipment</h3>
@@ -118,7 +118,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
                 className="md:mr-auto w-full max-w-sm bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-lg p-6 shadow-2xl relative lg:-left-12 hover:border-cyan-500/50 transition-colors"
               >
                 <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl pointer-events-none"></div>
-                <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-5 border border-cyan-500/30">
+                <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-5 border border-cyan-500/30">
                   <Zap className="text-cyan-400 w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2 tracking-wide">Professional Execution</h3>

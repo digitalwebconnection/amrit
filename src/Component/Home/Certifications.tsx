@@ -66,10 +66,10 @@ export const Certifications: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-                className="bg-white border border-slate-100 rounded-3xl p-8 shadow-[0_15px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-blue-100 transition-all duration-500 group"
+                className="bg-white border border-slate-100 rounded-lg p-8 shadow-[0_15px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] hover:border-blue-100 transition-all duration-500 group"
               >
                 <div className="flex items-start gap-6">
-                  <div className={`shrink-0 w-16 h-16 ${cert.bg} ${cert.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500`}>
+                  <div className={`shrink-0 w-16 h-16 ${cert.bg} ${cert.color} rounded-full flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500`}>
                     {cert.icon}
                   </div>
                   <div className="pt-1">

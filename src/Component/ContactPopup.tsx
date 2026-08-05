@@ -36,13 +36,13 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden"
+            className="bg-white rounded-lg shadow-2xl w-full max-w-md overflow-hidden"
           >
             <div className="bg-primary-blue p-6 flex justify-between items-center text-white">
               <h2 className="text-2xl font-bold">Get a Quote</h2>
               <button 
                 onClick={onClose}
-                className="text-white/80 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10"
+                className="text-white/80 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer"
               >
                 <X size={24} />
               </button>
@@ -122,7 +122,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
 
               <button 
                 type="submit"
-                className="w-full bg-primary-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full bg-primary-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 Send Request <Send size={18} />
               </button>
