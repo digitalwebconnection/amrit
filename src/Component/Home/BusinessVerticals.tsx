@@ -54,19 +54,31 @@ export const BusinessVerticals: React.FC = () => {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-[2px] bg-orange-500 rounded-full"></div>
-              <h3 className="text-orange-500 font-bold uppercase tracking-widest text-sm">Our Expertise</h3>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
-              Business <span className="text-blue-600">Verticals</span>
-            </h2>
-          </div>
-          <p className="text-slate-500 text-lg md:text-xl max-w-md leading-relaxed font-light lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-orange-500/30 pl-6 lg:pl-0 lg:pr-6">
-            Delivering comprehensive energy solutions tailored to your specific needs, powered by innovation.
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4"
+          >
+            Business <span className="text-primary-blue"><br />Verticals</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4 mb-4"
+          >
+            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4"
+          >
+            Our Expertise
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

@@ -31,29 +31,49 @@ const projects = [
 
 export const RecentProjects: React.FC = () => {
   return (
-    <section className="py-12 bg-white relative overflow-hidden">
+    <section id="projects" className="py-12 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">  
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div className="max-w-2xl">
-            <h4 className="text-[#d46337] font-bold tracking-widest uppercase text-sm mb-3">Our Portfolio</h4>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-              Transforming Infrastructure with <span className="text-primary-blue">Excellence</span>
-            </h2>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900"
+          >
+            Transforming Infrastructure <span className="text-primary-blue"><br />with Excellence</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4 mb-4"
+          >
+            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-[#d46337] font-bold tracking-widest uppercase text-sm mt-4"
+          >
+            Our Portfolio
+          </motion.p>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-150">
           
           {/* Large Item */}
           <motion.div 
             whileHover="hover"
             initial="initial"
-            className="md:col-span-2 h-[300px] md:h-full relative rounded-lg overflow-hidden group"
+            className="md:col-span-2 h-75 md:h-full relative rounded-lg overflow-hidden group"
           >
             <img src={projects[0].image} alt={projects[0].title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
             
             <motion.div 
               className="absolute bottom-0 left-0 p-8 w-full"
@@ -77,10 +97,10 @@ export const RecentProjects: React.FC = () => {
                 key={idx}
                 whileHover="hover"
                 initial="initial"
-                className="flex-1 h-[250px] md:h-auto relative rounded-lg overflow-hidden group cursor-pointer"
+                className="flex-1 h-62.5 md:h-auto relative rounded-lg overflow-hidden group cursor-pointer"
               >
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
                 
                 <motion.div 
                   className="absolute bottom-0 left-0 p-6 w-full"

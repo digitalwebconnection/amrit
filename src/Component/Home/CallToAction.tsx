@@ -27,13 +27,17 @@ export const CallToAction: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
+            className="lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <h4 className="text-primary-orange font-bold tracking-widest uppercase text-sm mb-3">Get in Touch</h4>
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              Ready to Power Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-orange to-primary-blue">Future?</span>
-            </h2>
+            <div className="w-full flex flex-col items-center text-center mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4">
+                Ready to Power <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-orange to-primary-blue"><br />Your Future?</span>
+              </h2>
+              <div className="flex justify-center mt-4 mb-4">
+                <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+              </div>
+              <h4 className="text-primary-orange font-bold tracking-widest uppercase text-sm mt-4">Get in Touch</h4>
+            </div>
             
             <p className="text-gray-900 text-lg mb-10 leading-relaxed">
               Whether it's a large-scale commercial solar integration or industrial electrical EPC, our certified experts are ready to deliver seamless execution.

@@ -6,6 +6,8 @@ import BusinessVerticals from './BusinessVerticals';
 import OurProcess from './OurProcess';
 import WhyChooseSection from './WhyChooseSection';
 import CompanyHighlights from './CompanyHighlights';
+import Products from './Products';
+import ChannelPatner from './ChannelPatner';
 import Certifications from './Certifications';
 import RecentProjects from './RecentProjects';
 import Leadership from './Leadership';
@@ -29,6 +31,8 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <RecentProjects />
       <WhyChooseSection />
       <CompanyHighlights />
+      <Products />
+      <ChannelPatner />
       <Certifications />
       <Leadership />
       <Testimonials />

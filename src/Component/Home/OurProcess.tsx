@@ -48,20 +48,31 @@ export const OurProcess: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl">
         
         {/* Header */}
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6">
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-            <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">How We Work</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1] mb-6">
-            A Proven, Streamlined <br />
-            <span className="text-blue-600">
-              Process
-            </span>
-          </h2>
-          <p className="text-slate-500 text-lg font-light leading-relaxed">
-            From initial consultation to final handover, our expert approach guarantees flawless execution and maximum energy efficiency.
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4"
+          >
+            A Proven, Streamlined <span className="text-primary-blue"><br />Process</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4 mb-4"
+          >
+            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4"
+          >
+            How We Work
+          </motion.p>
         </div>
 
         {/* Interactive Tabs Layout */}

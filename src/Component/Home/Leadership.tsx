@@ -1,29 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Mail, Quote } from 'lucide-react';
+
 
 export const Leadership: React.FC = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center mb-4"
-          >
-            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
-          </motion.div>
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-gray-900 mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900"
           >
-            Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-blue-400">Leadership</span>
+            Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-blue-400"><br />Leadership</span>
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4 mb-4"
+          >
+            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+          </motion.div>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">

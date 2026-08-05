@@ -31,14 +31,31 @@ export const FAQSection: React.FC = () => {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-        <div className="text-center mb-16">
-          
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6">
-            Frequently Asked <span className="text-primary-blue"> <br />Questions</span>
-          </h2>
-          <div className="flex justify-center mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4"
+          >
+            Frequently Asked <span className="text-primary-blue"><br />Questions</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4 mb-4"
+          >
             <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
-          </div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4"
+          >
+            FAQs
+          </motion.p>
         </div>
 
         <div className="space-y-4">

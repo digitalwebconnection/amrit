@@ -32,14 +32,16 @@ export const WhyChooseSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
           
           {/* Text Side */}
-          <div className="flex-1 lg:pr-8 py-4">
-            <div className="mb-2 flex items-center gap-2">
-              <div className="w-12 h-1 bg-primary-orange rounded-full"></div>
-              <h3 className="text-primary-orange font-bold uppercase tracking-wider text-sm">Why Choose Us</h3>
+          <div className="lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="w-full flex flex-col items-center text-center mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4">
+                The Amrit Electricals <span className="text-primary-blue"><br />Advantage</span>
+              </h2>
+              <div className="flex justify-center mt-4 mb-4">
+                <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+              </div>
+              <h3 className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4">Why Choose Us</h3>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              The Amrit Electricals <span className="text-primary-blue">Advantage</span>
-            </h2>
             <p className="text-gray-600 mb-10 text-lg leading-relaxed">
               We don't just provide services; we build lasting partnerships. Here is why homeowners and businesses trust us for their most critical energy needs.
             </p>

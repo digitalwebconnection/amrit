@@ -26,6 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Why Us', href: '#why-us' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
@@ -81,8 +82,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         </div>
 
         {/* === MAIN NAVBAR (Initial State) === */}
-        {!isScrolled && (
-          <div className="w-full bg-white border-b border-gray-100 shadow-sm relative z-30">
+        <div className="w-full bg-white border-b border-gray-100 shadow-sm relative z-30">
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-20 lg:h-24">
               
               {/* Logo */}
@@ -94,12 +94,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               <nav className="hidden lg:flex items-center gap-8 h-full">
                 {navLinks.map((link) => (
                   isHomePage ? (
-                    <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group">
+                    <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group cursor-pointer">
                       {link.name}
                       <span className="absolute bottom-6 left-0 w-full h-[2px] bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                     </a>
                   ) : (
-                    <Link key={link.name} to={`/${link.href}`} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group">
+                    <Link key={link.name} to={`/${link.href}`} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group cursor-pointer">
                       {link.name}
                       <span className="absolute bottom-6 left-0 w-full h-[2px] bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                     </Link>
@@ -126,7 +126,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               </div>
             </div>
           </div>
-        )}
       </header>
 
       {/* === UNIQUE FLOATING NAVBAR (Sticky State) === */}
@@ -148,11 +147,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 isHomePage ? (
-                  <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-800 font-bold hover:text-primary-orange transition-colors text-sm uppercase tracking-wider">
+                  <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-gray-800 font-bold hover:text-primary-orange transition-colors text-sm uppercase tracking-wider cursor-pointer">
                     {link.name}
                   </a>
                 ) : (
-                  <Link key={link.name} to={`/${link.href}`} className="text-gray-800 font-bold hover:text-primary-orange transition-colors text-sm uppercase tracking-wider">
+                  <Link key={link.name} to={`/${link.href}`} className="text-gray-800 font-bold hover:text-primary-orange transition-colors text-sm uppercase tracking-wider cursor-pointer">
                     {link.name}
                   </Link>
                 )
