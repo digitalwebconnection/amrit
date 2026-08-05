@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #274092;
+  --color-primary-orange: #f47920;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+  }
+}
