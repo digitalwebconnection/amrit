@@ -8,9 +8,9 @@ interface HeroProps {
 
 export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
-    <section
-      id="home"
-      className="relative h-160 flex items-center pt-32 pb-20 overflow-hidden bg-slate-950"
+    <section 
+      id="home" 
+      className="relative h-160 flex items-center pt-12 pb-20 overflow-hidden bg-slate-950"
     >
       {/* Background Image & Overlays */}
       <div className="absolute inset-0">

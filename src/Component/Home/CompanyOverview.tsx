@@ -4,7 +4,11 @@ import { ShieldCheck, Zap, ArrowRight, Sun, Leaf } from 'lucide-react';
 
 export const CompanyOverview: React.FC = () => {
   return (
+<<<<<<< Updated upstream
     <section id="about" className="py-14 bg-slate-50 relative overflow-hidden">
+=======
+    <section id="about" className="py-16 bg-slate-50 relative overflow-hidden">
+>>>>>>> Stashed changes
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform origin-top pointer-events-none"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
@@ -127,8 +131,7 @@ export const CompanyOverview: React.FC = () => {
             </div>
 
             <div>
-              <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-[0_10px_20px_-10px_rgba(37,99,235,0.5)] hover:-translate-y-1 overflow-hidden cursor-pointer">
-                <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] skew-x-12 "></div>
+              <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-2xl shadow-black hover:-translate-y-1 overflow-hidden cursor-pointer">
                 <span className="relative z-10">Read Our Full Story</span>
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
               </button>

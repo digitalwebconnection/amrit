@@ -63,16 +63,8 @@ export const OurProcess: React.FC = () => {
             viewport={{ once: true }}
             className="flex justify-center mt-4 mb-4"
           >
-            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
+            <div className="w-32 h-1 bg-primary-orange rounded-full"></div>
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4"
-          >
-            How We Work
-          </motion.p>
         </div>
 
         {/* Interactive Tabs Layout */}
@@ -104,11 +96,11 @@ export const OurProcess: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-lg text-white"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-md text-white"
                 >
-                  <div className="flex items-center gap-3 mb-1">
-                    <span className="text-2xl font-black opacity-50">0{activeStep + 1}</span>
-                    <h4 className="text-lg font-bold">{steps[activeStep].title}</h4>
+                  <div className="flex items-center gap-3 mb-1 text-center justify-center">
+                    <span className="text-3xl font-black opacity-50">0{activeStep + 1}</span>
+                    <h4 className="text-2xl font-bold text-white">{steps[activeStep].title}</h4>
                   </div>
                 </motion.div>
               </div>
@@ -126,7 +118,7 @@ export const OurProcess: React.FC = () => {
               return (
                 <div 
                   key={step.id} 
-                  className={`p-4 rounded-lg cursor-pointer transition-all duration-300 border relative overflow-hidden group ${
+                  className={`p-4 rounded-lg cursor-pointer shadow-lg transition-all duration-300 border relative overflow-hidden group ${
                     isActive 
                       ? 'bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-blue-100 scale-[1.02]' 
                       : 'bg-white/50 border-transparent hover:bg-slate-50 hover:scale-[1.01]'
@@ -164,14 +156,12 @@ export const OurProcess: React.FC = () => {
                       <p className={`text-[13px] leading-snug transition-colors ${isActive ? 'text-slate-700' : 'text-slate-500'}`}>
                         {step.description}
                       </p>
-                    </div>
-                    
+                    </div>                   
                   </div>
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>
