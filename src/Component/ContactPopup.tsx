@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send } from 'lucide-react';
+import { toast } from 'react-toastify';
+import logo from '../assets/logo.png';
 
 interface ContactPopupProps {
   isOpen: boolean;
@@ -24,7 +26,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
     e.preventDefault();
     // Placeholder for form submission logic
     console.log('Form submitted:', formData);
-    alert('Thank you for reaching out! We will contact you soon.');
+    toast.success('Thank you for reaching out! We will contact you soon.');
     onClose();
   };
 
@@ -38,14 +40,15 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="bg-white rounded-lg shadow-2xl w-full max-w-md overflow-hidden"
           >
-            <div className="bg-primary-blue p-6 flex justify-between items-center text-white">
-              <h2 className="text-2xl font-bold">Get a Quote</h2>
+            <div className="bg-white p-6 pb-2 flex flex-col items-center justify-center relative border-b border-gray-100">
               <button 
                 onClick={onClose}
-                className="text-white/80 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10 cursor-pointer"
+                className="absolute right-4 top-4 text-gray-400 hover:text-gray-700 transition-colors p-1 rounded-full hover:bg-gray-100 cursor-pointer"
               >
                 <X size={24} />
               </button>
+              <img src={logo} alt="Amrit Electricals Logo" className="h-12 w-auto mb-3" />
+              <h2 className="text-xl font-bold text-gray-800">Get a Quote</h2>
             </div>
             
             <form onSubmit={handleSubmit} className="p-6 space-y-4">

@@ -1,4 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Component/Header';
 import Footer from './Component/Footer';
@@ -60,6 +62,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <AnimatePresence>
         {isLoading && <Preloader />}
       </AnimatePresence>

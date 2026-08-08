@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, Send } from 'lucide-react';
+import { toast } from 'react-toastify';
 import logo from '../assets/logo.png';
 
 export const Footer: React.FC = () => {
@@ -10,6 +11,7 @@ export const Footer: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // handle subscribe
+    toast.success('Thank you for subscribing to our newsletter!');
     setEmail('');
   };
 

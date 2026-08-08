@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail, User, MessageSquare } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 export const CallToAction: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -8,7 +9,7 @@ export const CallToAction: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for reaching out! We will get back to you shortly.");
+    toast.success("Thank you for reaching out! We will get back to you shortly.");
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
