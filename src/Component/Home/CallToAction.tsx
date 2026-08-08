@@ -13,7 +13,8 @@ export const CallToAction: React.FC = () => {
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
-  return (
+  return (   
+    
     <section className="relative py-14 bg-white overflow-hidden" id="contact">
       {/* Background Graphic */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-orange/20 blur-[150px] pointer-events-none rounded-full transform translate-x-1/3"></div>
