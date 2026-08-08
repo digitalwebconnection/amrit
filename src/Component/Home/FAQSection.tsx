@@ -48,14 +48,6 @@ export const FAQSection: React.FC = () => {
           >
             <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-primary-orange font-bold uppercase tracking-wider text-sm mt-4"
-          >
-            FAQs
-          </motion.p>
         </div>
 
         <div className="space-y-4">

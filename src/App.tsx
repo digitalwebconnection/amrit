@@ -32,7 +32,7 @@ function App() {
       <SEO />
       <Header onOpenContact={() => setIsContactOpen(true)} />
       
-      <div className="flex-grow">
+      <div className="grow">
         <Routes>
           <Route path="/" element={<HomeMain onOpenContact={() => setIsContactOpen(true)} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
