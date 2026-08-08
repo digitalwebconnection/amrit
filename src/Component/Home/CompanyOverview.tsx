@@ -4,11 +4,7 @@ import { ShieldCheck, Zap, ArrowRight, Sun, Leaf } from 'lucide-react';
 
 export const CompanyOverview: React.FC = () => {
   return (
-<<<<<<< Updated upstream
-    <section id="about" className="py-14 bg-slate-50 relative overflow-hidden">
-=======
     <section id="about" className="py-16 bg-slate-50 relative overflow-hidden">
->>>>>>> Stashed changes
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform origin-top pointer-events-none"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
