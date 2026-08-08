@@ -13,7 +13,7 @@ export const CallToAction: React.FC = () => {
   };
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden" id="contact">
+    <section className="relative py-14 bg-white overflow-hidden" id="contact">
       {/* Background Graphic */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-orange/20 blur-[150px] pointer-events-none rounded-full transform translate-x-1/3"></div>
       <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-blue-500/15 blur-[150px] pointer-events-none rounded-full"></div>
@@ -29,11 +29,11 @@ export const CallToAction: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <div className="w-full flex flex-col items-center text-center mb-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4">
-                Ready to Power <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-orange to-primary-blue"><br />Your Future?</span>
+            <div className="w-full flex flex-col items-center text-center mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-2">
+                Ready to Power <span className="text-transparent bg-clip-text bg-linear-to-t from-primary-orange to-primary-blue"><br />Your Future?</span>
               </h2>
-              <div className="flex justify-center mt-4 mb-4">
+              <div className="flex justify-center mt-2 mb-2">
                 <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
               </div>
               <h4 className="text-primary-orange font-bold tracking-widest uppercase text-sm mt-4">Get in Touch</h4>
@@ -77,7 +77,7 @@ export const CallToAction: React.FC = () => {
           >
             <div className="bg-white p-8 md:p-10 rounded-3xl border border-primary-orange/10 shadow-[0_20px_60px_-15px_rgba(212,99,55,0.25)] relative hover:shadow-[0_20px_60px_-15px_rgba(212,99,55,0.4)] transition-shadow duration-500">
               {/* Subtle top border accent */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1.5 bg-gradient-to-r from-transparent via-primary-orange to-transparent opacity-90 rounded-t-3xl"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1.5 bg-linear-to-r from-transparent via-primary-orange to-transparent opacity-90 rounded-t-3xl"></div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
               

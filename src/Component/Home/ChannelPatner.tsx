@@ -13,7 +13,7 @@ const partners = [
 
 export const ChannelPatner: React.FC = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden border-y border-gray-100">
+    <section className="py-14 bg-white overflow-hidden border-y border-gray-100">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-10">
          
@@ -44,7 +44,7 @@ export const ChannelPatner: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="w-40 h-20 md:w-66 md:h-48 flex items-center justify-center  hover:opacity-100 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
+              className="w-40 h-20 md:w-66 md:h-30 flex items-center justify-center  hover:opacity-100 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
             >
               <div className="relative w-full h-full flex items-center justify-center group">
                 <img 
@@ -60,7 +60,7 @@ export const ChannelPatner: React.FC = () => {
                   }}
                 />
                 {/* Premium Text Fallback if image fails to load */}
-                <div className="hidden absolute inset-0 flex items-center justify-center bg-gray-50 rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-4">
+                <div className="hidden absolute inset-0 items-center justify-center bg-gray-50 rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-4">
                   <span className="font-black text-base md:text-lg text-gray-800 tracking-wider text-center leading-tight">
                     {partner.name.toUpperCase()}
                   </span>

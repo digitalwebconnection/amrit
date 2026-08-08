@@ -9,9 +9,9 @@ export const PrivacyPolicy: React.FC = () => {
   return (
     <>
       <SEO title="Privacy Policy - Amrit Electricals" />
-      <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+      <div className="py-10 min-h-screen">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+          <div className="">
             <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-8">Privacy Policy</h1>
             
             <div className="prose prose-blue max-w-none text-gray-600 leading-relaxed space-y-6">

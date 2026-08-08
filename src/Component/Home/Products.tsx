@@ -24,10 +24,10 @@ const products = [
 
 export const Products: React.FC = () => {
   return (
-    <section id="products-section" className="py-24 bg-[#f0f6f9] relative overflow-hidden">
+    <section id="products-section" className="py-14 bg-[#f0f6f9] relative overflow-hidden">
       {/* Background Watermark */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none">
-        <h2 className="text-[8rem] md:text-[12rem] lg:text-[15rem] font-black text-transparent leading-none tracking-widest uppercase" style={{ WebkitTextStroke: '2px rgba(0,0,0,0.03)' }}>
+        <h2 className="text-[8rem] md:text-[12rem] lg:text-[15rem] font-black text-transparent leading-none tracking-widest uppercase" style={{ WebkitTextStroke: '2px rgba(0,0,0,0.1)' }}>
           Products
         </h2>
       </div>
@@ -73,16 +73,16 @@ export const Products: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-white rounded-[2rem] overflow-visible shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-300 group flex flex-col relative"
+              className="bg-white rounded-xl overflow-visible shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-300 group flex flex-col relative"
             >
               {/* Product Image Container */}
-              <div className="relative h-64 overflow-visible rounded-t-[2rem]">
+              <div className="relative h-64 overflow-visible rounded-t-xl">
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-full object-cover rounded-t-[2rem]"
+                  className="w-full h-full object-cover rounded-t-xl"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors rounded-t-[2rem]"></div>
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors rounded-t-4xl"></div>
                 
                 {/* Floating Action Button overlapping the image and content */}
                 <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 z-20">

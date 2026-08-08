@@ -43,7 +43,7 @@ export const OurProcess: React.FC = () => {
   return (
     <section className="py-12 bg-white relative overflow-hidden">
       {/* Dynamic Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-blue-50/50 via-white to-white pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl">
         
@@ -76,11 +76,11 @@ export const OurProcess: React.FC = () => {
         </div>
 
         {/* Interactive Tabs Layout */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
           
           {/* Left: Image Container */}
-          <div className="w-full lg:w-[55%] relative h-[400px] lg:h-auto">
-            <div className="absolute inset-0 rounded-lg overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-slate-100 group">
+          <div className="w-full lg:w-[55%] relative h-100 lg:h-auto">
+            <div className="absolute inset-0 rounded-lg overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)]  group">
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={activeStep}
@@ -95,7 +95,7 @@ export const OurProcess: React.FC = () => {
               </AnimatePresence>
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-slate-900/10 to-transparent pointer-events-none"></div>
               
               {/* Floating Badge on Image */}
               <div className="absolute bottom-6 left-6 right-6">
@@ -115,7 +115,7 @@ export const OurProcess: React.FC = () => {
             </div>
             
             {/* Background decorative element */}
-            <div className={`absolute -inset-2 bg-gradient-to-tr ${steps[activeStep].color} rounded-lg opacity-10 -z-10 transition-colors duration-700`}></div>
+            <div className={`absolute -inset-2 bg-linear-to-tr ${steps[activeStep].color} rounded-lg opacity-10 -z-10 transition-colors duration-700`}></div>
           </div>
 
           {/* Right: Interactive Step List */}
@@ -135,17 +135,17 @@ export const OurProcess: React.FC = () => {
                   onMouseEnter={() => setActiveStep(idx)}
                 >
                   {/* Subtle active indicator line */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`}></div>
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`}></div>
                   
                   {/* Color Tint Background for active state */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.08]' : 'opacity-0 group-hover:opacity-[0.02]'}`}></div>
+                  <div className={`absolute inset-0 bg-linear-to-br ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.08]' : 'opacity-0 group-hover:opacity-[0.02]'}`}></div>
 
                   <div className="flex items-start gap-4 relative z-10 pl-2">
                     
                     {/* Icon Container */}
                     <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
                       isActive 
-                        ? `bg-gradient-to-br ${step.color} text-white shadow-md shadow-blue-500/20 rotate-0` 
+                        ? `bg-linear-to-br ${step.color} text-white shadow-md shadow-blue-500/20 rotate-0` 
                         : 'bg-slate-100 border border-slate-200 text-slate-400 group-hover:text-blue-500 -rotate-3 group-hover:rotate-0'
                     }`}>
                       {step.icon}

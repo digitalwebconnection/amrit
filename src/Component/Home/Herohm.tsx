@@ -8,15 +8,15 @@ interface HeroProps {
 
 export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative h-160 flex items-center pt-32 pb-20 overflow-hidden bg-slate-950"
     >
       {/* Background Image & Overlays */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-          alt="Solar Panels" 
+        <img
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Solar Panels"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -24,7 +24,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Main Content (Left) */}
           <div className="lg:col-span-7 flex flex-col items-start mt-10 lg:mt-0">
             <motion.div
@@ -41,7 +41,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
                 Premium Solar Partner
               </span>
             </motion.div>
-            
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,11 +49,11 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
               className="text-5xl md:text-6xl lg:text-6xl font-bold leading-[1.1] mb-6 text-white tracking-tight font-sans"
             >
               Complete Solar Supply <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">
                 & EPC Solutions
               </span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,22 +62,22 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             >
               From premium solar modules to reliable inverters and complete BOS components, Amrit Electricals equips installers and businesses with dependable solar tech and professional EPC execution.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
             >
-              <button 
+              <button
                 onClick={onOpenContact}
                 className="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_-5px_rgba(37,99,235,0.6)] hover:-translate-y-1 cursor-pointer"
               >
                 <span>Get Free Consultation</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              
-              <a 
+
+              <a
                 href="#projects"
                 className="group w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-lg transition-all flex items-center justify-center border border-white/10 backdrop-blur-sm"
               >
@@ -90,9 +90,9 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
           {/* Floating Glass Cards (Right) */}
           <div className="lg:col-span-5 relative mt-12 lg:mt-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/20 blur-[100px] rounded-full pointer-events-none hidden md:block"></div>
-            
+
             <div className="relative flex flex-col gap-6 md:gap-8">
-              
+
               {/* Card 1 */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}

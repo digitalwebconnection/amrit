@@ -130,18 +130,18 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-gray-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium text-gray-200">
           <p>
             &copy; {currentYear} Amrit Electricals. All rights reserved.
           </p>
           
           <div className="flex items-center gap-2">
-            <span>&lt;/&gt;</span> Developed by <a href="#" className="text-primary-orange hover:text-orange-400 transition-colors tracking-wide">Digital Web Connection</a>
+            <span>&lt;/&gt;</span> Digital Partner<a href="#" className="text-primary-orange hover:text-orange-400 transition-colors tracking-wide">Digital Web Connection</a>
           </div>
 
           <div className="flex items-center gap-6">
-            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </div>

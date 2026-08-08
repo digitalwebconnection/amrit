@@ -2,6 +2,7 @@ import React from 'react';
 import Herohm from './Herohm';
 import Scrooling from './Scrooling';
 import CompanyOverview from './CompanyOverview';
+import VideoSection from './VideoSection';
 import BusinessVerticals from './BusinessVerticals';
 import OurProcess from './OurProcess';
 import WhyChooseSection from './WhyChooseSection';
@@ -28,6 +29,7 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <CompanyOverview />
       <BusinessVerticals />
       <OurProcess />
+      <VideoSection />
       <RecentProjects />
       <WhyChooseSection />
       <CompanyHighlights />
@@ -36,7 +38,6 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <Certifications />
       <Leadership />
       <Testimonials />
-
       <FAQSection />
       <CallToAction />
     </main>

@@ -32,7 +32,7 @@ export const FAQSection: React.FC = () => {
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -40,7 +40,7 @@ export const FAQSection: React.FC = () => {
           >
             Frequently Asked <span className="text-primary-blue"><br />Questions</span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -58,32 +58,49 @@ export const FAQSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="border border-gray-200 rounded-2xl overflow-hidden"
+              className="relative p-0.5 rounded-xl overflow-hidden group shadow-sm"
             >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
-              >
-                <span className="font-bold text-lg text-gray-900">{faq.question}</span>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${openIndex === index ? 'bg-primary-orange text-white' : 'bg-gray-100 text-gray-500'}`}>
-                  {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-                </div>
-              </button>
+              {/* Default Border Background */}
+              <div className="absolute inset-0 bg-gray-200"></div>
 
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Running Gradient Border Background */}
+              <div
+                className={`absolute inset-0 transition-opacity duration-500 ${openIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}
+              >
+                <div
+                  className="absolute -inset-full animate-spin bg-[conic-gradient(from_0deg,transparent_0_260deg,#3b82f6_310deg,#d46337_360deg)]"
+                  style={{ animationDuration: '4s' }}
+                ></div>
+              </div>
+
+              {/* Inner Content */}
+              <div className="relative bg-white rounded-xl h-full overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-slate-50 transition-colors"
+                >
+                  <span className={`font-bold text-lg transition-colors ${openIndex === index ? 'text-blue-600' : 'text-gray-900'}`}>{faq.question}</span>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${openIndex === index ? 'bg-[#d46337] text-white rotate-180 shadow-md' : 'bg-gray-100 text-gray-500'}`}>
+                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                  </div>
+                </button>
+
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
           ))}
         </div>

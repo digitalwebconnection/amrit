@@ -27,7 +27,7 @@ export const WhyChooseSection: React.FC = () => {
   ];
 
   return (
-    <section id="why-us" className="py-20 bg-white">
+    <section id="why-us" className="py-14 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-16">
           
@@ -76,7 +76,7 @@ export const WhyChooseSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="flex-1 w-full flex flex-col mt-8 lg:mt-0"
           >
-            <div className="relative rounded-lg overflow-hidden shadow-2xl flex-grow min-h-[400px] lg:min-h-0">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl grow min-h-100 lg:min-h-0">
               <img 
                 src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Our Team at Work" 

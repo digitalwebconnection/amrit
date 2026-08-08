@@ -50,7 +50,7 @@ export const BusinessVerticals: React.FC = () => {
 
   return (
     <section id="services" className="py-12 bg-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none -z-0"></div>
+      <div className="absolute top-0 right-0 w-125 h-125 bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         

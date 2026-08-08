@@ -5,46 +5,46 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 export const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      name: "RAJESH KUMAR",
-      role: "RESIDENTIAL CLIENT",
-      content: "Amrit Electricals completely transformed our home with their solar installation. We opted for Adani Solar panels, and the team was professional, timely, and left the site spotless. Our electricity bills have dropped significantly!",
+      name: "VIJAY GOVARTHAN",
+      role: "LOCAL GUIDE",
+      content: "Purchased Goldi Solar Panels and Junction boxes. On time delivery and competitive pricing. Thanks",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "PRIYA SHARMA",
-      role: "FACTORY OWNER",
-      content: "We hired them for a complete commercial rewiring and a 50kW industrial solar setup. Their attention to safety protocols and detail is unmatched. It's rare to find such dedicated professionals in the EPC space.",
+      name: "SAI KUMAR",
+      role: "CUSTOMER",
+      content: "Very fast and good service... Best rate and best quality goods.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "VIKRAM SINGH",
-      role: "PROPERTY DEVELOPER",
-      content: "I have worked with many contractors, but Amrit Electricals stands out for their reliability and the quality of materials used. They handle all our residential project electricals and solar integrations flawlessly.",
+      name: "PAVAN MEDISETTI",
+      role: "LOCAL GUIDE",
+      content: "One stop solution for Solar power systems. Quality with best pricing👍🏼👍🏻",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "AMIT PATEL",
-      role: "WAREHOUSE MANAGER",
-      content: "The 100kW commercial solar installation was executed perfectly. The project was completed ahead of schedule, and the energy generation is exactly as promised. Highly recommend their commercial EPC services.",
+      name: "BARATH M",
+      role: "CUSTOMER",
+      content: "All electrical items available at best rate. Nice customer service 👍",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "SUNITA VERMA",
-      role: "HOMEOWNER",
-      content: "Excellent service! They installed a Microtek Solar Inverter system for our house. The technicians were very knowledgeable, explained the whole system to us, and the after-sales support has been incredibly responsive.",
+      name: "ADITYA GOTURU",
+      role: "CUSTOMER",
+      content: "Good selection of parts, knowledgeable and patient owner",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "RAHUL DESAI",
-      role: "HOSPITAL ADMINISTRATOR",
-      content: "In a hospital, reliable power is critical. Amrit Electricals handled our high-tension wiring and backup power systems with absolute precision. We trust them completely with our electrical infrastructure.",
+      name: "BHANU VENKATESH",
+      role: "CUSTOMER",
+      content: "Customer recieving and quality is good",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
@@ -112,12 +112,12 @@ export const Testimonials: React.FC = () => {
       {/* Background Graphic Simulation (Bar charts) */}
       <div className="absolute bottom-12 left-0 w-full lg:w-1/2 h-64 flex items-end gap-2 px-8 z-0 overflow-hidden">
         {[20, 40, 15, 60, 30, 10, 50, 40, 25, 70, 20, 55, 35, 15, 45, 80, 25, 65, 45, 15, 50, 30].map((height, i) => (
-          <div key={i} className="w-6 md:w-8 bg-[#252525] flex-shrink-0" style={{ height: `${height}%` }} />
+          <div key={i} className="w-6 md:w-8 bg-[#252525] shrink-0" style={{ height: `${height}%` }} />
         ))}
       </div>
       
       {/* Circular wireframe accent */}
-      <div className="absolute bottom-16 left-[25%] w-87.5 h-[350px] rounded-full border border-white/5 pointer-events-none z-0 hidden lg:block" />
+      <div className="absolute bottom-16 left-[25%] w-87.5 h-87.5 rounded-full border border-white/5 pointer-events-none z-0 hidden lg:block" />
 
       <div className="w-full relative z-10 container mx-auto">
         <div className="flex flex-col lg:flex-row lg:h-130">
@@ -133,7 +133,7 @@ export const Testimonials: React.FC = () => {
               </svg>
             </div>
 
-            <div className="relative w-full overflow-visible min-h-[220px]">
+            <div className="relative w-full overflow-visible min-h-55">
               <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   key={currentIndex}
@@ -213,8 +213,7 @@ export const Testimonials: React.FC = () => {
                   <div className="absolute inset-0 bg-[#181818]/10"></div>
                 </motion.div>
               </AnimatePresence>
-              
-             
+
             </div>
           </div>
           

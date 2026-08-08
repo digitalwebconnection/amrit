@@ -4,7 +4,7 @@ import { ShieldCheck, Zap, ArrowRight, Sun, Leaf } from 'lucide-react';
 
 export const CompanyOverview: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="about" className="py-14 bg-slate-50 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform origin-top pointer-events-none"></div>
       <div className="absolute -left-40 top-40 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
@@ -18,20 +18,20 @@ export const CompanyOverview: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative mt-8 lg:mt-0 h-[500px] sm:h-[600px] w-full"
+            className="relative mt-8 lg:mt-0 h-125 sm:h-150 w-full"
           >
             {/* Glowing Sun Background Effect */}
             <div className="absolute top-1/4 right-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-yellow-400/30 rounded-full blur-[60px] sm:blur-[80px] -z-10 pointer-events-none"></div>
             <div className="absolute bottom-1/4 left-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-blue-500/20 rounded-full blur-[60px] sm:blur-[80px] -z-10 pointer-events-none"></div>
             
             {/* Main Image Container */}
-            <div className="absolute right-0 sm:right-4 top-4 sm:top-8 w-[90%] sm:w-[85%] h-[85%] sm:h-[90%] rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl z-10 group border border-white/50">
+            <div className="absolute right-0 sm:right-4 top-4 sm:top-8 w-[90%] sm:w-[85%] h-[85%] sm:h-[90%] rounded-2xl sm:rounded-xl overflow-hidden shadow-2xl z-10 group border border-white/50">
               <img 
                 src="/images/solar_team.png" 
                 alt="Commercial Solar Installation" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/70 via-slate-900/20 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-tr from-slate-900/70 via-slate-900/20 to-transparent pointer-events-none"></div>
             </div>
 
             {/* Floating Energy Stat Card (Bottom Left) */}
@@ -53,7 +53,7 @@ export const CompanyOverview: React.FC = () => {
                   <span className="text-blue-600">98%</span>
                 </div>
                 <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                  <div className="w-[98%] h-full bg-gradient-to-r from-blue-500 to-green-400 rounded-full relative">
+                  <div className="w-[98%] h-full bg-linear-to-r from-blue-500 to-green-400 rounded-full relative">
                     <div className="absolute top-0 right-0 w-4 h-full bg-white/40 animate-pulse"></div>
                   </div>
                 </div>
@@ -61,13 +61,13 @@ export const CompanyOverview: React.FC = () => {
             </div>
 
             {/* Secondary Floating Image/Badge (Top Right) */}
-            <div className="absolute right-0 sm:-right-12 top-12 sm:top-16 w-36 sm:w-48 rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.2)] border-[4px] border-white z-20 group">
+            <div className="absolute right-0 sm:-right-12 top-12 sm:top-16 w-36 sm:w-48 rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.2)] border-4 border-white z-20 group">
               <img 
                 src="/images/electrical_tech.png" 
                 alt="Solar Inverter Tech" 
                 className="w-full h-28 sm:h-32 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end p-3 sm:p-4">
+              <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end p-3 sm:p-4">
                 <div className="flex items-center gap-2 text-white">
                   <Sun size={14} className="text-yellow-400" />
                   <span className="text-[10px] sm:text-xs font-bold tracking-wide uppercase">Smart Solar Tech</span>
@@ -85,7 +85,7 @@ export const CompanyOverview: React.FC = () => {
             className="flex flex-col mt-16 lg:mt-0"
           >
             <div className="mb-4 flex items-center gap-3">
-              <div className="w-12 h-[2px] bg-blue-600 rounded-full"></div>
+              <div className="w-12 h-0.5 bg-blue-600 rounded-full"></div>
               <h3 className="text-blue-600 font-bold uppercase tracking-widest text-sm">About Amrit Electricals</h3>
             </div>
 
