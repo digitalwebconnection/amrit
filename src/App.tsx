@@ -10,6 +10,13 @@ import Preloader from './Component/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import SEO from './Component/SEO';
 
+
+
+// src/App.tsx(15,41): error TS2307: Cannot find module './pages/PrivacyPolicy' or its corresponding type declarations.
+// src/App.tsx(16,42): error TS2307: Cannot find module './pages/TermsOfService' or its corresponding type declarations.
+// Error: Command "npm run build" exited with 2
+
+
 // Dynamic imports for code splitting
 const HomeMain = lazy(() => import('./Component/Home/HomeMain'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
