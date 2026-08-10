@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 lg:ml-auto">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Quick Links
-              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span>
+              {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
               {['Home', 'About Us', 'Our Projects', 'Why Choose Us', 'Testimonials'].map((item) => (
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3 lg:ml-8">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Our Services
-              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span>
+              {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
               {['Solar Panel Installation', 'Commercial Wiring', 'Residential Electricals', 'Maintenance & Repairs', 'Energy Consultation'].map((item) => (
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Stay Updated
-              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span>
+              {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
             <p className="text-gray-400 text-sm mb-4">
               Subscribe to our newsletter for the latest solar energy insights and offers.

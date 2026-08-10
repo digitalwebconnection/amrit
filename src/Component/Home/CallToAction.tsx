@@ -46,7 +46,7 @@ export const CallToAction: React.FC = () => {
               <div className="flex justify-center mt-2 mb-2">
                 <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
               </div>
-              <h4 className="text-primary-orange font-bold tracking-widest uppercase text-sm mt-4">Get in Touch</h4>
+          
             </div>
             
             <p className="text-gray-900 text-lg mb-10 leading-relaxed">
