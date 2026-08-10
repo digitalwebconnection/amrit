@@ -76,6 +76,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
                   required
                   value={formData.name}
                   onChange={handleChange}
@@ -91,6 +92,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                     type="tel"
                     id="phone"
                     name="phone"
+                    autoComplete="tel"
                     required
                     pattern="[0-9]{10}"
                     title="Please enter a valid 10-digit phone number"
@@ -108,6 +110,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                     type="email"
                     id="email"
                     name="email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue outline-none transition-all duration-200 shadow-sm hover:border-gray-300 text-gray-800"

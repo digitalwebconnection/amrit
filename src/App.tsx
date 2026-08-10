@@ -18,6 +18,7 @@ import SEO from './Component/SEO';
 const HomeMain = lazy(() => import('./Component/Home/HomeMain'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -81,6 +82,7 @@ function App() {
             <Route path="/" element={<HomeMain onOpenContact={() => setIsContactOpen(true)} />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </div>

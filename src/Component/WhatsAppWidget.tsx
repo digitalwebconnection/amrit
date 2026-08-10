@@ -125,6 +125,9 @@ export const WhatsAppWidget: React.FC = () => {
             <div className="bg-white px-4 py-3 flex flex-col z-10">
               <div className="flex gap-2">
                 <textarea 
+                  id="whatsapp_message"
+                  name="whatsapp_message"
+                  autoComplete="off"
                   className="flex-1 resize-none rounded-xl p-3 text-[14px] border border-gray-200 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-gray-50 shadow-inner transition-shadow" 
                   rows={2} 
                   value={message}

@@ -40,7 +40,8 @@ export const VideoSection: React.FC = () => {
           playsInline
           poster="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=2000"
         >
-          <source src="https://cdn.pixabay.com/video/2021/08/04/83861-584742616_large.mp4" type="video/mp4" />
+          {/* Note: Pixabay CDN links expire. It's recommended to download the video and host it in your public/ folder. Using a stable sample video for now. */}
+          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 

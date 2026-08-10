@@ -101,6 +101,9 @@ export const Footer: React.FC = () => {
             <form onSubmit={handleSubmit} className="relative group">
               <input 
                 type="email" 
+                name="newsletter_email"
+                id="newsletter_email"
+                autoComplete="email"
                 placeholder="Enter your email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

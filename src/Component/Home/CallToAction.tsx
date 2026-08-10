@@ -98,11 +98,13 @@ export const CallToAction: React.FC = () => {
                     <input 
                       type="text" 
                       required
+                      name="name"
+                      id="name"
+                      autoComplete="name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full bg-transparent border-2 border-gray-200 rounded-xl pl-12 pr-4 py-4 text-gray-900 focus:outline-none focus:border-primary-orange focus:bg-white transition-all peer placeholder-transparent"
                       placeholder="Your Name"
-                      id="name"
                     />
                     <label htmlFor="name" className="absolute left-11 -top-2.5 bg-white px-2 text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-orange rounded pointer-events-none">Your Name</label>
                     <User className="absolute left-4 top-4 text-gray-400 peer-focus:text-primary-orange transition-colors" size={20} />
@@ -113,6 +115,9 @@ export const CallToAction: React.FC = () => {
                     <input 
                       type="tel" 
                       required
+                      name="phone"
+                      id="phone"
+                      autoComplete="tel"
                       pattern="[0-9]{10}"
                       title="Please enter a valid 10-digit phone number"
                       minLength={10}
@@ -121,7 +126,6 @@ export const CallToAction: React.FC = () => {
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full bg-transparent border-2 border-gray-200 rounded-xl pl-12 pr-4 py-4 text-gray-900 focus:outline-none focus:border-primary-orange focus:bg-white transition-all peer placeholder-transparent"
                       placeholder="Phone Number"
-                      id="phone"
                     />
                     <label htmlFor="phone" className="absolute left-11 -top-2.5 bg-white px-2 text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-orange rounded pointer-events-none">Phone Number</label>
                     <Phone className="absolute left-4 top-4 text-gray-400 peer-focus:text-primary-orange transition-colors" size={20} />
@@ -133,11 +137,13 @@ export const CallToAction: React.FC = () => {
                   <input 
                     type="email" 
                     required
+                    name="email"
+                    id="email"
+                    autoComplete="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full bg-transparent border-2 border-gray-200 rounded-xl pl-12 pr-4 py-4 text-gray-900 focus:outline-none focus:border-primary-orange focus:bg-white transition-all peer placeholder-transparent"
                     placeholder="Email Address"
-                    id="email"
                   />
                   <label htmlFor="email" className="absolute left-11 -top-2.5 bg-white px-2 text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-orange rounded pointer-events-none">Email Address</label>
                   <Mail className="absolute left-4 top-4 text-gray-400 peer-focus:text-primary-orange transition-colors" size={20} />
@@ -147,12 +153,14 @@ export const CallToAction: React.FC = () => {
                 <div className="relative group">
                   <textarea 
                     required
+                    name="message"
+                    id="message"
+                    autoComplete="off"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full bg-transparent border-2 border-gray-200 rounded-xl pl-12 pr-4 py-4 text-gray-900 focus:outline-none focus:border-primary-orange focus:bg-white transition-all resize-none peer placeholder-transparent"
                     placeholder="How can we help?"
-                    id="message"
                   ></textarea>
                   <label htmlFor="message" className="absolute left-11 -top-2.5 bg-white px-2 text-xs font-semibold text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary-orange rounded pointer-events-none">How can we help?</label>
                   <MessageSquare className="absolute left-4 top-4 text-gray-400 peer-focus:text-primary-orange transition-colors" size={20} />
