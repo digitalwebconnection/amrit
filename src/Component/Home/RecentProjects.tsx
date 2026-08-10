@@ -54,6 +54,7 @@ export const RecentProjects: React.FC = () => {
           >
             Transforming Infrastructure <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">with Excellence</span>
           </motion.h2>
+          <div className="w-42 h-1 bg-primary-orange rounded-full items-center justify-center mx-auto mt-2"></div>
         </div>
 
         {/* Bento Grid Gallery */}
@@ -114,7 +115,7 @@ export const RecentProjects: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <button className="group inline-flex items-center gap-3 px-10 py-2 rounded-full bg-slate-900 text-white font-semibold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/30">
+            <button className="group inline-flex items-center gap-3 px-10 py-2 rounded-full bg-slate-900 text-white font-semibold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/30 cursor-pointer">
               View All Projects
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                 <ArrowUpRight className="w-4 h-4" />

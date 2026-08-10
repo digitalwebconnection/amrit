@@ -4,22 +4,12 @@ import { Play } from 'lucide-react';
 
 export const VideoSection: React.FC = () => {
   return (
-    <section className="py-14 bg-slate-50 relative overflow-hidden">
+    <section className="py-12 bg-slate-50 relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-            <span className="text-slate-700 font-bold uppercase tracking-widest text-xs">See Us In Action</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +17,8 @@ export const VideoSection: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-serif font-black text-slate-900 mb-6 leading-tight"
           >
-            Powering the Future
+            Powering the Future of <span className="text-primary-blue">Solar & Clean Energy</span>
+            <div className="w-32 h-1 bg-primary-orange rounded-full items-center justify-center mx-auto mt-2"></div>
           </motion.h2>
         </div>
       </div>

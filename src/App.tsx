@@ -19,8 +19,8 @@ import SEO from './Component/SEO';
 
 // Dynamic imports for code splitting
 const HomeMain = lazy(() => import('./Component/Home/HomeMain'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./Pages/TermsOfService'));
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
