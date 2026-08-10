@@ -96,12 +96,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                   isHomePage ? (
                     <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group cursor-pointer">
                       {link.name}
-                      <span className="absolute bottom-6 left-0 w-full h-[2px] bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                      <span className="absolute bottom-6 left-0 w-full h-0.5 bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                     </a>
                   ) : (
                     <Link key={link.name} to={`/${link.href}`} className="relative text-gray-800 font-bold hover:text-primary-orange transition-colors h-full flex items-center text-sm uppercase tracking-wider group cursor-pointer">
                       {link.name}
-                      <span className="absolute bottom-6 left-0 w-full h-[2px] bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                      <span className="absolute bottom-6 left-0 w-full h-0.5 bg-primary-orange transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                     </Link>
                   )
                 ))}
@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             animate={{ y: 0, opacity: 1, x: '-50%' }}
             exit={{ y: -100, opacity: 0, x: '-50%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-4 left-1/2 z-50 w-[95%]  bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full border border-gray-200/50 px-4 md:px-8 py-3 flex justify-between items-center"
+            className="fixed top-4 left-1/2 z-50 w-[95%]  bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full border border-gray-200/50 px-4 md:px-4 py-2 flex justify-between items-center"
           >
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group" onClick={() => window.scrollTo(0,0)}>
@@ -189,7 +189,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-white flex flex-col"
+            className="fixed inset-0 z-100 bg-white flex flex-col"
           >
             <div className="flex justify-between items-center p-4 border-b border-gray-100">
               <Link to="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>

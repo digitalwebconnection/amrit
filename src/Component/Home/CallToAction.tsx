@@ -8,6 +8,14 @@ export const CallToAction: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate 10-digit phone number
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone.replace(/\D/g, ''))) {
+      toast.error('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
     console.log("Form submitted:", formData);
     toast.success("Thank you for reaching out! We will get back to you shortly.");
     setFormData({ name: '', email: '', phone: '', message: '' });
@@ -105,6 +113,10 @@ export const CallToAction: React.FC = () => {
                     <input 
                       type="tel" 
                       required
+                      pattern="[0-9]{10}"
+                      title="Please enter a valid 10-digit phone number"
+                      minLength={10}
+                      maxLength={10}
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full bg-transparent border-2 border-gray-200 rounded-xl pl-12 pr-4 py-4 text-gray-900 focus:outline-none focus:border-primary-orange focus:bg-white transition-all peer placeholder-transparent"

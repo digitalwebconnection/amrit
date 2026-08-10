@@ -20,7 +20,7 @@ export const Scrooling: React.FC = () => {
   ];
 
   return (
-    <div className="bg-blue-600 py-4 overflow-hidden flex whitespace-nowrap relative z-20 shadow-inner">
+    <div className="bg-blue-600 py-2 overflow-hidden flex whitespace-nowrap relative z-20 shadow-inner">
       <motion.div
         className="flex space-x-8 items-center"
         animate={{ x: [0, -1035] }} // Adjust based on content width

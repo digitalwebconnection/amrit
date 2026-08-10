@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Shield, Zap, ChevronRight } from 'lucide-react';
 
 interface HeroProps {
@@ -7,6 +7,21 @@ interface HeroProps {
 }
 
 export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    "https://visolindia.com/wp-content/uploads/2023/09/banner.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0EpiS3d-KL4IympbQb3ZrdmvuunTCw84U0-HvikaVsQrqJxSjXMV6Z9GT&s=10"
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section 
       id="home" 
@@ -14,12 +29,19 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
     >
       {/* Background Image & Overlays */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="Solar Panels"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImageIndex}
+            src={backgroundImages[currentImageIndex]}
+            alt="Solar Background"
+            initial={{ opacity: 0, x: 50, scale: 1.05 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -50, scale: 1.05 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
