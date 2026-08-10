@@ -35,11 +35,11 @@ export const CompanyHighlights: React.FC = () => {
   return (
     <section className="py-24 relative overflow-hidden bg-linear-to-br from-slate-50 via-blue-50/40 to-orange-50/30 text-slate-800 border-y border-slate-100">
       {/* Premium Light Dot Grid Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] [background-size:32px_32px] opacity-70"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] bg-size-[32px_32px] opacity-70"></div>
       
       {/* Large Glowing Ambient Blurs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#203A96]/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }}></div>
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#F18223]/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }}></div>
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-125 h-125 bg-[#203A96]/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }}></div>
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-125 h-125 bg-[#F18223]/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }}></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         
@@ -81,10 +81,7 @@ export const CompanyHighlights: React.FC = () => {
                 {/* Top Border Accent Line */}
                 <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-slate-200/50 to-transparent group-hover:via-slate-300 transition-all duration-500"></div>
 
-                {/* Monospace Index Number */}
-                <div className="absolute top-6 right-8 text-[10px] font-mono tracking-widest text-slate-300 group-hover:text-slate-400 transition-colors duration-500 select-none">
-                  {`// 0${index + 1}`}
-                </div>
+               
 
                 {/* Futuristic Icon Ring */}
                 <div className={`w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center mb-8 relative transition-all duration-500 ${
