@@ -10,10 +10,6 @@ import Preloader from './Component/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import SEO from './Component/SEO';
 
-
-
-
-
 // Dynamic imports for code splitting
 const HomeMain = lazy(() => import('./Component/Home/HomeMain'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
