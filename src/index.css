@@ -4,6 +4,8 @@
   --color-primary-blue: #203A96;
   --color-primary-orange: #F18223;
 
+  --font-serif: 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
   /* Global Brand Overrides */
   --color-blue-50: color-mix(in srgb, #203A96 5%, white);
   --color-blue-100: color-mix(in srgb, #203A96 15%, white);
@@ -40,7 +42,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    font-family: var(--font-serif, 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif);
   }
 
   img {

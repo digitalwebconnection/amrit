@@ -21,7 +21,7 @@ const NotFound: React.FC = () => {
           <div className="text-8xl font-black text-transparent bg-clip-text bg-linear-to-r from-primary-blue to-primary-orange mb-6">
             404
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-serif font-bold text-gray-900 mb-4">
             Oops! Page Not Found
           </h1>
           <p className="text-gray-600 mb-8">

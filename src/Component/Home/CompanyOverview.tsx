@@ -15,29 +15,29 @@ const BRAND = {
 const highlights = [
   {
     icon: Shield,
-    title: "25-Year Warranty",
-    description: "Tier-1 Grade-A solar panels, linear performance backed for 25 years.",
-    tint: "from-[rgba(241,130,35,0.14)] to-[rgba(32,58,150,0.08)]",
-    iconColor: BRAND.primaryOrange,
-  },
-  {
-    icon: Award,
-    title: "MNRE & ISO Certified",
-    description: "Approved solar channel partner with ISO 9001:2015 certified engineering.",
-    tint: "from-[rgba(32,58,150,0.16)] to-[rgba(241,130,35,0.08)]",
-    iconColor: BRAND.primaryBlue,
-  },
-  {
-    icon: TrendingUp,
-    title: "3–4 Year ROI",
-    description: "Fastest payback with smart system sizing, high yield & DISCOM net-metering.",
+    title: "Adani & Polycab Partner",
+    description: "Authorized partner delivering Tier-1 PV modules and world-class on-grid solar inverters.",
     tint: "from-[rgba(241,130,35,0.14)] to-[rgba(32,58,150,0.08)]",
     iconColor: BRAND.primaryOrange,
   },
   {
     icon: Building,
-    title: "Turnkey EPC & Service",
-    description: "End-to-end site survey, installation & lifetime 24/7 after-sales O&M support.",
+    title: "1-Box Solar KIT (1-25 kW)",
+    description: "Complete turnkey box with all components ready for fast rooftop solar PV installation.",
+    tint: "from-[rgba(32,58,150,0.16)] to-[rgba(241,130,35,0.08)]",
+    iconColor: BRAND.primaryBlue,
+  },
+  {
+    icon: Award,
+    title: "Trained In-House Engineers",
+    description: "Dedicated team of certified engineers supporting solar installers and system integrators.",
+    tint: "from-[rgba(241,130,35,0.14)] to-[rgba(32,58,150,0.08)]",
+    iconColor: BRAND.primaryOrange,
+  },
+  {
+    icon: TrendingUp,
+    title: "DISCOM Net-Metering",
+    description: "Sanctioned net-metering & generation meters (Secure & L&T DLMS Class 0.5S) with CTs.",
     tint: "from-[rgba(32,58,150,0.16)] to-[rgba(241,130,35,0.08)]",
     iconColor: BRAND.primaryBlue,
   },
@@ -65,18 +65,18 @@ export default function CompanyOverview() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-8 lg:py-14 bg-gradient-to-b from-slate-50 via-white to-slate-50"
+      className="relative overflow-hidden py-8 lg:py-14 bg-linear-to-b from-slate-50 via-white to-slate-50"
       id="about"
     >
       {/* Background ambient accents with brand colors */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -left-24 w-[520px] h-[520px] rounded-full blur-3xl opacity-35 animate-spin-slow-reverse"
+        className="pointer-events-none absolute -top-24 -left-24 w-130 h-130 rounded-full blur-3xl opacity-35 animate-spin-slow-reverse"
         style={{ background: "radial-gradient(circle, rgba(241,130,35,0.22) 0%, transparent 60%)" }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-20 -right-28 w-[600px] h-[600px] rounded-full blur-3xl opacity-35 animate-spin-slow"
+        className="pointer-events-none absolute -bottom-20 -right-28 w-150 h-150 rounded-full blur-3xl opacity-35 animate-spin-slow"
         style={{ background: "radial-gradient(circle, rgba(32,58,150,0.22) 0%, transparent 60%)" }}
       />
 
@@ -88,17 +88,16 @@ export default function CompanyOverview() {
             style={{ color: BRAND.primaryBlue }}
           >
             <span className="w-2 h-2 rounded-full bg-primary-orange animate-pulse" />
-            MNRE Approved // Tier-1 Solar EPC
+            Sustainable, Reliable &amp; Affordable Energy
           </span>
         </div>
 
-        <h2 className={`text-3xl md:text-5xl font-extrabold text-center text-slate-900 mb-4 transition-colors duration-300 hover:text-[#203A96] tracking-tight ${isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-5"}`} style={{ animationDelay: isVisible ? "0.3s" : "0s" }}>
-          Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">Amrit Electricals?</span>
+        <h2 className={`text-3xl md:text-5xl font-serif font-extrabold text-center text-slate-900 mb-4 transition-colors duration-300  tracking-tight ${isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-5"}`} style={{ animationDelay: isVisible ? "0.3s" : "0s" }}>
+          One Stop Solution for All <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Solar Rooftop Projects</span>
         </h2>
 
         <p className={`text-center text-sm md:text-base text-slate-900 font-medium max-w-6xl mx-auto mb-12 leading-relaxed ${isVisible ? "animate-fade-in-up" : "opacity-0 translate-y-5"}`} style={{ animationDelay: isVisible ? "0.45s" : "0s" }}>
-          Delivering dependable clean-energy engineering with measurable ROI. We spotlight the exact trust drivers enterprise and residential clients look for: <br className="hidden sm:block" />
-          <span className="font-bold text-slate-800"> 25-Year Linear Power Warranty, MNRE Certified Execution, 3–4 Year ROI, and Turnkey O&amp;M Support.</span>
+          Amrit Electricals is an Authorised channel partner for Polycab Inverters and Solar Panels, Adani Solar, Secure &amp; L&amp;T Energy Meters, Ashmor CTs, Polycab DC Cables &amp; MCBs, Citel SPDs, and Excel make earthing. We provide complete solar solutions tailored to your energy needs.
         </p>
 
         {/* Highlights grid */}
@@ -127,7 +126,7 @@ export default function CompanyOverview() {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-950 mb-2 font-sans group-hover:text-primary-blue transition-colors">
+                  <h3 className="text-lg font-serif font-bold text-slate-950 mb-2 group-hover:text-primary-blue transition-colors">
                     {h.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-900 leading-relaxed ">
@@ -145,21 +144,21 @@ export default function CompanyOverview() {
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-105"
             style={{ background: BRAND.primaryBlue, border: "1px solid rgba(32,58,150,0.4)" }}
           >
-            🏆 Authorized Solar EPC Partner
+            🏆 Authorized Partner: Adani Solar &amp; Polycab
           </span>
           <span className="text-slate-400 text-sm hidden sm:inline">•</span>
           <span
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-105"
             style={{ background: BRAND.primaryOrange, border: "1px solid rgba(241,130,35,0.4)" }}
           >
-            Telangana &amp; Nationwide Execution
+            📦 1-Box Ready Turnkey Solar KITs
           </span>
           <span className="text-slate-400 text-sm hidden sm:inline">•</span>
           <span
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-transform hover:scale-105"
             style={{ background: BRAND.deepBlue, border: "1px solid rgba(18,34,94,0.4)" }}
           >
-            Backed by Tier-1 Solar PV &amp; 25-Year Linear Yield
+            ⚡ 25-Year Linear Power Warranty
           </span>
         </div>
       </div>

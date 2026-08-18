@@ -5,20 +5,24 @@ import { Plus, Minus } from 'lucide-react';
 export const FAQSection: React.FC = () => {
   const faqs = [
     {
-      question: "What types of solar panels and inverters do you supply and install?",
-      answer: "We supply and install Tier-1 high-efficiency N-Type TOPCon and Mono-PERC bifacial solar panels from leading manufacturers including Adani Solar and Goldi Solar, paired with high-yield smart string inverters from Polycab and Sungrow with 98.8%+ MPPT efficiency."
+      question: "What products and brands does Amrit Electricals supply?",
+      answer: "We are an authorised channel partner supplying Adani Solar PV Panels (Mono PERC & TOPCon), Polycab Inverters (On-Grid & Hybrid), ACDB & DCDB Distribution Panels, DLMS Class 0.5S Energy Meters (Secure & L&T), Ashmor CTs, Polycab DC Cables, CITEL SPDs, and maintenance-free Chemical Earthing."
     },
     {
-      question: "How long does turnkey solar EPC execution take from design to grid sync?",
-      answer: "Residential rooftop installations typically take 2 to 4 days. Commercial and industrial solar projects (50 kW to 1 MW+) generally take 2 to 4 weeks, including DISCOM net-metering sanctions, CEIG inspections, and structural load erection."
+      question: "What is the 1-Box Solar KIT and who is it for?",
+      answer: "Our pre-packaged Solar KITs (available from 1 kW to 25 kW) are designed for solar installers and system integrators. You get all required components—panels, inverter, ACDB/DCDB, DC cables, and protection devices—in one single delivery ready for instant installation."
     },
     {
-      question: "What warranty and performance guarantee do you provide?",
-      answer: "All solar PV modules come with a 25-Year Linear Power Output Warranty backed directly by the OEM. Inverters carry a 5 to 10-year warranty, and our turnkey EPC craftsmanship and structure carry comprehensive lifetime after-sales O&M support."
+      question: "How much can I cut my electricity bills with rooftop solar?",
+      answer: "With a high-efficiency Adani Solar rooftop system and Polycab on-grid inverter, residential and commercial clients typically cut their electricity bills by up to 80% with quick 3 to 4-year capital payback."
     },
     {
-      question: "Do you handle government subsidies and DISCOM net-metering approvals?",
-      answer: "Yes! As an MNRE-approved channel partner and Grade-A licensed electrical contractor, we manage end-to-end statutory approvals, DISCOM net-metering applications, bi-directional meter synchronization, and applicable subsidy disbursement documentation."
+      question: "What performance warranties are provided?",
+      answer: "All Adani Solar PV modules carry a 25-Year Linear Performance Warranty. Polycab inverters include comprehensive 5 to 10-year OEM warranties, supported by our in-house team of trained solar engineers."
+    },
+    {
+      question: "Do you supply DISCOM-approved net-metering equipment?",
+      answer: "Yes, we supply DISCOM-compliant 3-Phase HT TOD Class 0.5S DLMS Net-Meters (Secure & L&T) along with Ashmor CTs, ensuring smooth statutory testing and bidirectional grid export clearance."
     }
   ];
 
@@ -29,7 +33,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-12 lg:py-16 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden selection:bg-primary-orange selection:text-white">
+    <section className="relative py-12 lg:py-16 bg-linear-to-b from-white via-slate-50 to-white overflow-hidden selection:bg-primary-orange selection:text-white">
       {/* Background Glowing Ambient Orbs */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-blue/10 rounded-full blur-[130px] pointer-events-none" />
@@ -58,11 +62,11 @@ export const FAQSection: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 mb-4"
           >
-            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">Questions</span>
+            Frequently Asked <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Questions</span>
           </motion.h2>
 
           {/* Shimmer Line */}
-          <div className="relative w-32 h-1 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mx-auto shadow-[0_0_12px_rgba(241,130,35,0.6)] overflow-hidden">
+          <div className="relative w-32 h-1 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mx-auto shadow-[0_0_12px_rgba(241,130,35,0.6)] overflow-hidden">
             <motion.div
               animate={{ x: ['-100%', '200%'] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
@@ -90,7 +94,7 @@ export const FAQSection: React.FC = () => {
               >
                 {/* Left Active Glow Stripe */}
                 <div
-                  className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary-orange to-amber-500 transition-opacity duration-300 ${
+                  className={`absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b from-primary-orange to-amber-500 transition-opacity duration-300 ${
                     isOpen ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -107,7 +111,7 @@ export const FAQSection: React.FC = () => {
                   
                   <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                     isOpen
-                      ? 'bg-gradient-to-tr from-primary-orange to-amber-500 text-white shadow-md shadow-orange-500/30 scale-105'
+                      ? 'bg-linear-to-tr from-primary-orange to-amber-500 text-white shadow-md shadow-orange-500/30 scale-105'
                       : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-primary-blue'
                   }`}>
                     {isOpen ? <Minus size={18} /> : <Plus size={18} />}

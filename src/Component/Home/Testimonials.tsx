@@ -5,44 +5,44 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 export const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      name: "VIJAY GOVARTHAN",
-      role: "LOCAL GUIDE",
-      content: "Purchased Goldi Solar Panels and Junction boxes. On time delivery and competitive pricing. Thanks",
+      name: "SHEKHAR GALBALE",
+      role: "CLIENT REVIEW",
+      content: "Great experience and impressive product. It was a very professional and technically competent job from the whole team.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "SAI KUMAR",
-      role: "CUSTOMER",
-      content: "Very fast and good service... Best rate and best quality goods.",
+      name: "RAJESH SHRIKHANDE",
+      role: "COMMERCIAL CLIENT",
+      content: "Best Solar Products Availability, Under one roof. Prompt supply and genuine authorized quality.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "PAVAN MEDISETTI",
-      role: "LOCAL GUIDE",
-      content: "One stop solution for Solar power systems. Quality with best pricing👍🏼👍🏻",
+      name: "NILESH HINGNE",
+      role: "FOUNDER & CEO",
+      content: "Well organised Technical staff, Service oriented. Reliable execution and excellent turnaround times.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "BARATH M",
-      role: "CUSTOMER",
-      content: "All electrical items available at best rate. Nice customer service 👍",
+      name: "AMIT BHATTAD",
+      role: "SYSTEM INTEGRATOR",
+      content: "Complete Solar didn't waste any time and got right to it like they said they were going to do. Excellent communication and support.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "ADITYA GOTURU",
-      role: "CUSTOMER",
-      content: "Good selection of parts, knowledgeable and patient owner",
+      name: "PAVAN MEDISETTI",
+      role: "LOCAL GUIDE",
+      content: "One stop solution for Solar power systems. Quality with best pricing and authentic Tier-1 panels.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
     },
     {
-      name: "BHANU VENKATESH",
-      role: "CUSTOMER",
-      content: "Customer recieving and quality is good",
+      name: "VIJAY GOVARTHAN",
+      role: "SOLAR INSTALLER",
+      content: "Purchased Adani Solar Panels and Polycab Junction boxes. On time delivery and competitive pricing. Thanks.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
     }

@@ -128,7 +128,7 @@ const SpotlightNav: React.FC<SpotlightNavProps> = ({
 
       {/* 2. Active Ambience Layer (Glow bar at bottom of active item) */}
       <div
-        className="pointer-events-none absolute bottom-0 left-0 w-full h-[2.5px] z-[2]"
+        className="pointer-events-none absolute bottom-0 left-0 w-full h-[2.5px] z-2"
         style={{
           background: `radial-gradient(70px circle at var(--ambience-x, 0px) 0%, var(--ambience-color, #F18223) 0%, transparent 100%)`,
         }}
@@ -310,17 +310,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         <div className="bg-black text-white   hidden  lg:block">
           <div className=" mx-auto px-4 md:px-6 flex justify-between items-center py-2 text-sm font-medium">
             <div className="flex items-center gap-8">
-              <div className="flex items-center gap-2">
+              <a href="tel:+919700705020" className="flex items-center gap-2 hover:text-primary-orange transition-colors">
                 <PhoneCall size={16} className="text-primary-orange" />
-                <span>+91 98765 43210</span>
-              </div>
+                <span>+91 97007 05020</span>
+              </a>
               <div className="flex items-center gap-2">
                 <Mail size={16} className="text-primary-orange" />
                 <span>info@amritelectricals.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin size={16} className="text-primary-orange" />
-                <span>123 Energy Park, New Delhi</span>
+                <MapPin size={16} className="text-primary-orange shrink-0" />
+                <span>PG Road, Secunderabad, Telangana 500003</span>
               </div>
             </div>
 
@@ -356,17 +356,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Ambient Solar Glow Behind Logo Area */}
-          <div className="absolute -top-12 -left-12 w-80 h-44 bg-gradient-to-br from-primary-orange/15 via-blue-500/10 to-transparent rounded-full blur-2xl pointer-events-none -z-10" />
+          <div className="absolute -top-12 -left-12 w-80 h-44 bg-linear-to-br from-primary-orange/15 via-blue-500/10 to-transparent rounded-full blur-2xl pointer-events-none -z-10" />
 
           <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-20 lg:h-20 relative">
 
             {/* Logo with Dynamic Background Graphics */}
             <Link to="/" className="relative flex items-center gap-3 group py-1.5" onClick={() => { if (isHomePage) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
               {/* Radial Flare Glow */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-orange-500/20 via-blue-600/10 to-transparent rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-all duration-500 pointer-events-none -z-10" />
+              <div className="absolute -inset-3 bg-linear-to-r from-orange-500/20 via-blue-600/10 to-transparent rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-all duration-500 pointer-events-none -z-10" />
 
               {/* Technical Solar Orbit / Compass SVG Graphic */}
-              <div className="absolute -top-0 -left-4 w-20 h-20 opacity-10 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 pointer-events-none -z-10">
+              <div className="absolute top-0 -left-4 w-20 h-20 opacity-10 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 pointer-events-none -z-10">
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary-orange">
                   <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
                   <circle cx="50" cy="50" r="34" stroke="#203A96" strokeWidth="0.75" />
@@ -437,10 +437,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
             {/* Right Side (Phone + Animated Quote Button) */}
             <div className="hidden lg:flex items-center gap-5">
-              <div className="flex items-center gap-2 text-gray-900">
+              <a href="tel:+919700705020" className="flex items-center gap-2 text-gray-900 hover:text-primary-orange transition-colors">
                 <PhoneCall className="w-4 h-4 text-primary-orange" />
-                <p className="font-bold text-sm">+91 98765 43210</p>
-              </div>
+                <p className="font-bold text-sm">+91 97007 05020</p>
+              </a>
               <AnimatedButton
                 onClick={onOpenContact}
                 className="bg-white rounded-full border border-primary-orange hover:bg-primary-orange text-black hover:text-white px-4 py-1.5 text-sm [--shine:rgba(255,255,255,0.9)]"
@@ -495,10 +495,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             </div>
 
             <div className="p-8 bg-gray-50">
-              <div className="flex justify-center items-center gap-3 mb-6 text-gray-900">
+              <a href="tel:+919700705020" className="flex justify-center items-center gap-3 mb-6 text-gray-900 hover:text-primary-orange transition-colors">
                 <PhoneCall className="w-6 h-6 text-primary-orange" />
-                <span className="font-bold text-xl">+91 98765 43210</span>
-              </div>
+                <span className="font-bold text-xl">+91 97007 05020</span>
+              </a>
               <AnimatedButton
                 onClick={() => {
                   setIsMobileMenuOpen(false);

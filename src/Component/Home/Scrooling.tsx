@@ -20,30 +20,30 @@ interface TickerItem {
 
 export const Scrooling: React.FC = () => {
   const items: TickerItem[] = [
-    { icon: Sun, label: "Tier-1 Solar PV Modules", highlight: "TOPCon & Bifacial" },
-    { icon: Zap, label: "Turnkey EPC Engineering", highlight: "MW-Scale Execution" },
-    { icon: ShieldCheck, label: "25-Year Performance Warranty", highlight: "Tier-1 Assured" },
-    { icon: Award, label: "MNRE Approved Partner", highlight: "Subsidy Ready" },
-    { icon: Cpu, label: "Smart String Inverters", highlight: "98.8% Efficiency" },
-    { icon: Layers, label: "Industrial & Commercial Rooftops", highlight: "Max Bill Cut" },
-    { icon: Activity, label: "DISCOM Net-Metering Sync", highlight: "Zero-Hassle" },
-    { icon: Wrench, label: "Turnkey BOS & Lifetime O&M", highlight: "24/7 Support" },
+    { icon: Sun, label: "Adani Solar PV Panels", highlight: "Mono & TOPCon" },
+    { icon: Cpu, label: "Polycab Grid-Tie Inverters", highlight: "98.8% MPPT" },
+    { icon: Layers, label: "Turnkey Solar KITs (1-25 kW)", highlight: "1-Box Solution" },
+    { icon: ShieldCheck, label: "ACDB & DCDB Panels", highlight: "Full Protection" },
+    { icon: Activity, label: "DLMS Net-Meters & CTs", highlight: "DISCOM Approved" },
+    { icon: Zap, label: "Polycab Solar DC Cables", highlight: "Flame Retardant" },
+    { icon: Award, label: "CITEL Surge Protectors", highlight: "Type 1+2 SPD" },
+    { icon: Wrench, label: "Chemical Earthing & BOS", highlight: "25-Yr Reliability" },
   ];
 
   // Double the items array for infinite loop
   const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="relative z-20 overflow-hidden bg-gradient-to-r from-[#070a14] via-[#0d1428] to-[#070a14] border-y border-amber-500/20 py-3.5 sm:py-2.5 shadow-2xl">
+    <div className="relative z-20 overflow-hidden bg-linear-to-r from-[#070a14] via-[#0d1428] to-[#070a14] border-y border-amber-500/20 py-3.5 sm:py-2.5 shadow-2xl">
       {/* Top Shimmering Solar Gold Accent Line */}
-      <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary-orange via-50% to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[1.5px] bg-linear-to-r from-transparent via-primary-orange via-50% to-transparent pointer-events-none" />
 
       {/* Bottom Subtle Blue/Amber Accent Line */}
-      <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 via-50% to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-500/30 via-50% to-transparent pointer-events-none" />
 
       {/* Left and Right Smooth Edge Gradient Fade Masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-[#070a14] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-[#070a14] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-linear-to-r from-[#070a14] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-linear-to-l from-[#070a14] to-transparent z-10 pointer-events-none" />
 
       {/* Continuous Seamless Infinite Marquee Track */}
       <motion.div
@@ -66,7 +66,7 @@ export const Scrooling: React.FC = () => {
               className="inline-flex items-center gap-3  transition-all duration-300 group cursor-default shadow-md backdrop-blur-md"
             >
               {/* Glowing Icon Badge */}
-              <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-primary-orange/25 to-amber-400/15 border border-primary-orange/40 flex items-center justify-center text-primary-orange group-hover:scale-110 transition-transform shadow-[0_0_8px_rgba(241,130,35,0.3)]">
+              <div className="w-6 h-6 rounded-full bg-linear-to-tr from-primary-orange/25 to-amber-400/15 border border-primary-orange/40 flex items-center justify-center text-primary-orange group-hover:scale-110 transition-transform shadow-[0_0_8px_rgba(241,130,35,0.3)]">
                 <IconComponent size={13} className="group-hover:rotate-12 transition-transform text-primary-orange" />
               </div>
 

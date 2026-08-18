@@ -5,7 +5,7 @@ import { Send, Phone, X,  Sparkles, CheckCheck } from 'lucide-react';
 export const WhatsAppWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("Hello, I need an EPC solar & electrical consultation.");
-  const phoneNumber = "+919876543210"; // Official Amrit Electricals support number
+  const phoneNumber = "+919700705020"; // Official Amrit Electricals support number
 
   // Auto open after a short delay on initial visit
   useEffect(() => {
@@ -40,13 +40,13 @@ export const WhatsAppWidget: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.92 }}
             transition={{ type: "spring", stiffness: 320, damping: 25 }}
-            className="w-[360px] sm:w-[390px] bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(16,185,129,0.35),0_0_30px_rgba(0,0,0,0.15)] overflow-hidden mb-4 flex flex-col border border-emerald-100"
+            className="w-90 sm:w-97.5 bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(16,185,129,0.35),0_0_30px_rgba(0,0,0,0.15)] overflow-hidden mb-4 flex flex-col border border-emerald-100"
           >
             {/* ================= HEADER WITH GLOWING SHIMMER ================= */}
-            <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white p-4.5 flex items-center justify-between shadow-md relative overflow-hidden">
+            <div className="bg-linear-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white p-4.5 flex items-center justify-between shadow-md relative overflow-hidden">
               
               {/* Traveling Shimmer Accent */}
-              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-linear-to-r from-transparent via-white/80 to-transparent pointer-events-none overflow-hidden">
                 <motion.div
                   animate={{ x: ['-100%', '200%'] }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
@@ -68,7 +68,7 @@ export const WhatsAppWidget: React.FC = () => {
 
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h3 className="font-bold text-[15px] leading-tight text-white font-sans">Amrit Electricals Support</h3>
+                    <h3 className="font-bold text-[15px] leading-tight text-white font-serif">Amrit Electricals Support</h3>
                     <CheckCheck size={14} className="text-emerald-300" />
                   </div>
                   <p className="text-[11px] text-emerald-100 flex items-center gap-1 mt-0.5">
@@ -89,7 +89,7 @@ export const WhatsAppWidget: React.FC = () => {
             </div>
 
             {/* ================= CHAT BODY ================= */}
-            <div className="bg-slate-50/90 px-4 py-5 flex flex-col flex-1 relative border-b border-slate-100 max-h-[320px] overflow-y-auto">
+            <div className="bg-slate-50/90 px-4 py-5 flex flex-col flex-1 relative border-b border-slate-100 max-h-80 overflow-y-auto">
               
               {/* Automated Assistant Bubble */}
               <motion.div
@@ -155,7 +155,7 @@ export const WhatsAppWidget: React.FC = () => {
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.96 }}
                     onClick={handleSend}
-                    className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.55)] transition-all cursor-pointer"
+                    className="bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.55)] transition-all cursor-pointer"
                   >
                     <Send size={13} />
                     <span>Send</span>
@@ -211,7 +211,7 @@ export const WhatsAppWidget: React.FC = () => {
           {/* Main Floating WhatsApp Button */}
           <motion.button
             onClick={() => setIsOpen(true)}
-            className="relative w-15 h-15 bg-gradient-to-tr from-emerald-600 via-emerald-500 to-teal-500 text-white rounded-full shadow-[0_10px_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_35px_rgba(16,185,129,0.8)] border-2 border-white/40 flex items-center justify-center z-10 cursor-pointer"
+            className="relative w-15 h-15 bg-linear-to-tr from-emerald-600 via-emerald-500 to-teal-500 text-white rounded-full shadow-[0_10px_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_35px_rgba(16,185,129,0.8)] border-2 border-white/40 flex items-center justify-center z-10 cursor-pointer"
             aria-label="Open WhatsApp Chat"
             whileHover={{ scale: 1.12, rotate: 6 }}
             whileTap={{ scale: 0.92 }}

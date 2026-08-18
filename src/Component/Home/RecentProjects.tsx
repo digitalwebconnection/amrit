@@ -265,7 +265,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-4"
           >
-            Recent Flagship <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">Projects</span>
+            Recent Flagship <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Projects</span>
           </motion.h2>
 
           {/* Subtitle */}
@@ -327,7 +327,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                 />
 
                 {/* Dark Vignette Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-300" />
                 <div className="absolute inset-0 bg-primary-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Top Corner Badges */}
@@ -349,7 +349,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                     <span className="truncate">{project.location}</span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-amber-200 transition-colors font-sans line-clamp-2">
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-amber-200 transition-colors font-serif line-clamp-2">
                     {project.title}
                   </h3>
 
@@ -434,13 +434,13 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                     decoding="async"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent" />
                   
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <p className="text-xs font-bold text-primary-orange uppercase tracking-wider mb-1">
                       {selectedProject.client}
                     </p>
-                    <h3 className="text-xl sm:text-2xl font-bold font-sans">
+                    <h3 className="text-xl sm:text-2xl font-bold font-serif">
                       {selectedProject.title}
                     </h3>
                   </div>
@@ -537,7 +537,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-blue via-blue-800 to-primary-orange text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-primary-blue via-blue-800 to-primary-orange text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer"
                 >
                   <span>Request Similar Project Scope</span>
                   <ArrowRight size={14} />

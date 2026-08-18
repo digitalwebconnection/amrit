@@ -67,7 +67,7 @@ interface CertificationsProps {
 
 export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact }) => {
   return (
-    <section id="certifications" className="py-8 lg:py-14 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden selection:bg-primary-orange selection:text-white">
+    <section id="certifications" className="py-8 lg:py-14 bg-linear-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden selection:bg-primary-orange selection:text-white">
       
       {/* ================= HIGH-TECH BACKGROUND GRAPHICS & GLOW EFFECTS ================= */}
       {/* 1. Technical Circuit Matrix Grid (SVG) */}
@@ -99,7 +99,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-32 -right-32 w-[580px] h-[580px] rounded-full border border-dashed border-amber-400/20 pointer-events-none -z-0 flex items-center justify-center"
+        className="absolute -top-32 -right-32 w-145 h-145 rounded-full border border-dashed border-amber-400/20 pointer-events-none z-0 flex items-center justify-center"
       >
         <div className="w-4/5 h-4/5 rounded-full border border-blue-400/20" />
       </motion.div>
@@ -113,7 +113,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
           y: [0, 20, 0]
         }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-28 -left-28 w-[600px] h-[600px] bg-gradient-to-br from-primary-orange/20 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -top-28 -left-28 w-150 h-150 bg-linear-to-br from-primary-orange/20 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
       <motion.div
         animate={{
@@ -123,12 +123,12 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
           y: [0, -20, 0]
         }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-28 -right-28 w-[600px] h-[600px] bg-gradient-to-tl from-primary-blue/20 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -bottom-28 -right-28 w-150 h-150 bg-linear-to-tl from-primary-blue/20 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
 
       {/* 4. Top & Bottom Shimmer Accent Lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
 
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
@@ -162,13 +162,13 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
               className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-slate-900 mb-4 leading-[1.15]"
             >
               Certified for <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
                 Global Excellence
               </span>
             </motion.h3>
 
             {/* Glowing Accent Bar with Shimmer Beam */}
-            <div className="relative w-36 h-1.5 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-2 mb-6 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
+            <div className="relative w-36 h-1.5 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-2 mb-6 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
@@ -217,7 +217,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
                   className={`group relative bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 border ${cert.border} shadow-[0_10px_30px_-8px_rgba(0,0,0,0.28)] hover:shadow-2xl transition-all duration-400 overflow-hidden cursor-default`}
                 >
                   {/* Top Glowing Laser Accent Line */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.gradient}`} />
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-linear-to-r ${cert.gradient}`} />
                   
                   {/* Radial Glow Bloom on Hover */}
                   <div 
@@ -226,7 +226,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
                   />
 
                   {/* Specular Light Reflection Sweep on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-[1800ms] ease-out pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/60 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1800 ease-out pointer-events-none" />
 
                   <div className="relative z-10 flex flex-col justify-between h-full">
                     
@@ -243,7 +243,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
                       </div>
 
                       {/* Certification Title & Description */}
-                      <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-primary-blue transition-colors font-sans">
+                      <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-primary-blue transition-colors font-serif">
                         {cert.name}
                       </h4>
                       <p className="text-slate-600 leading-relaxed text-xs sm:text-sm font-normal">

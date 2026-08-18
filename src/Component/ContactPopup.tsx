@@ -57,7 +57,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
           {/* Backdrop Blur Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -76,7 +76,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                 opacity: [0.35, 0.6, 0.35],
               }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-[450px] h-[450px] bg-primary-orange/25 rounded-full blur-[110px]"
+              className="w-112.5 h-112.5 bg-primary-orange/25 rounded-full blur-[110px]"
             />
             <motion.div
               animate={{
@@ -84,7 +84,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                 opacity: [0.25, 0.5, 0.25],
               }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="w-[450px] h-[450px] bg-primary-blue/30 rounded-full blur-[120px] -translate-y-20 translate-x-20"
+              className="w-112.5 h-112.5 bg-primary-blue/30 rounded-full blur-[120px] -translate-y-20 translate-x-20"
             />
           </div>
 
@@ -97,7 +97,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
             className="relative w-full max-w-lg bg-white rounded-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.5),0_0_50px_rgba(241,130,35,0.2)] border border-slate-200/90 z-50 overflow-hidden my-auto"
           >
             {/* Top Multi-color Laser Shimmer Line */}
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 overflow-hidden">
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
@@ -106,7 +106,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
             </div>
 
             {/* Modal Header */}
-            <div className="relative p-6 pb-4 pt-7 text-center border-b border-slate-100 bg-gradient-to-b from-slate-50/80 via-white to-white">
+            <div className="relative p-6 pb-4 pt-7 text-center border-b border-slate-100 bg-linear-to-b from-slate-50/80 via-white to-white">
               {/* Close Button */}
               <button
                 onClick={onClose}
@@ -118,7 +118,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
 
               {/* Logo with Soft Glow */}
               <div className="relative inline-block mb-3">
-                <div className="absolute -inset-2 bg-gradient-to-r from-primary-orange/20 to-primary-blue/20 rounded-full blur-md opacity-70" />
+                <div className="absolute -inset-2 bg-linear-to-r from-primary-orange/20 to-primary-blue/20 rounded-full blur-md opacity-70" />
                 <img src={logo} alt="Amrit Electricals Logo" className="relative h-12 w-auto object-contain mx-auto" />
               </div>
 
@@ -131,7 +131,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
               </div>
 
               <h2 className="text-2xl font-black text-slate-900 font-serif tracking-tight">
-                Request a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">Free Quote</span>
+                Request a <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Free Quote</span>
               </h2>
               <p className="text-xs text-slate-500 font-medium mt-0.5 max-w-sm mx-auto">
                 Get certified engineering advice, turnkey pricing, and DISCOM feasibility analysis.
@@ -143,7 +143,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
               
               {/* Name Input */}
               <div className="relative group">
-                <label htmlFor="modal-name" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-name" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 items-center gap-1.5">
                   <User size={13} className="text-primary-orange" />
                   <span>Full Name / Company Name</span>
                   <span className="text-rose-500">*</span>
@@ -166,7 +166,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                 
                 {/* Phone */}
                 <div className="relative group">
-                  <label htmlFor="modal-phone" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
+                  <label htmlFor="modal-phone" className="text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
                     <Phone size={13} className="text-primary-orange" />
                     <span>Phone Number</span>
                     <span className="text-rose-500">*</span>
@@ -190,7 +190,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
 
                 {/* Email */}
                 <div className="relative group">
-                  <label htmlFor="modal-email" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
+                  <label htmlFor="modal-email" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 items-center gap-1.5">
                     <Mail size={13} className="text-primary-blue" />
                     <span>Email Address</span>
                   </label>
@@ -209,7 +209,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
 
               {/* Service Select */}
               <div className="relative group">
-                <label htmlFor="modal-service" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-service" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 items-center gap-1.5">
                   <Layers size={13} className="text-primary-orange" />
                   <span>Interested Service / Requirement</span>
                 </label>
@@ -234,7 +234,7 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
 
               {/* Message */}
               <div className="relative group">
-                <label htmlFor="modal-message" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-message" className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5 items-center gap-1.5">
                   <MessageSquare size={13} className="text-primary-blue" />
                   <span>Project Details / Estimated Capacity (Optional)</span>
                 </label>
@@ -255,10 +255,10 @@ export const ContactPopup: React.FC<ContactPopupProps> = ({ isOpen, onClose }) =
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.015 }}
                 whileTap={{ scale: 0.985 }}
-                className="group relative w-full mt-2 py-3.5 px-6 bg-gradient-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_8px_25px_rgba(241,130,35,0.45)] hover:shadow-[0_12px_35px_rgba(241,130,35,0.7)] flex items-center justify-center gap-2.5 cursor-pointer overflow-hidden border border-orange-400/30"
+                className="group relative w-full mt-2 py-3.5 px-6 bg-linear-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 shadow-[0_8px_25px_rgba(241,130,35,0.45)] hover:shadow-[0_12px_35px_rgba(241,130,35,0.7)] flex items-center justify-center gap-2.5 cursor-pointer overflow-hidden border border-orange-400/30"
               >
                 {/* Light Shimmer Sweep on Hover */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform ease-out pointer-events-none" />
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform ease-out pointer-events-none" />
 
                 <span className="relative z-10">
                   {isSubmitting ? 'Submitting Request...' : 'Send Request & Get Quote'}

@@ -28,11 +28,11 @@ const steps: ProcessStep[] = [
     id: 0,
     stepNumber: "01",
     icon: ClipboardCheck,
-    title: "Site Audit & Feasibility",
-    subtitle: "Drone Mapping & Load Assessment",
-    description: "Our senior engineers conduct comprehensive on-site drone LiDAR surveys, structural shadow simulations, and DISCOM tariff audits to calculate accurate yield projections.",
-    deliverable: "Detailed Feasibility Report & PVsyst Simulation",
-    statusBadge: "Phase 1: Feasibility Audit",
+    title: "Site Assessment & Sizing",
+    subtitle: "Rooftop Survey & Bill Analysis",
+    description: "Our in-house engineers conduct thorough rooftop surveys, shadow assessments, and electricity bill audits to calculate optimal system capacity and max bill savings.",
+    deliverable: "Custom System Design & Generation Forecast",
+    statusBadge: "Phase 1: Feasibility & Sizing",
     color: "from-blue-600 to-indigo-600",
     accentHex: "#203A96",
     image: "/images/process_1.png"
@@ -41,11 +41,11 @@ const steps: ProcessStep[] = [
     id: 1,
     stepNumber: "02",
     icon: PenTool,
-    title: "Custom Design & Engineering",
-    subtitle: "CAD Drawings & Statutory Approvals",
-    description: "Certified electrical architects formulate detailed Single Line Diagrams (SLD), 3D string layouts, HT/LT substation schematics, and secure statutory DISCOM net-metering sanctions.",
-    deliverable: "BOM, 3D Schematics & Net-Metering Sanction",
-    statusBadge: "Phase 2: Technical Design",
+    title: "Solar KIT & BOS Procurement",
+    subtitle: "Authorized Adani & Polycab Supply",
+    description: "Sourcing Tier-1 Adani Solar panels, Polycab string inverters, pre-engineered ACDB/DCDB, and Polycab DC cables assembled into turnkey 1-Box Solar KITs.",
+    deliverable: "Complete Turnkey Solar Package & DISCOM Filing",
+    statusBadge: "Phase 2: OEM Kit Assembly",
     color: "from-amber-500 to-orange-500",
     accentHex: "#F18223",
     image: "/images/process_2.png"
@@ -54,10 +54,10 @@ const steps: ProcessStep[] = [
     id: 2,
     stepNumber: "03",
     icon: Wrench,
-    title: "Precision EPC Installation",
-    subtitle: "Tier-1 BOS & CEA Compliance",
-    description: "Executed by certified technician teams using hot-dip galvanized mounting structures, Tier-1 TOPCon solar modules, smart string inverters, and certified DC/AC switchgear.",
-    deliverable: "Heavy-Duty Structural & Electrical Erection",
+    title: "Installation & Safety Wiring",
+    subtitle: "Surge Protection & Chemical Earthing",
+    description: "Professional mechanical module mounting, string layout wiring, CITEL SPD integration, and maintenance-free chemical earthing for comprehensive safety.",
+    deliverable: "Heavy-Duty Rooftop Installation & Safety Earthing",
     statusBadge: "Phase 3: EPC Execution",
     color: "from-orange-500 to-amber-600",
     accentHex: "#F18223",
@@ -67,11 +67,11 @@ const steps: ProcessStep[] = [
     id: 3,
     stepNumber: "04",
     icon: ShieldCheck,
-    title: "Commissioning & Lifetime O&M",
-    subtitle: "DISCOM Sync & 24/7 Monitoring",
-    description: "Following rigorous insulation, flash testing, and bidirectional meter installation, we synchronize with the grid and activate real-time cloud SCADA performance tracking.",
-    deliverable: "25-Yr Linear Warranty & 24/7 O&M Handover",
-    statusBadge: "Phase 4: Grid Sync & O&M",
+    title: "Net-Metering & Handover",
+    subtitle: "DISCOM Sync & 25-Year Warranty",
+    description: "Installation of DLMS Class 0.5S bidirectional net meters, final DISCOM inspection, solar generation synchronization, and 25-year performance warranty activation.",
+    deliverable: "25-Yr Linear Warranty & Net-Metering Activation",
+    statusBadge: "Phase 4: Grid Sync & Yield",
     color: "from-emerald-500 to-teal-500",
     accentHex: "#10B981",
     image: "/images/process_4.png"
@@ -92,7 +92,7 @@ export const OurProcess: React.FC = () => {
   }, [isAutoPlaying]);
 
   return (
-    <section id="process" className="relative py-14 lg:py-22 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
+    <section id="process" className="relative py-14 lg:py-22 bg-linear-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
       
       {/* ================= HIGH-TECH GRAPHICS & BACKGROUND EFFECTS ================= */}
       {/* 1. Circuit Blueprint Matrix Pattern */}
@@ -124,7 +124,7 @@ export const OurProcess: React.FC = () => {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-32 -left-32 w-[580px] h-[580px] rounded-full border border-dashed border-primary-blue/20 pointer-events-none -z-0 flex items-center justify-center"
+        className="absolute -top-32 -left-32 w-145 h-145 rounded-full border border-dashed border-primary-blue/20 pointer-events-none z-0 flex items-center justify-center"
       >
         <div className="w-4/5 h-4/5 rounded-full border border-amber-400/20" />
       </motion.div>
@@ -138,7 +138,7 @@ export const OurProcess: React.FC = () => {
           y: [0, 25, 0]
         }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-28 -right-28 w-[600px] h-[600px] bg-gradient-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -top-28 -right-28 w-150 h-150 bg-linear-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
       <motion.div
         animate={{
@@ -148,12 +148,12 @@ export const OurProcess: React.FC = () => {
           y: [0, -25, 0]
         }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-28 -left-28 w-[600px] h-[600px] bg-gradient-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -bottom-28 -left-28 w-150 h-150 bg-linear-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
 
       {/* 4. Top & Bottom Shimmer Accent Lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
 
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
@@ -187,7 +187,7 @@ export const OurProcess: React.FC = () => {
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-4"
           >
             A Proven, Streamlined <br className="" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">
               4-Stage Engineering Process
             </span>
           </motion.h2>
@@ -213,7 +213,7 @@ export const OurProcess: React.FC = () => {
           
           {/* ================= LEFT: 3D SHOWCASE DISPLAY (7 COLS) ================= */}
           <div className="lg:col-span-7 flex flex-col">
-            <div className="relative h-95 sm:h-[460px] lg:h-[520px] w-full rounded-xl sm:rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-slate-200/90 bg-slate-900 group">
+            <div className="relative h-95 sm:h-115 lg:h-130 w-full rounded-xl sm:rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-slate-200/90 bg-slate-900 group">
               
               {/* Dynamic Image Crossfade Transition */}
               <AnimatePresence mode="wait">
@@ -232,11 +232,11 @@ export const OurProcess: React.FC = () => {
               </AnimatePresence>
               
               {/* Multi-stage Gradient Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-blue/30 via-transparent to-primary-orange/20 mix-blend-overlay pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-primary-blue/30 via-transparent to-primary-orange/20 mix-blend-overlay pointer-events-none" />
 
               {/* Shimmer Light Reflection Sweep on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-[1800ms] ease-out pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1800 ease-out pointer-events-none" />
 
               {/* Top Status HUD Badges */}
               <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between z-20">
@@ -270,7 +270,7 @@ export const OurProcess: React.FC = () => {
                         {steps[activeStep].stepNumber}
                       </span>
                       <div>
-                        <h4 className="text-lg sm:text-xl font-bold text-white leading-tight font-sans">
+                        <h4 className="text-lg sm:text-xl font-bold text-white leading-tight font-serif">
                           {steps[activeStep].title}
                         </h4>
                         <p className="text-xs text-amber-300 font-medium">
@@ -294,7 +294,7 @@ export const OurProcess: React.FC = () => {
                       initial={{ width: "0%" }}
                       animate={{ width: "100%" }}
                       transition={{ duration: isAutoPlaying ? 6 : 0, ease: "linear" }}
-                      className="h-full bg-gradient-to-r from-primary-orange via-amber-400 to-primary-blue rounded-full"
+                      className="h-full bg-linear-to-r from-primary-orange via-amber-400 to-primary-blue rounded-full"
                     />
                   </div>
                 </motion.div>
@@ -327,17 +327,17 @@ export const OurProcess: React.FC = () => {
                   }}
                 >
                   {/* Left Active Glow Bar */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`} />
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`} />
                   
                   {/* Active Background Gradient Tint */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.06]' : 'opacity-0 group-hover:opacity-[0.02]'}`} />
+                  <div className={`absolute inset-0 bg-linear-to-r ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.06]' : 'opacity-0 group-hover:opacity-[0.02]'}`} />
 
                   <div className="flex items-start gap-4 relative z-10 pl-1">
                     
                     {/* Glowing Icon Capsule */}
                     <div className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-400 ${
                       isActive 
-                        ? `bg-gradient-to-br ${step.color} text-white shadow-md shadow-orange-500/30 scale-108` 
+                        ? `bg-linear-to-br ${step.color} text-white shadow-md shadow-orange-500/30 scale-108` 
                         : 'bg-slate-100 border border-slate-200 text-slate-500 group-hover:text-primary-blue group-hover:bg-blue-50'
                     }`}>
                       <Icon size={22} />
@@ -356,7 +356,7 @@ export const OurProcess: React.FC = () => {
                         )}
                       </div>
 
-                      <h3 className={`text-base sm:text-lg font-bold leading-tight mb-1 font-sans transition-colors ${isActive ? 'text-slate-900' : 'text-slate-800'}`}>
+                      <h3 className={`text-base sm:text-lg font-bold leading-tight mb-1 font-serif transition-colors ${isActive ? 'text-slate-900' : 'text-slate-800'}`}>
                         {step.title}
                       </h3>
 

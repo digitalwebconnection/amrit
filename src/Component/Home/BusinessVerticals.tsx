@@ -38,16 +38,16 @@ const services: ServiceItem[] = [
   {
     id: "solar-epc",
     icon: Sun,
-    badge: "Tier-1 PV Modules",
-    title: "Turnkey Solar EPC",
-    subtitle: "Rooftop & Ground-Mounted Plants",
-    description: "End-to-end industrial, commercial, and residential solar power plants with DISCOM net-metering synchronization and 25-year linear performance warranty.",
-    metric: "50+ MW",
-    metricLabel: "EPC Executed",
+    badge: "Adani & Polycab Partner",
+    title: "Residential & Commercial Solar",
+    subtitle: "Rooftop & Captive Solar Power",
+    description: "Complete rooftop solar PV installations engineered to cut electricity bills by up to 80% with DISCOM net-metering and 25-year linear performance warranty.",
+    metric: "90+ MW",
+    metricLabel: "Panels Supplied",
     features: [
-      "On-Grid & Hybrid Solar Systems",
-      "DISCOM Net-Metering Sanctions",
-      "3–4 Year Projected Payback"
+      "Adani Mono-PERC & TOPCon Panels",
+      "Cut Electricity Bills by Up to 80%",
+      "DISCOM Net-Metering Sanctions"
     ],
     gradient: "from-amber-500/15 via-orange-500/8 to-transparent",
     glowColor: "rgba(241, 130, 35, 0.4)",
@@ -56,18 +56,18 @@ const services: ServiceItem[] = [
     borderHover: "group-hover:border-primary-orange group-hover:shadow-[0_0_40px_rgba(241,130,35,0.25)]"
   },
   {
-    id: "ht-lt-installations",
+    id: "solar-kits",
     icon: Zap,
-    badge: "Govt. Grade-A Licensed",
-    title: "HT / LT Electrical Systems",
-    subtitle: "Heavy Industrial Infrastructure",
-    description: "High-voltage substations, transformer installations, HT switchyards, and industrial busduct power distribution built strictly to CEA electrical standards.",
-    metric: "11kV–33kV",
-    metricLabel: "Substation Range",
+    badge: "1 kW to 25 kW Ready",
+    title: "Turnkey Solar KITs",
+    subtitle: "1-Box Ready for Integrators",
+    description: "Launched to support small and medium system integrators – no need to source from multiple vendors. Order 1 box containing all components ready for fast installation.",
+    metric: "500+",
+    metricLabel: "Kits Delivered",
     features: [
-      "HT Substation & Transformer Setup",
-      "Compact Substation (CSS) Delivery",
-      "CEA & State Electrical Approvals"
+      "Off-Grid, On-Grid & Hybrid Combos",
+      "All Hardware & Cables in 1 Box",
+      "Plug-and-Play Quick Installation"
     ],
     gradient: "from-blue-600/15 via-indigo-600/8 to-transparent",
     glowColor: "rgba(32, 58, 150, 0.4)",
@@ -76,18 +76,18 @@ const services: ServiceItem[] = [
     borderHover: "group-hover:border-primary-blue group-hover:shadow-[0_0_40px_rgba(32,58,150,0.25)]"
   },
   {
-    id: "iot-scada",
+    id: "inverters",
     icon: Cpu,
-    badge: "Industry 4.0 Ready",
-    title: "Smart Automation & SCADA",
-    subtitle: "IoT Telemetry & Analytics",
-    description: "Real-time generation telemetry, automated PLC control panels, cloud SCADA integration, and AI-driven predictive fault detection dashboards.",
-    metric: "99.4%",
-    metricLabel: "Telemetry Accuracy",
+    badge: "98.8% MPPT Efficiency",
+    title: "Polycab Solar Inverters",
+    subtitle: "Grid-Tie & Hybrid Conversion",
+    description: "Authorized Polycab on-grid and string solar inverters engineered with world-class components for optimal MPPT yield, rugged durability, and cloud monitoring.",
+    metric: "75+ MW",
+    metricLabel: "Inverters Supplied",
     features: [
-      "Real-time MPPT & Inverter Sync",
-      "Cloud Generation Analytics",
-      "Automated Warning & Trip Alerts"
+      "Single-Phase & 3-Phase On-Grid",
+      "World-Class Reliable Components",
+      "Real-Time Wireless IoT Telemetry"
     ],
     gradient: "from-indigo-500/15 via-blue-500/8 to-transparent",
     glowColor: "rgba(99, 102, 241, 0.4)",
@@ -96,18 +96,18 @@ const services: ServiceItem[] = [
     borderHover: "group-hover:border-indigo-500 group-hover:shadow-[0_0_40px_rgba(99,102,241,0.25)]"
   },
   {
-    id: "energy-audits",
+    id: "energy-meters",
     icon: ShieldCheck,
-    badge: "BEE Certified Protocol",
-    title: "Energy & Safety Audits",
-    subtitle: "Harmonics & Safety Compliance",
-    description: "Comprehensive power quality analysis, thermography scanning, power factor optimization, and DISCOM statutory electrical compliance certifications.",
-    metric: "0.99 PF",
-    metricLabel: "Optimized Factor",
+    badge: "DISCOM & MSEDCL Approved",
+    title: "Energy Meters & CTs",
+    subtitle: "Net & Generation DLMS Meters",
+    description: "3-Phase HT TOD Class 0.5S DLMS Energy Meters and Ashmor CTs for bidirectional solar net-metering and exact utility generation measurement.",
+    metric: "50,000+",
+    metricLabel: "Meters Deployed",
     features: [
-      "Thermal Imaging & Hotspot Checks",
-      "Harmonic Distortion Mitigation",
-      "Statutory Safety Approvals"
+      "Secure & L&T DLMS Energy Meters",
+      "Ashmor Precision Current Transformers",
+      "DISCOM Net-Metering Compliance"
     ],
     gradient: "from-rose-500/15 via-amber-500/8 to-transparent",
     glowColor: "rgba(244, 63, 94, 0.4)",
@@ -116,18 +116,18 @@ const services: ServiceItem[] = [
     borderHover: "group-hover:border-rose-500 group-hover:shadow-[0_0_40px_rgba(244,63,94,0.25)]"
   },
   {
-    id: "om-maintenance",
+    id: "bos-protection",
     icon: Wrench,
-    badge: "24/7 SLA Response",
-    title: "Operations & Maintenance (O&M)",
-    subtitle: "Lifetime Asset Management",
-    description: "Comprehensive preventive robotic panel cleaning, predictive inverter maintenance, rapid breakdown restoration, and remote surveillance.",
-    metric: "99.8%",
-    metricLabel: "Uptime Guaranteed",
+    badge: "ACDB, DCDB & SPDs",
+    title: "Balance of System (BOS)",
+    subtitle: "Cables, Combiners & Protection",
+    description: "High-grade ACDB/DCDB protection boxes, flame-retardant Polycab DC Cables, CITEL Type 1+2 surge protection devices (SPDs), and maintenance-free chemical earthing.",
+    metric: "100%",
+    metricLabel: "Fault Protection",
     features: [
-      "Automated Robot Dry Cleaning",
-      "Quarterly Thermal Thermography",
-      "2-Hour Rapid On-Site SLA"
+      "ACDB & DCDB Distribution Boxes",
+      "CITEL Class 1+2 Surge Protectors",
+      "Polycab Flame-Retardant DC Cables"
     ],
     gradient: "from-teal-500/15 via-emerald-500/8 to-transparent",
     glowColor: "rgba(20, 184, 166, 0.4)",
@@ -136,18 +136,18 @@ const services: ServiceItem[] = [
     borderHover: "group-hover:border-teal-500 group-hover:shadow-[0_0_40px_rgba(20,184,166,0.25)]"
   },
   {
-    id: "battery-storage",
+    id: "engineering-support",
     icon: BatteryCharging,
-    badge: "Lithium-Ion & ESS",
-    title: "Battery Storage (BESS)",
-    subtitle: "Peak-Shaving & Backup Power",
-    description: "Commercial and industrial battery energy storage systems (BESS) engineered for peak shaving, TOD tariff optimization, and seamless grid blackout transitions.",
-    metric: "Zero MS",
-    metricLabel: "Switching Time",
+    badge: "Trained Solar Engineers",
+    title: "Installer & EPC Engineering Support",
+    subtitle: "Turnkey Design & Technical Support",
+    description: "In-house team of certified solar engineers to support solar installers, provide system sizing, single-line diagrams (SLD), and turnkey project commissioning.",
+    metric: "10+ Yrs",
+    metricLabel: "Industry Leadership",
     features: [
-      "Industrial Peak-Shaving Technology",
-      "Diesel Abatement & Fuel Saving",
-      "Smart Hybrid Inverter Integration"
+      "In-House Dedicated Solar Engineers",
+      "System Sizing & SLD Engineering",
+      "Lifetime After-Sales Technical SLA"
     ],
     gradient: "from-emerald-500/15 via-teal-500/8 to-transparent",
     glowColor: "rgba(16, 185, 129, 0.4)",
@@ -163,10 +163,10 @@ interface BusinessVerticalsProps {
 
 export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenContact }) => {
   return (
-    <section id="services" className="relative py-8 lg:py-14 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
+    <section id="services" className="relative py-8 lg:py-14 bg-linear-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
       
       
-      <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-primary-blue/40 via-50% to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-blue/40 via-50% to-transparent pointer-events-none" />
 
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
@@ -232,7 +232,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                 className={`group relative rounded-xl bg-white/95 backdrop-blur-xl border border-slate-200/90 ${service.borderHover} p-7 sm:p-8 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.86),0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-default`}
               >
                 {/* 3D Glowing Gradient Tint in Background on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
                 {/* Ambient Radial Colored Glow Orb in Card */}
                 <div
@@ -241,7 +241,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                 />
 
                 {/* 3D Specular Light Sweep on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1800 ease-out pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/60 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1800 ease-out pointer-events-none" />
 
                 {/* Top Section: Icon + Badge + Metric */}
                 <div className="relative z-10 mb-5">
@@ -252,7 +252,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                     {/* Glowing Icon Pod */}
                     <div className="relative">
                       {/* Rotating Halo behind icon on hover */}
-                      <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-primary-orange/30 to-primary-blue/30 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
+                      <div className="absolute -inset-1 rounded-2xl bg-linear-to-tr from-primary-orange/30 to-primary-blue/30 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 pointer-events-none" />
                       
                       <div className={`relative w-14 h-14 rounded-2xl ${service.iconBg} border flex items-center justify-center ${service.iconColor} shadow-md group-hover:scale-115 group-hover:rotate-6 transition-all duration-500`}>
                         <Icon size={28} />
@@ -277,7 +277,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                   </span>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 group-hover:text-primary-blue transition-colors font-sans mb-1.5 leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 group-hover:text-primary-blue transition-colors mb-1.5 leading-tight">
                     {service.title}
                   </h3>
                   <p className="text-xs font-bold text-primary-orange mb-3.5 tracking-wide">

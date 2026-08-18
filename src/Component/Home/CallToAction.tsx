@@ -61,7 +61,7 @@ export const CallToAction: React.FC = () => {
           y: [0, 20, 0]
         }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-28 -right-28 w-[600px] h-[600px] bg-gradient-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -top-28 -right-28 w-150 h-150 bg-linear-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
       <motion.div
         animate={{
@@ -71,12 +71,12 @@ export const CallToAction: React.FC = () => {
           y: [0, -20, 0]
         }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-28 -left-28 w-[600px] h-[600px] bg-gradient-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+        className="absolute -bottom-28 -left-28 w-150 h-150 bg-linear-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
       />
 
       {/* Top & Bottom Shimmer Accent Lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
       
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
@@ -104,13 +104,13 @@ export const CallToAction: React.FC = () => {
             {/* Headline with Gradient Text */}
             <h2 className="text-3xl sm:text-4xl lg:text-4xl font-serif font-black text-slate-900 mb-3 ">
               Power Your Project with <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
                 Direct Distributor Pricing
               </span>
             </h2>
 
             {/* Glowing Accent Bar with Shimmer Beam */}
-            <div className="relative w-36 h-1.5 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-1 mb-5 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
+            <div className="relative w-36 h-1.5 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-1 mb-5 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
               <motion.div
                 animate={{ x: ['-100%', '200%'] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
@@ -129,7 +129,7 @@ export const CallToAction: React.FC = () => {
               
               {/* Phone Pod */}
               <a 
-                href="tel:+919876543210"
+                href="tel:+919700705020"
                 className="flex items-center gap-4 p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-primary-orange/60 transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-primary-orange border border-orange-200/80 group-hover:bg-primary-orange group-hover:text-white transition-all shadow-xs group-hover:scale-108">
@@ -137,7 +137,7 @@ export const CallToAction: React.FC = () => {
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-500 group-hover:text-primary-orange transition-colors font-bold uppercase tracking-wider">Distribution &amp; EPC Desk</p>
-                  <p className="font-mono font-bold text-slate-900 text-base sm:text-lg group-hover:text-primary-blue transition-colors">+91 98765 43210</p>
+                  <p className="font-mono font-bold text-slate-900 text-base sm:text-lg group-hover:text-primary-blue transition-colors">+91 97007 05020</p>
                 </div>
               </a>
               
@@ -154,6 +154,19 @@ export const CallToAction: React.FC = () => {
                   <p className="font-sans font-bold text-slate-900 text-sm sm:text-base group-hover:text-primary-blue transition-colors">info@amritelectricals.com</p>
                 </div>
               </a>
+
+              {/* Location Pod */}
+              <div className="flex items-start gap-4 p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all duration-300">
+                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 border border-emerald-200/80 shrink-0 mt-0.5">
+                  <MapPin size={20} />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Office &amp; Supply Depot</p>
+                  <p className="text-xs text-slate-700 font-medium leading-relaxed">
+                    Ground Floor, Mecleodguda, Backside Mamta sweets, No 1, H, 8-107, PG Road, beside Marwadi School, Secunderabad, Telangana 500003
+                  </p>
+                </div>
+              </div>
           
             </div>
 
@@ -170,7 +183,7 @@ export const CallToAction: React.FC = () => {
             <div className="bg-white/95 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-slate-200/90 shadow-[0_20px_60px_-15px_rgba(32,58,150,0.18)] hover:shadow-[0_25px_65px_-12px_rgba(241,130,35,0.25)] transition-all duration-500 relative overflow-hidden">
               
               {/* Traveling Shimmer Line at Top */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 opacity-90 overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 opacity-90 overflow-hidden">
                 <motion.div
                   animate={{ x: ['-100%', '200%'] }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
@@ -180,7 +193,7 @@ export const CallToAction: React.FC = () => {
               
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-sans leading-tight">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 font-serif leading-tight">
                     Get Distributor &amp; EPC Quote
                   </h3>
                   <p className="text-xs text-slate-500 font-medium mt-1">
@@ -345,7 +358,7 @@ export const CallToAction: React.FC = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-3.5 bg-gradient-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2.5 shadow-[0_10px_30px_rgba(241,130,35,0.45)] hover:shadow-[0_0_35px_rgba(241,130,35,0.75)] cursor-pointer border border-orange-400/30 mt-2"
+                  className="w-full py-3.5 bg-linear-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2.5 shadow-[0_10px_30px_rgba(241,130,35,0.45)] hover:shadow-[0_0_35px_rgba(241,130,35,0.75)] cursor-pointer border border-orange-400/30 mt-2"
                 >
                   <span>Request Distributor Price List &amp; Proposal</span>
                   <ArrowRight size={16} />

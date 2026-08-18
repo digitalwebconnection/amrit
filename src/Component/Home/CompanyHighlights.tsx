@@ -49,10 +49,10 @@ export function StatsCounter({
 
 export const CompanyHighlights: React.FC = () => {
   const stats = [
-    { value: 500, suffix: "+", label: "Projects Completed", icon: LayoutGrid },
-    { value: 50, suffix: "+", label: "Expert Technicians", icon: Users },
-    { value: 10, suffix: "+", label: "Years Experience", icon: Award },
-    { value: 100, suffix: "%", label: "Client Satisfaction", icon: Smile },
+    { value: 90, suffix: " MW+", label: "Solar Panels Supplied", icon: LayoutGrid },
+    { value: 75, suffix: " MW+", label: "Inverters Supplied", icon: Award },
+    { value: 500, suffix: "+", label: "Turnkey Solar KITs", icon: Users },
+    { value: 50000, suffix: "+", label: "Energy Meters Deployed", icon: Smile },
   ];
 
   return (
@@ -91,7 +91,7 @@ export const CompanyHighlights: React.FC = () => {
                 </div>
 
                 {/* Number with Spring Animated StatsCounter */}
-                <div className="relative z-10 text-5xl md:text-6xl font-black mb-3 tracking-tighter flex items-baseline select-none">
+                <div className="relative z-10 text-5xl md:text-5xl font-black mb-3 tracking-tighter flex items-baseline select-none">
                   <StatsCounter 
                     value={stat.value} 
                     suffix={stat.suffix} 

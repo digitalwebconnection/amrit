@@ -28,7 +28,7 @@ const partners = [
 
 export const ChannelPatner: React.FC = () => {
   return (
-    <section className="relative pt-8 lg:pt-14 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden border-y border-slate-200/80">
+    <section className="relative pt-8 lg:pt-14 bg-linear-to-b from-slate-50 via-white to-slate-50 overflow-hidden border-y border-slate-200/80">
     
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
@@ -61,8 +61,8 @@ export const ChannelPatner: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight mb-4"
           >
-            Authorised <br className="sm:hidden" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">
+            Authorised <br className="" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">
               Channel Partners
             </span>
           </motion.h2>
@@ -75,7 +75,7 @@ export const ChannelPatner: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-900 text-sm sm:text-base max-w-6xl mx-auto font-normal leading-relaxed"
           >
-            Direct OEM partnerships with India’s most trusted solar and electrical manufacturing leaders, guaranteeing authentic Grade-A components and maximum lifespan.
+            Authorised channel partner for Polycab Inverters &amp; Solar Panels, Adani Solar, Secure Meters, L&amp;T (Schneider), Ashmor CTs, Polycab DC Cables, Citel SPDs, and Excel earthing.
           </motion.p>
         </div>
 
@@ -155,11 +155,11 @@ export const ChannelPatner: React.FC = () => {
         >
           <div className='max-w-7xl mx-auto '>
           {/* Top Moving Specular Light Shimmer */}
-          <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-[1.5px] bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none overflow-hidden">
             <motion.div
               animate={{ x: ['-100%', '200%'] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-              className="w-1/3 h-full bg-gradient-to-r from-transparent via-primary-orange to-transparent shadow-[0_0_8px_rgba(241,130,35,0.8)]"
+              className="w-1/3 h-full bg-linear-to-r from-transparent via-primary-orange to-transparent shadow-[0_0_8px_rgba(241,130,35,0.8)]"
             />
           </div>
 

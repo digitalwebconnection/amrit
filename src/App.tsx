@@ -7,7 +7,7 @@ import Footer from './Component/Footer';
 import ContactPopup from './Component/ContactPopup';
 import WhatsAppWidget from './Component/WhatsAppWidget';
 import Preloader from './Component/Preloader';
-import ScrollToTop from './Component/ScrollToTop';
+// import ScrollToTop from './Component/ScrollToTop';
 import ScrollProgressBar from './Component/Common/ScrollProgressBar';
 import { AnimatePresence, motion } from 'framer-motion';
 import SEO from './Component/SEO';
@@ -95,7 +95,7 @@ function App() {
         <Footer onOpenContact={() => setIsContactOpen(true)} />
         <ContactPopup isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         <WhatsAppWidget />
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
       </motion.div>
     </>
   );

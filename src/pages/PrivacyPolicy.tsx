@@ -12,12 +12,12 @@ export const PrivacyPolicy: React.FC = () => {
       <div className="py-10 min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="">
-            <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-8">Privacy Policy</h1>
+            <h1 className="text-3xl md:text-5xl font-serif font-black text-gray-900 mb-8">Privacy Policy</h1>
             
             <div className="prose prose-blue max-w-none text-gray-600 leading-relaxed space-y-6">
               <p>Last updated: {new Date().toLocaleDateString()}</p>
               
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Introduction</h2>
+              <h2 className="text-2xl font-serif font-bold text-gray-900 mt-8 mb-4">1. Introduction</h2>
               <p>
                 Welcome to Amrit Electricals. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
               </p>

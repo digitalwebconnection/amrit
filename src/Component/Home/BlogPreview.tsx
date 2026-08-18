@@ -5,24 +5,24 @@ import { Calendar, ArrowRight } from 'lucide-react';
 const articles = [
   {
     image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=600",
-    date: "Aug 12, 2026",
+    date: "Nov 13, 2025",
     category: "Solar Energy",
-    title: "How Commercial Solar Drastically Reduces Overhead Costs",
-    excerpt: "Discover the financial benefits of transitioning your manufacturing unit to a captive solar power plant."
+    title: "How Solar Power Can Cut Your Electricity Bills by Up to 80%",
+    excerpt: "With electricity tariffs rising across India, explore how high-efficiency rooftop solar systems drastically reduce operational power costs."
   },
   {
     image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&q=80&w=600",
-    date: "Jul 28, 2026",
-    category: "Electrical Safety",
-    title: "The Importance of Routine Electrical Safety Audits",
-    excerpt: "Why neglecting industrial electrical maintenance can lead to catastrophic failures and severe compliance penalties."
+    date: "Nov 06, 2025",
+    category: "Adani Solar",
+    title: "Adani Solar Driving India's Biggest Rooftop Energy Movement",
+    excerpt: "Discover how Tier-1 TOPCon and Mono-PERC solar PV modules are transforming residential and industrial rooftops with 25-year warranties."
   },
   {
     image: "https://images.unsplash.com/photo-1565439399435-010abfb9d4cf?auto=format&fit=crop&q=80&w=600",
-    date: "Jul 15, 2026",
-    category: "Company News",
-    title: "Amrit Electricals Completes 100th EPC Solar Project",
-    excerpt: "A major milestone achieved as we successfully commission a 500kW ground-mounted solar project for our latest client."
+    date: "Oct 16, 2025",
+    category: "Solar Technology",
+    title: "How Off-Grid, On-Grid & Hybrid Solar Systems Work",
+    excerpt: "A complete guide for system integrators and homeowners on choosing between on-grid net metering, off-grid kits, and hybrid energy storage."
   }
 ];
 
@@ -33,7 +33,7 @@ export const BlogPreview: React.FC = () => {
         
         <div className="text-center mb-16">
           <h4 className="text-[#d46337] font-bold tracking-widest uppercase text-sm mb-3">News & Insights</h4>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-serif font-black text-gray-900">
             Latest Updates from <span className="text-primary-blue">Amrit Electricals</span>
           </h2>
         </div>
@@ -63,7 +63,7 @@ export const BlogPreview: React.FC = () => {
                   <Calendar size={14} />
                   {article.date}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#d46337] transition-colors line-clamp-2">
+                <h3 className="text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-[#d46337] transition-colors line-clamp-2">
                   {article.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-6 line-clamp-3">

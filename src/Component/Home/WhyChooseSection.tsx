@@ -6,38 +6,38 @@ export const WhyChooseSection: React.FC = () => {
   const reasons = [
     {
       icon: <Award size={32} />,
-      title: "Certified Excellence",
+      title: "One-Stop Solar Solution",
       description:
-        "Our technicians hold top industry certifications, guaranteeing work that meets the highest safety standards.",
-    },
-    {
-      icon: <Clock size={32} />,
-      title: "On-Time Delivery",
-      description:
-        "We respect your time. Our projects are meticulously planned and executed to meet strict deadlines.",
-    },
-    {
-      icon: <Users size={32} />,
-      title: "Customer-Centric",
-      description:
-        "Your satisfaction is our priority. We work closely with you from consultation to final handover.",
+        "All rooftop components under one roof – Adani panels, Polycab inverters, ACDB/DCDB, cables, and DLMS net-meters.",
     },
     {
       icon: <Wrench size={32} />,
-      title: "Advanced Equipment",
+      title: "1-Box Ready Solar KITs",
       description:
-        "We utilize the latest tools and technology to ensure efficient, long-lasting, and safe installations.",
+        "Pre-engineered 1 kW to 25 kW kits that eliminate multi-vendor sourcing and enable fast turnkey installation.",
+    },
+    {
+      icon: <Users size={32} />,
+      title: "In-House Solar Engineers",
+      description:
+        "Certified in-house engineering team supporting installers and system integrators with design, SLD, and commissioning.",
+    },
+    {
+      icon: <Clock size={32} />,
+      title: "25-Year Linear Warranty",
+      description:
+        "Direct OEM backed performance warranties on Adani Solar panels and world-class Polycab string/hybrid inverters.",
     },
   ];
 
   return (
-    <section id="why-us" className="py-8 lg:py-14 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden selection:bg-primary-orange selection:text-white">
+    <section id="why-us" className="py-8 lg:py-14 bg-linear-to-b from-white via-slate-50 to-white relative overflow-hidden selection:bg-primary-orange selection:text-white">
       
      
 
       {/* 5. Top & Bottom Shimmer Accent Lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
 
       {/* ================= MAIN CONTAINER ================= */}
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
@@ -51,13 +51,13 @@ export const WhyChooseSection: React.FC = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 mb-4 leading-tight">
                 The Amrit Electricals{" "}
                 <br className="hidden lg:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange drop-shadow-[0_2px_12px_rgba(241,130,35,0.25)]">
                   Advantage
                 </span>
               </h2>
 
               {/* Glowing Accent Bar with Shimmer Beam */}
-              <div className="relative w-36 h-1.5 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-2 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
+              <div className="relative w-36 h-1.5 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mt-2 lg:mx-0 mx-auto shadow-[0_0_15px_rgba(241,130,35,0.7)] overflow-hidden">
                 <motion.div
                   animate={{ x: ['-100%', '200%'] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
@@ -121,7 +121,7 @@ export const WhyChooseSection: React.FC = () => {
             className="flex-1 w-full flex flex-col mt-8 lg:mt-0 relative"
           >
             {/* Glowing Backdrop Aura behind Image */}
-            <div className="absolute -inset-3 bg-gradient-to-tr from-primary-orange/25 via-primary-blue/25 to-transparent rounded-2xl blur-xl -z-10" />
+            <div className="absolute -inset-3 bg-linear-to-tr from-primary-orange/25 via-primary-blue/25 to-transparent rounded-2xl blur-xl -z-10" />
 
             <div className="relative rounded-lg overflow-hidden shadow-2xl grow min-h-100 lg:min-h-0 group border border-white/20">
               <img
@@ -134,7 +134,7 @@ export const WhyChooseSection: React.FC = () => {
               <div className="absolute inset-0 bg-primary-blue/20 mix-blend-multiply"></div>
               
               {/* Shimmer Light Reflection Sweep on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-[1800ms] ease-out pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/25 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1800 ease-out pointer-events-none" />
             </div>
           </motion.div>
 

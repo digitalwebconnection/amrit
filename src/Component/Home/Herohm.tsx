@@ -46,7 +46,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
         </AnimatePresence>
 
         {/* Multi-Stage Dark Gradient Overlays for Contrast and Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 via-55% to-slate-950/10" />
+        <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/70 via-55% to-slate-950/10" />
         <div className="absolute inset-0 bg-linear-to-t from-slate-950/20 via-transparent to-black/20" />
 
         {/* Dynamic Sweeping Sunlight Overlay streaming across the images */}
@@ -73,7 +73,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             y: [0, -15, 0]
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-20 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-primary-orange/35 via-amber-500/20 to-transparent rounded-full blur-[120px]"
+          className="absolute -top-20 -left-20 w-137.5 h-137.5 bg-linear-to-tr from-primary-orange/35 via-amber-500/20 to-transparent rounded-full blur-[120px]"
         />
 
         {/* Subtle Secondary Deep Blue Glow */}
@@ -83,7 +83,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             opacity: [0.1, 0.2, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-10 left-1/3 w-[450px] h-[450px] bg-gradient-to-br from-blue-600/20 via-sky-500/10 to-transparent rounded-full blur-[130px]"
+          className="absolute bottom-10 left-1/3 w-112.5 h-112.5 bg-linear-to-br from-blue-600/20 via-sky-500/10 to-transparent rounded-full blur-[130px]"
         />
       </div>
 
@@ -100,7 +100,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-36 -left-36 w-[500px] sm:w-[700px] lg:w-[850px] h-[500px] sm:h-[700px] lg:h-[850px] rounded-full pointer-events-none"
+          className="absolute -top-36 -left-36 w-125 sm:w-175 lg:w-212.5 h-125 sm:h-175 lg:h-212.5 rounded-full pointer-events-none"
           style={{
             background: 'radial-gradient(circle at 75% 25%, rgba(255, 235, 140, 0.45) 0%, rgba(245, 158, 11, 0.22) 30%, rgba(241, 130, 35, 0.1) 55%, transparent 75%)',
           }}
@@ -118,7 +118,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-12 -left-64 sm:-left-96 w-[600px] sm:w-[850px] lg:w-[1050px] h-[450px] sm:h-[650px] origin-top-right pointer-events-none"
+          className="absolute -top-12 -left-64 sm:-left-96 w-150 sm:w-212.5 lg:w-262.5 h-112.5 sm:h-162.5 origin-top-right pointer-events-none"
           style={{
             background: 'conic-gradient(from 205deg at 95% 10%, transparent 0deg, rgba(255, 245, 180, 0.3) 14deg, transparent 28deg, rgba(251, 191, 36, 0.22) 42deg, transparent 56deg, rgba(241, 130, 35, 0.15) 75deg, transparent 95deg)',
             filter: 'blur(22px)',
@@ -165,7 +165,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[-15px] sm:inset-[-30px] pointer-events-none opacity-50"
+            className="absolute -inset-3.75 sm:-inset-7.5 pointer-events-none opacity-50"
           >
             <svg viewBox="0 0 200 200" className="w-full h-full text-amber-200">
               {[...Array(8)].map((_, i) => (
@@ -187,11 +187,11 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
               opacity: [0.75, 1, 0.75],
             }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute w-24 h-24 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full bg-gradient-to-tr from-amber-400 via-primary-orange to-yellow-200 blur-xl opacity-85"
+            className="absolute w-24 h-24 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full bg-linear-to-tr from-amber-400 via-primary-orange to-yellow-200 blur-xl opacity-85"
           />
 
           {/* Brilliant Radiant Sun Disc Core */}
-          <div className="relative w-16 h-16 sm:w-22 sm:h-22 md:w-26 md:h-26 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-white via-amber-100 to-amber-400 shadow-[0_0_45px_rgba(255,235,120,0.95),0_0_80px_rgba(241,130,35,0.75)] flex items-center justify-center">
+          <div className="relative w-16 h-16 sm:w-22 sm:h-22 md:w-26 md:h-26 lg:w-28 lg:h-28 rounded-full bg-linear-to-br from-white via-amber-100 to-amber-400 shadow-[0_0_45px_rgba(255,235,120,0.95),0_0_80px_rgba(241,130,35,0.75)] flex items-center justify-center">
             {/* Ultra-Intense Hot White Core */}
             <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white blur-[2px] shadow-[0_0_25px_rgba(255,255,255,1)]" />
           </div>
@@ -225,7 +225,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-orange shadow-[0_0_8px_rgba(241,130,35,0.8)]" />
             </span>
             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-slate-200">
-              <span className="text-primary-orange font-bold">MNRE Partner</span> // Tier-1 Solar EPC
+              <span className="text-primary-orange font-bold">Adani Solar &amp; Polycab Partner</span> // 10+ Years Experience
             </span>
             <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-500" />
             <span className="hidden sm:inline-flex text-[10px] uppercase font-bold text-amber-400">
@@ -240,9 +240,10 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             transition={{ duration: 0.7, delay: 0.12 }}
             className="text-4xl sm:text-5xl lg:text-[3.65rem] font-serif font-bold leading-[1.12] mb-5 text-white tracking-tight drop-shadow-md"
           >
-            Complete Solar Supply <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-primary-orange to-amber-200 drop-shadow-[0_2px_24px_rgba(241,130,35,0.35)]">
-              &amp; EPC Solutions
+            Residential <span className=' font-mono
+            '>&</span> Commercial <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-primary-orange to-amber-200 drop-shadow-[0_2px_24px_rgba(241,130,35,0.35)]">
+              Complete Solar Solutions
             </span>
           </motion.h1>
 
@@ -253,7 +254,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             transition={{ duration: 0.7, delay: 0.22 }}
             className="text-base sm:text-lg text-white mb-6 max-w-2xl leading-[1.75] font-light drop-shadow-sm"
           >
-            From premium solar PV modules to industrial-grade inverters and complete BOS components, Amrit Electricals equips installers and commercial enterprises with dependable clean-energy technology and turnkey EPC execution.
+            We drive the transition to sustainable, reliable &amp; affordable clean energy. Amrit Electricals provides high-efficiency Adani Solar PV panels, Polycab on-grid inverters, ACDB/DCDB, and complete turnkey 1 kW–25 kW Solar Kits for homes and businesses.
           </motion.p>
 
           {/* Dual Action CTAs */}
@@ -266,12 +267,12 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
             {/* Primary Button */}
             <button
               onClick={onOpenContact}
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-[0.15em] rounded-sm transition-all duration-300 shadow-[0_4px_25px_rgba(241,130,35,0.45)] hover:shadow-[0_6px_35px_rgba(241,130,35,0.7)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer overflow-hidden border border-orange-400/40"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-linear-to-r from-primary-orange via-orange-500 to-amber-500 hover:from-orange-600 hover:to-primary-orange text-white font-bold text-xs uppercase tracking-[0.15em] rounded-sm transition-all duration-300 shadow-[0_4px_25px_rgba(241,130,35,0.45)] hover:shadow-[0_6px_35px_rgba(241,130,35,0.7)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer overflow-hidden border border-orange-400/40"
             >
               {/* Shimmer light sweep on hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform ease-out pointer-events-none" />
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform ease-out pointer-events-none" />
 
-              <span className="relative z-10">Get Free Consultation</span>
+              <span className="relative z-10">Get A Quote</span>
               <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1.5 transition-transform duration-200" />
             </button>
 
@@ -280,7 +281,7 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
               href="#projects"
               className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-slate-900/60 hover:bg-slate-800/80 text-white font-semibold text-xs uppercase tracking-[0.14em] rounded-sm transition-all duration-300 border border-white/15 hover:border-primary-orange/50 backdrop-blur-md shadow-sm hover:-translate-y-0.5 active:translate-y-0"
             >
-              <span>View Projects</span>
+              <span>View Products &amp; Kits</span>
               <ChevronRight size={16} className="text-slate-400 group-hover:text-primary-orange group-hover:translate-x-1 transition-all duration-200" />
             </a>
           </motion.div>
@@ -294,30 +295,30 @@ export const Herohm: React.FC<HeroProps> = ({ onOpenContact }) => {
           >
             <div className="flex flex-col">
               <div className="flex items-center gap-1 text-primary-orange font-mono font-bold text-xl sm:text-2xl lg:text-3xl">
-                <span>50+</span>
+                <span>90+</span>
                 <span className="text-sm font-sans font-semibold text-amber-400">MW</span>
               </div>
               <span className="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">
-                EPC Installed &amp; Supplied
+                Solar Panels Supplied
               </span>
             </div>
 
             <div className="flex flex-col border-l border-slate-800/80 pl-4 sm:pl-6">
               <div className="flex items-center gap-1 text-emerald-400 font-mono font-bold text-xl sm:text-2xl lg:text-3xl">
-                <span>99.4%</span>
+                <span>75+</span>
+                <span className="text-sm font-sans font-semibold text-emerald-300">MW</span>
               </div>
               <span className="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">
-                Grid Uptime Yield
+                Inverters Supplied
               </span>
             </div>
 
             <div className="flex flex-col border-l border-slate-800/80 pl-4 sm:pl-6">
               <div className="flex items-center gap-1 text-amber-400 font-mono font-bold text-xl sm:text-2xl lg:text-3xl">
-                <span>25</span>
-                <span className="text-sm font-sans font-semibold text-slate-300">Yrs</span>
+                <span>500+</span>
               </div>
               <span className="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider font-medium mt-0.5">
-                Linear Power Warranty
+                Turnkey Solar Kits
               </span>
             </div>
           </motion.div>

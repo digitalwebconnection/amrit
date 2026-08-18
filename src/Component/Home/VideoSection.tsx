@@ -74,7 +74,7 @@ export const VideoSection: React.FC = () => {
         </video>
 
         {/* Ambient Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-slate-950/30 pointer-events-none" />
 
         {/* Center Play / Pause Indicator */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

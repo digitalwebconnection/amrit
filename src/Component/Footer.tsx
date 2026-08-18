@@ -29,11 +29,11 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
   ];
 
   const serviceLinks = [
-    { name: 'Turnkey Solar EPC', href: '#services' },
-    { name: 'HT/LT Substations & Transformers', href: '#services' },
-    { name: 'Smart Automation & SCADA', href: '#services' },
-    { name: 'Operations & Maintenance (O&M)', href: '#services' },
-    { name: 'Commercial Energy Audits', href: '#services' },
+    { name: 'Residential & Commercial Solar', href: '#services' },
+    { name: 'Turnkey Solar KITs (1-25 kW)', href: '#services' },
+    { name: 'Polycab Inverters & Conversion', href: '#services' },
+    { name: 'DLMS Net-Meters & CTs', href: '#services' },
+    { name: 'ACDB/DCDB & CITEL SPDs', href: '#services' },
   ];
 
   return (
@@ -51,25 +51,27 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
               <img src={logo} alt="Amrit Electricals Logo" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Empowering homes, commercial hubs, and industrial enterprises with Grade-A licensed solar EPC and heavy electrical engineering. 25-Year performance warranty backed by Tier-1 OEM partners.
+              One-stop solar rooftop solution. Authorised partner for Adani Solar panels and Polycab inverters, supplying complete 1 kW–25 kW Solar KITs, ACDB/DCDB, and DISCOM net-metering systems.
             </p>
 
             <div className="space-y-4 mt-2">
               <div className="flex items-start gap-3">
-                <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0">
+                <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0 mt-0.5">
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm mb-0.5">Corporate Office</p>
-                  <p className="text-gray-400 text-sm">123 Energy Park, Tech Avenue, New Delhi, India</p>
+                  <p className="text-white font-bold text-sm mb-0.5">Office &amp; Supply Depot</p>
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+                    Ground Floor, Mecleodguda, Backside Mamta sweets, No 1, H, 8-107, PG Road, beside Marwadi School, Secunderabad, Telangana 500003
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0">
                   <Phone size={18} />
                 </div>
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-primary-orange transition-colors text-sm font-medium">
-                  +91 98765 43210
+                <a href="tel:+919700705020" className="text-gray-400 hover:text-primary-orange transition-colors text-sm font-medium">
+                  +91 97007 05020
                 </a>
               </div>
             </div>
@@ -77,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 lg:ml-auto">
-            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+            <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Quick Links
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
@@ -104,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
 
           {/* Our Services */}
           <div className="lg:col-span-3 lg:ml-8">
-            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+            <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Our Services
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
@@ -131,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
 
           {/* Newsletter */}
           <div className="lg:col-span-3">
-            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+            <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Stay Updated
               {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
