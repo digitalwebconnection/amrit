@@ -36,14 +36,7 @@
     overflow-x: hidden;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-serif, 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif);
-  }
+ 
 
   img {
     -webkit-user-drag: none;
