@@ -207,6 +207,8 @@ export const Testimonials: React.FC = () => {
                   <img 
                     src={testimonials[currentIndex].image} 
                     alt={testimonials[currentIndex].name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-center"
                   />
                   {/* Subtle overlay for better blending */}

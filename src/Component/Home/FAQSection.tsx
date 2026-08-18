@@ -5,20 +5,20 @@ import { Plus, Minus } from 'lucide-react';
 export const FAQSection: React.FC = () => {
   const faqs = [
     {
-      question: "What types of solar panels do you install?",
-      answer: "We install high-efficiency monocrystalline and polycrystalline solar panels from top-tier manufacturers. Our team will recommend the best option based on your energy needs and budget."
+      question: "What types of solar panels and inverters do you supply and install?",
+      answer: "We supply and install Tier-1 high-efficiency N-Type TOPCon and Mono-PERC bifacial solar panels from leading manufacturers including Adani Solar and Goldi Solar, paired with high-yield smart string inverters from Polycab and Sungrow with 98.8%+ MPPT efficiency."
     },
     {
-      question: "How long does a typical installation take?",
-      answer: "A standard residential solar installation typically takes 1 to 3 days. Commercial projects vary depending on scale. We always provide a clear timeline before starting any work."
+      question: "How long does turnkey solar EPC execution take from design to grid sync?",
+      answer: "Residential rooftop installations typically take 2 to 4 days. Commercial and industrial solar projects (50 kW to 1 MW+) generally take 2 to 4 weeks, including DISCOM net-metering sanctions, CEIG inspections, and structural load erection."
     },
     {
-      question: "Do you offer maintenance services?",
-      answer: "Yes! We offer comprehensive maintenance and repair services for both solar and general electrical systems to ensure they operate at peak efficiency."
+      question: "What warranty and performance guarantee do you provide?",
+      answer: "All solar PV modules come with a 25-Year Linear Power Output Warranty backed directly by the OEM. Inverters carry a 5 to 10-year warranty, and our turnkey EPC craftsmanship and structure carry comprehensive lifetime after-sales O&M support."
     },
     {
-      question: "Are your electricians certified?",
-      answer: "Absolutely. All our technicians and electricians are fully licensed, insured, and undergo regular training to stay updated with the latest safety standards."
+      question: "Do you handle government subsidies and DISCOM net-metering approvals?",
+      answer: "Yes! As an MNRE-approved channel partner and Grade-A licensed electrical contractor, we manage end-to-end statutory approvals, DISCOM net-metering applications, bi-directional meter synchronization, and applicable subsidy disbursement documentation."
     }
   ];
 
@@ -29,80 +29,110 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-10 bg-white">
-      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-        <div className="text-center max-w-3xl mx-auto mb-10">
+    <section className="relative py-12 lg:py-16 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden selection:bg-primary-orange selection:text-white">
+      {/* Background Glowing Ambient Orbs */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-blue/10 rounded-full blur-[130px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          {/* Eyebrow Pill Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs mb-4"
+          >
+            <span className="w-2 h-2 rounded-full bg-primary-orange animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Clear Answers // Technical Clarifications
+            </span>
+          </motion.div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4"
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 mb-4"
           >
-            Frequently Asked <span className="text-primary-blue"><br />Questions</span>
+            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">Questions</span>
           </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-4 mb-4"
-          >
-            <div className="w-16 h-1 bg-primary-orange rounded-full"></div>
-          </motion.div>
+
+          {/* Shimmer Line */}
+          <div className="relative w-32 h-1 bg-gradient-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mx-auto shadow-[0_0_12px_rgba(241,130,35,0.6)] overflow-hidden">
+            <motion.div
+              animate={{ x: ['-100%', '200%'] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+              className="w-1/2 h-full bg-white/80"
+            />
+          </div>
         </div>
 
+        {/* FAQs List */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="relative p-0.5 rounded-xl overflow-hidden group shadow-sm"
-            >
-              {/* Default Border Background */}
-              <div className="absolute inset-0 bg-gray-200"></div>
-
-              {/* Running Gradient Border Background */}
-              <div
-                className={`absolute inset-0 transition-opacity duration-500 ${openIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                  }`}
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className={`group relative rounded-2xl overflow-hidden transition-all duration-300 border ${
+                  isOpen
+                    ? 'border-primary-orange/60 shadow-[0_10px_30px_-8px_rgba(241,130,35,0.25)] bg-white ring-1 ring-primary-orange/20'
+                    : 'border-slate-200/80 bg-white hover:border-slate-300 shadow-sm hover:shadow-md'
+                }`}
               >
+                {/* Left Active Glow Stripe */}
                 <div
-                  className="absolute -inset-full animate-spin bg-[conic-gradient(from_0deg,transparent_0_260deg,#3b82f6_310deg,#d46337_360deg)]"
-                  style={{ animationDuration: '4s' }}
-                ></div>
-              </div>
+                  className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary-orange to-amber-500 transition-opacity duration-300 ${
+                    isOpen ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
 
-              {/* Inner Content */}
-              <div className="relative bg-white rounded-xl h-full overflow-hidden">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left bg-transparent transition-colors cursor-pointer"
                 >
-                  <span className={`font-bold text-lg transition-colors ${openIndex === index ? 'text-blue-600' : 'text-gray-900'}`}>{faq.question}</span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${openIndex === index ? 'bg-[#d46337] text-white rotate-180 shadow-md' : 'bg-gray-100 text-gray-500'}`}>
-                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                  <span className={`font-bold text-base sm:text-lg transition-colors font-sans pr-4 ${
+                    isOpen ? 'text-primary-orange' : 'text-slate-800 group-hover:text-primary-blue'
+                  }`}>
+                    {faq.question}
+                  </span>
+                  
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    isOpen
+                      ? 'bg-gradient-to-tr from-primary-orange to-amber-500 text-white shadow-md shadow-orange-500/30 scale-105'
+                      : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-primary-blue'
+                  }`}>
+                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                   </div>
                 </button>
 
                 <AnimatePresence>
-                  {openIndex === index && (
+                  {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.35, ease: 'easeInOut' }}
                     >
-                      <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-200">
-                        {faq.answer}
+                      <div className="px-5 sm:px-6 pb-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100 font-normal">
+                        <div className="pt-3.5">
+                          {faq.answer}
+                        </div>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -110,3 +140,4 @@ export const FAQSection: React.FC = () => {
 };
 
 export default FAQSection;
+

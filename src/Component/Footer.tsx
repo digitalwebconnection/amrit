@@ -4,7 +4,11 @@ import { Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'react-toastify';
 import logo from '../assets/logo.png';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenContact?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ }) => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
 
@@ -15,40 +19,58 @@ export const Footer: React.FC = () => {
     setEmail('');
   };
 
-  return (
-    <footer className="relative bg-[#020617] text-gray-300 pt-1 pb-8  font-sans border-t border-white/5 overflow-hidden">
-      
-      {/* Background ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100  pointer-events-none" />
+  const quickLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Our Services', href: '#services' },
+    { name: 'Recent Projects', href: '#projects' },
+    { name: 'Why Us', href: '#why-us' },
+    { name: 'Testimonials', href: '#testimonials' },
+  ];
 
+  const serviceLinks = [
+    { name: 'Turnkey Solar EPC', href: '#services' },
+    { name: 'HT/LT Substations & Transformers', href: '#services' },
+    { name: 'Smart Automation & SCADA', href: '#services' },
+    { name: 'Operations & Maintenance (O&M)', href: '#services' },
+    { name: 'Commercial Energy Audits', href: '#services' },
+  ];
+
+  return (
+    <footer className="relative bg-[#020617] text-gray-300 pt-1 pb-8  font-sans border-t border-white/5 overflow-hidden selection:bg-primary-orange selection:text-white">
+
+      {/* Background ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-primary-blue/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-6 mt-4 md:mt-10">
-          
+
           {/* Brand Info (Larger Column) */}
           <div className="lg:col-span-4 flex flex-col gap-6 lg:pr-8">
-            <Link to="/" className="inline-block">
-              <img src={logo} alt="Amrit Electricals Logo" className="h-16 w-auto" />
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block">
+              <img src={logo} alt="Amrit Electricals Logo" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Empowering homes and businesses with top-tier solar and electrical solutions. Your trusted partner for a sustainable and brighter energy future in India.
+              Empowering homes, commercial hubs, and industrial enterprises with Grade-A licensed solar EPC and heavy electrical engineering. 25-Year performance warranty backed by Tier-1 OEM partners.
             </p>
-            
+
             <div className="space-y-4 mt-2">
               <div className="flex items-start gap-3">
-                <div className="bg-white/5 p-2 rounded-lg text-primary-orange">
+                <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0">
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm mb-0.5">Head Office</p>
+                  <p className="text-white font-bold text-sm mb-0.5">Corporate Office</p>
                   <p className="text-gray-400 text-sm">123 Energy Park, Tech Avenue, New Delhi, India</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="bg-white/5 p-2 rounded-lg text-primary-orange">
+                <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0">
                   <Phone size={18} />
                 </div>
-                <p className="text-gray-400 text-sm font-medium">+91 98765 43210</p>
+                <a href="tel:+919876543210" className="text-gray-400 hover:text-primary-orange transition-colors text-sm font-medium">
+                  +91 98765 43210
+                </a>
               </div>
             </div>
           </div>
@@ -57,14 +79,23 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 lg:ml-auto">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Quick Links
-              {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
-              {['Home', 'About Us', 'Our Projects', 'Why Choose Us', 'Testimonials'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-primary-orange transition-colors flex items-center gap-2 group text-sm">
+              {quickLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        e.preventDefault();
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="hover:text-primary-orange transition-colors flex items-center gap-2 group text-sm"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-orange opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0" />
-                    <span className="transform transition-transform group-hover:translate-x-1">{item}</span>
+                    <span className="transform transition-transform group-hover:translate-x-1">{item.name}</span>
                   </a>
                 </li>
               ))}
@@ -75,14 +106,23 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3 lg:ml-8">
             <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Our Services
-              {/* <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-orange rounded-full"></span> */}
             </h3>
             <ul className="space-y-3 font-medium text-gray-400">
-              {['Solar Panel Installation', 'Commercial Wiring', 'Residential Electricals', 'Maintenance & Repairs', 'Energy Consultation'].map((item) => (
-                <li key={item}>
-                  <a href="#services" className="hover:text-primary-orange transition-colors flex items-center gap-2 group text-sm">
+              {serviceLinks.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        e.preventDefault();
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="hover:text-primary-orange transition-colors flex items-center gap-2 group text-sm"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-orange opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0" />
-                    <span className="transform transition-transform group-hover:translate-x-1">{item}</span>
+                    <span className="transform transition-transform group-hover:translate-x-1">{item.name}</span>
                   </a>
                 </li>
               ))}
@@ -99,25 +139,25 @@ export const Footer: React.FC = () => {
               Subscribe to our newsletter for the latest solar energy insights and offers.
             </p>
             <form onSubmit={handleSubmit} className="relative group">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 name="newsletter_email"
                 id="newsletter_email"
                 autoComplete="email"
-                placeholder="Enter your email" 
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary-orange focus:bg-white/10 transition-all"
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="absolute right-1.5 top-1.5 bottom-1.5 bg-primary-orange hover:bg-orange-600 text-white px-4 rounded-lg flex items-center justify-center transition-colors"
               >
                 <Send size={16} />
               </button>
             </form>
-            
+
             <div className="flex gap-4 mt-8">
               {[
                 { name: 'Facebook', svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path> },
@@ -139,7 +179,7 @@ export const Footer: React.FC = () => {
           <p>
             &copy; {currentYear} Amrit Electricals. All rights reserved.
           </p>
-          
+
           <div className="flex items-center gap-2">
             <span>&lt;/&gt;</span> Digital Partner<a href="#" className="text-primary-orange hover:text-orange-400 transition-colors tracking-wide">Digital Web Connection</a>
           </div>

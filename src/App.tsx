@@ -7,7 +7,9 @@ import Footer from './Component/Footer';
 import ContactPopup from './Component/ContactPopup';
 import WhatsAppWidget from './Component/WhatsAppWidget';
 import Preloader from './Component/Preloader';
-import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from './Component/ScrollToTop';
+import ScrollProgressBar from './Component/Common/ScrollProgressBar';
+import { AnimatePresence, motion } from 'framer-motion';
 import SEO from './Component/SEO';
 
 // Dynamic imports for code splitting
@@ -37,16 +39,16 @@ function App() {
       finishLoading();
     };
 
-    // Ensure preloader shows for at least 1.5s so the animation is visible
+    // Keep preloader brisk and visible without frustrating the user
     minTimer = setTimeout(() => {
       minTimeElapsed = true;
       finishLoading();
-    }, 1000);
+    }, 650);
 
-    // Maximum fallback of 8s in case an asset hangs forever
+    // Maximum fallback of 1.2s to guarantee fast interactivity
     fallbackTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1100);
 
     if (document.readyState === 'complete') {
       handleLoad();
@@ -63,32 +65,41 @@ function App() {
 
   return (
     <>
+      <ScrollProgressBar />
       <ToastContainer position="top-right" autoClose={3000} theme="colored" />
-      <AnimatePresence>
-        {isLoading && <Preloader />}
+      
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader key="preloader" />}
       </AnimatePresence>
 
-      <div className={`flex flex-col min-h-screen ${isLoading ? 'hidden' : 'block'}`}>
-      <SEO />
-      <Header onOpenContact={() => setIsContactOpen(true)} />
-      
-      <div className="grow">
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-slate-50"><div className="w-12 h-12 border-4 border-[#203A96] border-t-[#F18223] rounded-full animate-spin"></div></div>}>
-          <Routes>
-            <Route path="/" element={<HomeMain onOpenContact={() => setIsContactOpen(true)} />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`flex flex-col min-h-screen ${isLoading ? 'pointer-events-none' : 'pointer-events-auto'}`}
+      >
+        <SEO />
+        <Header onOpenContact={() => setIsContactOpen(true)} />
+        
+        <div className="grow">
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center bg-slate-50"><div className="w-10 h-10 border-4 border-[#203A96] border-t-[#F18223] rounded-full animate-spin"></div></div>}>
+            <Routes>
+              <Route path="/" element={<HomeMain onOpenContact={() => setIsContactOpen(true)} />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </div>
 
-      <Footer />
-      <ContactPopup isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-      <WhatsAppWidget />
-    </div>
+        <Footer onOpenContact={() => setIsContactOpen(true)} />
+        <ContactPopup isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+        <WhatsAppWidget />
+        <ScrollToTop />
+      </motion.div>
     </>
   );
 }
 
 export default App;
+

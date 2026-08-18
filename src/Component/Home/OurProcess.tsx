@@ -1,159 +1,366 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ClipboardCheck, PenTool, Wrench, ShieldCheck } from 'lucide-react';
+import {
+  ClipboardCheck,
+  PenTool,
+  Wrench,
+  ShieldCheck,
 
-const steps = [
+  FileText
+} from 'lucide-react';
+
+interface ProcessStep {
+  id: number;
+  stepNumber: string;
+  icon: React.ElementType;
+  title: string;
+  subtitle: string;
+  description: string;
+  deliverable: string;
+  statusBadge: string;
+  color: string;
+  accentHex: string;
+  image: string;
+}
+
+const steps: ProcessStep[] = [
   {
     id: 0,
-    icon: <ClipboardCheck size={24} />,
-    title: "Consultation & Audit",
-    description: "We begin with a thorough site inspection and energy audit to understand your precise requirements.",
-    color: "from-blue-600 to-blue-400",
+    stepNumber: "01",
+    icon: ClipboardCheck,
+    title: "Site Audit & Feasibility",
+    subtitle: "Drone Mapping & Load Assessment",
+    description: "Our senior engineers conduct comprehensive on-site drone LiDAR surveys, structural shadow simulations, and DISCOM tariff audits to calculate accurate yield projections.",
+    deliverable: "Detailed Feasibility Report & PVsyst Simulation",
+    statusBadge: "Phase 1: Feasibility Audit",
+    color: "from-blue-600 to-indigo-600",
+    accentHex: "#203A96",
     image: "/images/process_1.png"
   },
   {
     id: 1,
-    icon: <PenTool size={24} />,
-    title: "Custom Design",
-    description: "Our engineers design a tailored electrical or solar solution optimized for efficiency and compliance.",
-    color: "from-cyan-500 to-teal-400",
+    stepNumber: "02",
+    icon: PenTool,
+    title: "Custom Design & Engineering",
+    subtitle: "CAD Drawings & Statutory Approvals",
+    description: "Certified electrical architects formulate detailed Single Line Diagrams (SLD), 3D string layouts, HT/LT substation schematics, and secure statutory DISCOM net-metering sanctions.",
+    deliverable: "BOM, 3D Schematics & Net-Metering Sanction",
+    statusBadge: "Phase 2: Technical Design",
+    color: "from-amber-500 to-orange-500",
+    accentHex: "#F18223",
     image: "/images/process_2.png"
   },
   {
     id: 2,
-    icon: <Wrench size={24} />,
-    title: "Safe Installation",
-    description: "Certified technicians execute the project using top-tier materials while strictly adhering to safety standards.",
-    color: "from-orange-500 to-orange-400",
+    stepNumber: "03",
+    icon: Wrench,
+    title: "Precision EPC Installation",
+    subtitle: "Tier-1 BOS & CEA Compliance",
+    description: "Executed by certified technician teams using hot-dip galvanized mounting structures, Tier-1 TOPCon solar modules, smart string inverters, and certified DC/AC switchgear.",
+    deliverable: "Heavy-Duty Structural & Electrical Erection",
+    statusBadge: "Phase 3: EPC Execution",
+    color: "from-orange-500 to-amber-600",
+    accentHex: "#F18223",
     image: "/images/process_3.png"
   },
   {
     id: 3,
-    icon: <ShieldCheck size={24} />,
-    title: "Handover & Support",
-    description: "After rigorous testing, we commission the system and provide comprehensive ongoing maintenance.",
-    color: "from-emerald-500 to-green-400",
+    stepNumber: "04",
+    icon: ShieldCheck,
+    title: "Commissioning & Lifetime O&M",
+    subtitle: "DISCOM Sync & 24/7 Monitoring",
+    description: "Following rigorous insulation, flash testing, and bidirectional meter installation, we synchronize with the grid and activate real-time cloud SCADA performance tracking.",
+    deliverable: "25-Yr Linear Warranty & 24/7 O&M Handover",
+    statusBadge: "Phase 4: Grid Sync & O&M",
+    color: "from-emerald-500 to-teal-500",
+    accentHex: "#10B981",
     image: "/images/process_4.png"
   }
 ];
 
 export const OurProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  // Optional auto-cycle step timer
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
   return (
-    <section className="py-12 bg-white relative overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-blue-50/50 via-white to-white pointer-events-none"></div>
+    <section id="process" className="relative py-14 lg:py-22 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
+      
+      {/* ================= HIGH-TECH GRAPHICS & BACKGROUND EFFECTS ================= */}
+      {/* 1. Circuit Blueprint Matrix Pattern */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="process-grid-pattern" width="52" height="52" patternUnits="userSpaceOnUse">
+              <path
+                d="M 52 0 L 0 0 0 52"
+                fill="none"
+                stroke="rgba(32, 58, 150, 0.12)"
+                strokeWidth="0.75"
+              />
+              <circle cx="26" cy="26" r="1.5" fill="rgba(241, 130, 35, 0.5)" />
+              <path
+                d="M 26 18 L 26 26 L 34 26"
+                fill="none"
+                stroke="rgba(241, 130, 35, 0.25)"
+                strokeWidth="0.6"
+                strokeDasharray="2,3"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#process-grid-pattern)" />
+        </svg>
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl">
+      {/* 2. Rotating HUD Compass Graphic */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
+        className="absolute -top-32 -left-32 w-[580px] h-[580px] rounded-full border border-dashed border-primary-blue/20 pointer-events-none -z-0 flex items-center justify-center"
+      >
+        <div className="w-4/5 h-4/5 rounded-full border border-amber-400/20" />
+      </motion.div>
+
+      {/* 3. Ambient Radiant Glowing Plasma Orbs */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 1],
+          opacity: [0.25, 0.45, 0.25],
+          x: [0, 30, 0],
+          y: [0, 25, 0]
+        }}
+        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-28 -right-28 w-[600px] h-[600px] bg-gradient-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.4, 0.2],
+          x: [0, -30, 0],
+          y: [0, -25, 0]
+        }}
+        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute -bottom-28 -left-28 w-[600px] h-[600px] bg-gradient-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
+      />
+
+      {/* 4. Top & Bottom Shimmer Accent Lines */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary-blue/40 to-transparent pointer-events-none" />
+
+      {/* ================= MAIN CONTAINER ================= */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        {/* Section Header */}
+        <div className="text-center max-w-6xl mx-auto mb-12 lg:mb-14">
+          
+          {/* Eyebrow Pill Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-slate-200/90 shadow-sm mb-4"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-orange opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-orange" />
+            </span>
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-slate-700">
+              Turnkey Execution Roadmap // ISO 9001:2015 EPC
+            </span>
+          </motion.div>
+
+          {/* Heading */}
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-gray-900 mb-4"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-4"
           >
-            A Proven, Streamlined <span className="text-primary-blue"><br />Process</span>
+            A Proven, Streamlined <br className="" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue via-blue-700 to-primary-orange">
+              4-Stage Engineering Process
+            </span>
           </motion.h2>
-          <motion.div 
+
+          {/* Subtitle */}
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex justify-center mt-4 mb-4"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-900 text-sm sm:text-base md:text-lg max-w-6xl mx-auto font-normal leading-relaxed"
           >
-            <div className="w-32 h-1 bg-primary-orange rounded-full"></div>
-          </motion.div>
+            From drone terrain audits and 3D shadow analysis to Tier-1 module erection, CEA grid synchronization, and 25-year performance monitoring.
+          </motion.p>
         </div>
 
-        {/* Interactive Tabs Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+        {/* ================= INTERACTIVE CONSOLE SHOWCASE ================= */}
+        <div 
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
           
-          {/* Left: Image Container */}
-          <div className="w-full lg:w-[55%] relative h-100 lg:h-auto">
-            <div className="absolute inset-0 rounded-lg overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.12)]  group">
+          {/* ================= LEFT: 3D SHOWCASE DISPLAY (7 COLS) ================= */}
+          <div className="lg:col-span-7 flex flex-col">
+            <div className="relative h-95 sm:h-[460px] lg:h-[520px] w-full rounded-xl sm:rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-slate-200/90 bg-slate-900 group">
+              
+              {/* Dynamic Image Crossfade Transition */}
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={activeStep}
                   src={steps[activeStep].image}
                   alt={steps[activeStep].title}
-                  initial={{ opacity: 0, scale: 1.05 }}
+                  loading="lazy"
+                  decoding="async"
+                  initial={{ opacity: 0, scale: 1.08 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="w-full h-full object-cover absolute inset-0"
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="w-full h-full object-cover absolute inset-0 filter brightness-95 group-hover:scale-104 transition-transform duration-1000"
                 />
               </AnimatePresence>
               
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-slate-900/10 to-transparent pointer-events-none"></div>
-              
-              {/* Floating Badge on Image */}
-              <div className="absolute bottom-6 left-6 right-6">
+              {/* Multi-stage Gradient Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-blue/30 via-transparent to-primary-orange/20 mix-blend-overlay pointer-events-none" />
+
+              {/* Shimmer Light Reflection Sweep on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-[1800ms] ease-out pointer-events-none" />
+
+              {/* Top Status HUD Badges */}
+              <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between z-20">
+                <div className="flex items-center gap-2 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                  </span>
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200 font-mono">
+                    {steps[activeStep].statusBadge}
+                  </span>
+                </div>
+
+                <div className="bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-amber-400/40 text-amber-300 text-xs font-mono font-bold">
+                  {activeStep + 1} of 4
+                </div>
+              </div>
+
+              {/* Bottom Glassmorphic Card on Image */}
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 z-20">
                 <motion.div
-                  key={`badge-${activeStep}`}
+                  key={`card-${activeStep}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-md text-white"
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="bg-slate-950/85 backdrop-blur-xl border border-white/20 p-5 sm:p-6 rounded-2xl text-white shadow-2xl"
                 >
-                  <div className="flex items-center gap-3 mb-1 text-center justify-center">
-                    <span className="text-3xl font-black opacity-50">0{activeStep + 1}</span>
-                    <h4 className="text-2xl font-bold text-white">{steps[activeStep].title}</h4>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl sm:text-4xl font-mono font-black text-primary-orange leading-none">
+                        {steps[activeStep].stepNumber}
+                      </span>
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-bold text-white leading-tight font-sans">
+                          {steps[activeStep].title}
+                        </h4>
+                        <p className="text-xs text-amber-300 font-medium">
+                          {steps[activeStep].subtitle}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Deliverable Pill */}
+                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/10 text-xs text-slate-300 font-medium">
+                    <FileText size={13} className="text-primary-orange shrink-0" />
+                    <span className="text-slate-400">Deliverable:</span>
+                    <span className="text-white font-semibold">{steps[activeStep].deliverable}</span>
+                  </div>
+
+                  {/* Stage Progress Bar (Auto-advancing indicator) */}
+                  <div className="w-full h-1 bg-white/20 rounded-full mt-4 overflow-hidden">
+                    <motion.div
+                      key={`progress-${activeStep}`}
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: isAutoPlaying ? 6 : 0, ease: "linear" }}
+                      className="h-full bg-gradient-to-r from-primary-orange via-amber-400 to-primary-blue rounded-full"
+                    />
                   </div>
                 </motion.div>
               </div>
+
             </div>
-            
-            {/* Background decorative element */}
-            <div className={`absolute -inset-2 bg-linear-to-tr ${steps[activeStep].color} rounded-lg opacity-10 -z-10 transition-colors duration-700`}></div>
           </div>
 
-          {/* Right: Interactive Step List */}
-          <div className="w-full lg:w-[45%] flex flex-col gap-2">
+          {/* ================= RIGHT: INTERACTIVE STEP CARDS (5 COLS) ================= */}
+          <div className="lg:col-span-5 flex flex-col gap-3.5 justify-between">
             {steps.map((step, idx) => {
               const isActive = activeStep === idx;
-              
+              const Icon = step.icon;
+
               return (
                 <div 
                   key={step.id} 
-                  className={`p-4 rounded-lg cursor-pointer shadow-lg transition-all duration-300 border relative overflow-hidden group ${
+                  className={`group relative p-4 sm:p-4.5 rounded-2xl cursor-pointer transition-all duration-400 border overflow-hidden ${
                     isActive 
-                      ? 'bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-blue-100 scale-[1.02]' 
-                      : 'bg-white/50 border-transparent hover:bg-slate-50 hover:scale-[1.01]'
+                      ? 'bg-white shadow-[0_15px_35px_-8px_rgba(32,58,150,0.18)] border-primary-orange/60 scale-[1.02] ring-1 ring-primary-orange/30 z-10' 
+                      : 'bg-white/90 border-slate-200/80 hover:bg-white hover:border-slate-300 shadow-sm hover:shadow-md'
                   }`}
-                  onClick={() => setActiveStep(idx)}
-                  onMouseEnter={() => setActiveStep(idx)}
+                  onClick={() => {
+                    setActiveStep(idx);
+                    setIsAutoPlaying(false);
+                  }}
+                  onMouseEnter={() => {
+                    setActiveStep(idx);
+                    setIsAutoPlaying(false);
+                  }}
                 >
-                  {/* Subtle active indicator line */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`}></div>
+                  {/* Left Active Glow Bar */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${step.color} transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'} z-20`} />
                   
-                  {/* Color Tint Background for active state */}
-                  <div className={`absolute inset-0 bg-linear-to-br ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.08]' : 'opacity-0 group-hover:opacity-[0.02]'}`}></div>
+                  {/* Active Background Gradient Tint */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${step.color} transition-opacity duration-500 z-0 ${isActive ? 'opacity-[0.06]' : 'opacity-0 group-hover:opacity-[0.02]'}`} />
 
-                  <div className="flex items-start gap-4 relative z-10 pl-2">
+                  <div className="flex items-start gap-4 relative z-10 pl-1">
                     
-                    {/* Icon Container */}
-                    <div className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    {/* Glowing Icon Capsule */}
+                    <div className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-400 ${
                       isActive 
-                        ? `bg-linear-to-br ${step.color} text-white shadow-md shadow-blue-500/20 rotate-0` 
-                        : 'bg-slate-100 border border-slate-200 text-slate-400 group-hover:text-blue-500 -rotate-3 group-hover:rotate-0'
+                        ? `bg-gradient-to-br ${step.color} text-white shadow-md shadow-orange-500/30 scale-108` 
+                        : 'bg-slate-100 border border-slate-200 text-slate-500 group-hover:text-primary-blue group-hover:bg-blue-50'
                     }`}>
-                      {step.icon}
+                      <Icon size={22} />
                     </div>
                     
-                    {/* Text Content */}
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className={`text-xs font-bold tracking-wider transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
-                          STEP 0{idx + 1}
+                    {/* Text Details */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-[11px] font-mono font-bold tracking-wider uppercase transition-colors ${isActive ? 'text-primary-orange' : 'text-slate-500'}`}>
+                          STEP {step.stepNumber}
                         </span>
+                        {isActive && (
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary-orange/10 text-primary-orange border border-primary-orange/20">
+                            Active Phase
+                          </span>
+                        )}
                       </div>
-                      <h3 className={`text-lg font-bold leading-tight mt-1 mb-1 transition-colors ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+
+                      <h3 className={`text-base sm:text-lg font-bold leading-tight mb-1 font-sans transition-colors ${isActive ? 'text-slate-900' : 'text-slate-800'}`}>
                         {step.title}
                       </h3>
-                      <p className={`text-[13px] leading-snug transition-colors ${isActive ? 'text-slate-700' : 'text-slate-500'}`}>
+
+                      <p className={`text-xs leading-relaxed transition-colors line-clamp-2 ${isActive ? 'text-slate-700 font-normal' : 'text-slate-500'}`}>
                         {step.description}
                       </p>
                     </div>                   
@@ -162,7 +369,9 @@ export const OurProcess: React.FC = () => {
               );
             })}
           </div>
+
         </div>
+
       </div>
     </section>
   );

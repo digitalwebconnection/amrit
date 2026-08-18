@@ -7,13 +7,11 @@ import BusinessVerticals from './BusinessVerticals';
 import OurProcess from './OurProcess';
 import WhyChooseSection from './WhyChooseSection';
 import CompanyHighlights from './CompanyHighlights';
-import Products from './Products';
 import ChannelPatner from './ChannelPatner';
 import Certifications from './Certifications';
 import RecentProjects from './RecentProjects';
 import Leadership from './Leadership';
 import Testimonials from './Testimonials';
-
 import FAQSection from './FAQSection';
 import CallToAction from './CallToAction';
 
@@ -27,15 +25,14 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <Herohm onOpenContact={onOpenContact} />
       <Scrooling />
       <CompanyOverview />
-      <BusinessVerticals />
+      <ChannelPatner />
       <OurProcess />
+      <BusinessVerticals onOpenContact={onOpenContact} />
+      <RecentProjects onOpenContact={onOpenContact} />
       <VideoSection />
-      <RecentProjects />
       <WhyChooseSection />
       <CompanyHighlights />
-      <Products />
-      <ChannelPatner />
-      <Certifications />
+      <Certifications onOpenContact={onOpenContact} />
       <Leadership />
       <Testimonials />
       <FAQSection />
@@ -45,3 +42,4 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
 };
 
 export default HomeMain;
+

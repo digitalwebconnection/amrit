@@ -1,53 +1,105 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 
 export const VideoSection: React.FC = () => {
-  return (
-    <section className="py-12 bg-slate-50 relative overflow-hidden">
-      {/* Decorative Blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [, setHasStarted] = useState(false);
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif font-black text-slate-900 mb-6 leading-tight"
-          >
-            Powering the Future of <span className="text-primary-blue">Solar & Clean Energy</span>
-            <div className="w-32 h-1 bg-primary-orange rounded-full items-center justify-center mx-auto mt-2"></div>
-          </motion.h2>
-        </div>
-      </div>
+  // Lazy load and play video only when scrolled into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().then(() => {
+            setIsPlaying(true);
+            setHasStarted(true);
+          }).catch(() => {
+            // Autoplay may be restricted by browser policy
+          });
+        } else if (videoRef.current && !entry.isIntersecting) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+      setHasStarted(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  return (
+    <section ref={sectionRef} className="py-8 lg:py-12 bg-slate-50 relative overflow-hidden">
+      {/* Decorative Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-blue/5 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Full Bleed Video Container */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative w-full aspect-video md:aspect-21/7 bg-slate-900 group cursor-pointer overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
+        onClick={togglePlay}
+        className="relative w-full aspect-video md:aspect-21/7 bg-slate-950 group cursor-pointer overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.25)] border-y border-slate-200"
       >
-        {/* Note: In a real app you might want to use an onClick handler to open a modal with the video, or just play inline. */}
         <video
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
-          autoPlay
+          ref={videoRef}
+          className="w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-700"
           muted
           loop
           playsInline
+          preload="none"
           poster="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=2000"
         >
-          {/* Note: Pixabay CDN links expire. It's recommended to download the video and host it in your public/ folder. Using a stable sample video for now. */}
           <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
+        {/* Ambient Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/30 pointer-events-none" />
+
+        {/* Center Play / Pause Indicator */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-10 h-10 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-white/20 shadow-2xl">
-            <Play className="w-4 h-4 text-white ml-1" fill="currentColor" />
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: isPlaying ? 0.95 : 1 }}
+            className={`w-14 h-14 sm:w-16 sm:h-16 bg-slate-950/70 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl transition-all duration-300 ${
+              isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+            }`}
+          >
+            {isPlaying ? (
+              <Pause className="w-6 h-6 text-white" />
+            ) : (
+              <Play className="w-6 h-6 text-primary-orange ml-1 fill-primary-orange" />
+            )}
+          </motion.div>
+        </div>
+
+        {/* Bottom Banner Info */}
+        <div className="absolute bottom-4 sm:bottom-6 left-6 sm:left-10 z-10 pointer-events-none">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary-orange animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-slate-200 drop-shadow-sm">
+              Engineering in Action // Industrial Solar EPC
+            </span>
           </div>
         </div>
       </motion.div>
@@ -56,3 +108,4 @@ export const VideoSection: React.FC = () => {
 };
 
 export default VideoSection;
+
