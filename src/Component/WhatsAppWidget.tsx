@@ -196,17 +196,7 @@ export const WhatsAppWidget: React.FC = () => {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           />
 
-          {/* Floating Tooltip Pill */}
-          <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            onClick={() => setIsOpen(true)}
-            className="absolute right-18 top-1/2 -translate-y-1/2 whitespace-nowrap bg-slate-900/90 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-xl border border-white/20 hidden sm:flex items-center gap-2 cursor-pointer group-hover:scale-104 transition-transform"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Chat on WhatsApp</span>
-          </motion.div>
+      
 
           {/* Main Floating WhatsApp Button */}
           <motion.button
