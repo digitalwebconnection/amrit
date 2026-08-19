@@ -92,64 +92,9 @@ export const OurProcess: React.FC = () => {
   }, [isAutoPlaying]);
 
   return (
-    <section id="process" className="relative py-14 lg:py-22 bg-linear-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
-      
-      {/* ================= HIGH-TECH GRAPHICS & BACKGROUND EFFECTS ================= */}
-      {/* 1. Circuit Blueprint Matrix Pattern */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="process-grid-pattern" width="52" height="52" patternUnits="userSpaceOnUse">
-              <path
-                d="M 52 0 L 0 0 0 52"
-                fill="none"
-                stroke="rgba(32, 58, 150, 0.12)"
-                strokeWidth="0.75"
-              />
-              <circle cx="26" cy="26" r="1.5" fill="rgba(241, 130, 35, 0.5)" />
-              <path
-                d="M 26 18 L 26 26 L 34 26"
-                fill="none"
-                stroke="rgba(241, 130, 35, 0.25)"
-                strokeWidth="0.6"
-                strokeDasharray="2,3"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#process-grid-pattern)" />
-        </svg>
-      </div>
+    <section id="process" className="relative py-8 lg:py-14 bg-linear-to-b from-slate-50 via-white to-slate-50 overflow-hidden selection:bg-primary-orange selection:text-white">
 
-      {/* 2. Rotating HUD Compass Graphic */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 110, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-32 -left-32 w-145 h-145 rounded-full border border-dashed border-primary-blue/20 pointer-events-none z-0 flex items-center justify-center"
-      >
-        <div className="w-4/5 h-4/5 rounded-full border border-amber-400/20" />
-      </motion.div>
 
-      {/* 3. Ambient Radiant Glowing Plasma Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.25, 1],
-          opacity: [0.25, 0.45, 0.25],
-          x: [0, 30, 0],
-          y: [0, 25, 0]
-        }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-28 -right-28 w-150 h-150 bg-linear-to-bl from-primary-orange/25 via-amber-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, -30, 0],
-          y: [0, -25, 0]
-        }}
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-28 -left-28 w-150 h-150 bg-linear-to-tr from-primary-blue/25 via-sky-400/10 to-transparent rounded-full blur-[130px] pointer-events-none"
-      />
 
       {/* 4. Top & Bottom Shimmer Accent Lines */}
       <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none" />

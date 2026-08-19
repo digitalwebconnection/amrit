@@ -42,7 +42,7 @@ export const Preloader: React.FC = () => {
         opacity: 1,
         transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
       }}
-      className="fixed inset-0 z-99999 bg-white flex flex-col items-center justify-center overflow-hidden selection:bg-primary-orange selection:text-white"
+      className="fixed inset-0 z-99999  flex flex-col items-center justify-center overflow-hidden selection:bg-primary-orange selection:text-white"
     >
       {/* Background Soft Solar Ambient Glows (Light Theme) */}
       <motion.div
@@ -101,7 +101,7 @@ export const Preloader: React.FC = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, type: 'spring', bounce: 0.35 }}
-            className="relative w-24 h-24 bg-white/95 rounded-3xl border border-slate-200/90 shadow-[0_12px_35px_-8px_rgba(32,58,150,0.18),0_4px_12px_rgba(241,130,35,0.12)] flex items-center justify-center backdrop-blur-md overflow-hidden"
+            className="relative w-24 h-24 flex items-center justify-center backdrop-blur-md overflow-hidden"
           >
             {/* Specular Light Streak across the icon box */}
             <motion.div
