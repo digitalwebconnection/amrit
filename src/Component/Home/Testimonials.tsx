@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, Quote, CheckCircle, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, CheckCircle, Sparkles } from 'lucide-react';
 
 export const Testimonials: React.FC = () => {
   const testimonials = [
@@ -167,7 +167,7 @@ export const Testimonials: React.FC = () => {
               ease: "easeInOut",
               delay: i * 0.1
             }}
-            className="w-6 md:w-8 bg-gradient-to-t from-[#1e1e1e] via-[#282828] to-[#363636] rounded-t-xs shrink-0"
+            className="w-6 md:w-8 bg-linear-to-t from-[#1e1e1e] via-[#282828] to-[#363636] rounded-t-xs shrink-0"
           />
         ))}
       </div>
@@ -342,7 +342,7 @@ export const Testimonials: React.FC = () => {
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Gradient vignette for rich contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-[#181818]/20" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#181818]/80 via-transparent to-[#181818]/20" />
                 </motion.div>
               </AnimatePresence>
 
@@ -378,7 +378,7 @@ export const Testimonials: React.FC = () => {
         <motion.div
           animate={{ x: ['-100%', '200%'] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-0 inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none"
+          className="absolute top-0 inset-y-0 w-1/3 bg-linear-to-r from-transparent via-primary-orange/40 to-transparent pointer-events-none"
         />
       </div>
     </section>

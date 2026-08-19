@@ -51,7 +51,7 @@ export const Leadership: React.FC = () => {
             {/* Image Frame Container */}
             <div className="relative z-10 rounded-xl sm:rounded-xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.62)] bg-slate-900 group border border-slate-200/90">
               <img
-                src="https://media.licdn.com/dms/image/v2/C4D03AQFsJ3w9AGWI1w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1641607147971?e=2147483647&v=beta&t=3zmBhoKl2K7T5Z8NV5Rnk5ZTiHY-XXDVZS4-BaYfG6k"
+                src="/shiva-sir.webp"
                 alt="Amritpal Singh - Founder & CEO, Amrit Electricals"
                 loading="lazy"
                 decoding="async"
