@@ -1,5 +1,3 @@
-
-
 import { useEffect, useRef, useState } from "react"
 import { Shield, TrendingUp, Award, Building } from "lucide-react"
 
