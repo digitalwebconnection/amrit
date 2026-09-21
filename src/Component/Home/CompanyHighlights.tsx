@@ -1,115 +1,81 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { LayoutGrid, Users, Award, Smile } from 'lucide-react';
-
-interface StatsCounterProps {
-  value: number;
-  duration?: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
-  className?: string;
-}
-
-export function StatsCounter({
-  value,
-  duration = 1.5,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
-  className,
-}: StatsCounterProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
-  const [displayValue, setDisplayValue] = useState(0);
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on("change", (latest) => {
-      setDisplayValue(latest);
-    });
-    return unsubscribe;
-  }, [springValue]);
-
-  return (
-    <span ref={ref} className={`tabular-nums ${className || ""}`}>
-      {prefix}
-      {displayValue.toFixed(decimals)}
-      {suffix}
-    </span>
-  );
-}
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  LayoutGrid,
+  Award,
+  Layers,
+  Zap,
+  CheckCircle2,
+  ShieldCheck
+} from 'lucide-react';
 
 export const CompanyHighlights: React.FC = () => {
   const stats = [
-    { value: 90, suffix: " MW+", label: "Solar Panels Supplied", icon: LayoutGrid },
-    { value: 75, suffix: " MW+", label: "Inverters Supplied", icon: Award },
-    { value: 500, suffix: "+", label: "Turnkey Solar KITs", icon: Users },
-    { value: 50000, suffix: "+", label: "Energy Meters Deployed", icon: Smile },
+    { value: "90+", suffix: " MW", label: "Solar Panels Supplied", icon: LayoutGrid },
+    { value: "75+", suffix: " MW", label: "Inverters Supplied", icon: Award },
+    { value: "500+", suffix: "", label: "Turnkey Solar KITs", icon: Layers },
+    { value: "50,000+", suffix: "", label: "Energy Meters Deployed", icon: Zap },
+    { value: "1,200+", suffix: "", label: "Delivered Solar Projects", icon: CheckCircle2 },
+    { value: "10+", suffix: " Years", label: "Industry Excellence", icon: ShieldCheck },
   ];
 
+  // Double the stats array for seamless infinite moving loop
+  const duplicatedStats = [...stats, ...stats];
+
   return (
-    <section className="py-5 bg-white text-slate-800 ">
-      <div className="container mx-auto px-6 md:px-6 relative z-10 max-w-7xl">
-        
-        {/* Unified 4-Column Layout */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-2">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-                transition={{ 
-                  opacity: { duration: 0.6, delay: index * 0.1 },
-                  y: { type: "spring", stiffness: 300, damping: 20 }
-                }}
-                className={`relative p-8 md:p-10 rounded-2xl border border-slate-100 flex flex-col items-center text-center group cursor-pointer overflow-hidden transition-all duration-500 ${
-                  isEven 
-                    ? '' 
-                    : ''
+    <section className="py-8 bg-slate-50/70 border-b border-slate-200/80 text-slate-800 relative overflow-hidden">
+      {/* Left and Right Edge Gradient Fade Masks */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-linear-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-linear-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+
+      {/* Moving Slider Track */}
+      <motion.div
+        className="flex items-center gap-6 will-change-transform"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 34,
+            ease: 'linear',
+          },
+        }}
+      >
+        {duplicatedStats.map((stat, index) => {
+          const Icon = stat.icon;
+          const isOrange = index % 2 !== 0;
+
+          return (
+            <div
+              key={index}
+              className="w-68 sm:w-76 md:w-80 shrink-0 bg-white p-6 md:p-7 rounded-2xl border border-slate-300 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center text-center cursor-default"
+            >
+              <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                  isOrange
+                    ? 'bg-orange-50 text-primary-orange'
+                    : 'bg-blue-50 text-primary-blue'
                 }`}
               >
-                {/* Futuristic Icon Ring */}
-                <div className={`w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center mb-8 relative transition-all duration-500 ${
-                  isEven 
-                    ? 'text-primary-blue group-hover:text-white group-hover:border-primary-blue group-hover:bg-[#203A96] group-hover:shadow-[0_8px_20px_rgba(32,58,150,0.2)]' 
-                    : 'text-primary-orange group-hover:text-white group-hover:border-primary-orange group-hover:bg-[#F18223] group-hover:shadow-[0_8px_20px_rgba(241,130,35,0.2)]'
-                }`}>
-                  <Icon size={24} className="relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500" />
-                </div>
+                <Icon size={24} />
+              </div>
 
-                {/* Number with Spring Animated StatsCounter */}
-                <div className="relative z-10 text-5xl md:text-5xl font-black mb-3 tracking-tighter flex items-baseline select-none">
-                  <StatsCounter 
-                    value={stat.value} 
-                    suffix={stat.suffix} 
-                    duration={2}
-                    className="text-slate-900 transition-all duration-500"
-                  />
-                </div>
+              <div className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight font-mono mb-1">
+                {stat.value}
+                {stat.suffix && (
+                  <span className="text-xl font-sans font-semibold text-slate-600 ml-1">
+                    {stat.suffix}
+                  </span>
+                )}
+              </div>
 
-                {/* Label */}
-                <div className="relative z-10 text-[10px] md:text-xs font-bold text-slate-900 group-hover:text-slate-800 uppercase tracking-[0.25em] mt-2 transition-colors duration-500">
-                  {stat.label}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-      </div>
+              <div className="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1 truncate max-w-full">
+                {stat.label}
+              </div>
+            </div>
+          );
+        })}
+      </motion.div>
     </section>
   );
 };

@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ }) => {
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-block">
               <img src={logo} alt="Amrit Electricals Logo" className="h-16 w-auto object-contain" />
             </Link>
-            
+
 
             <div className="space-y-4 mt-2">
               <div className="flex items-start gap-3">

@@ -34,26 +34,20 @@ export const Scrooling: React.FC = () => {
   const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="relative z-20 overflow-hidden bg-linear-to-r from-[#070a14] via-[#0d1428] to-[#070a14] border-y border-amber-500/20 py-3.5 sm:py-2.5 shadow-2xl">
-      {/* Top Shimmering Solar Gold Accent Line */}
-      <div className="absolute top-0 inset-x-0 h-[1.5px] bg-linear-to-r from-transparent via-primary-orange via-50% to-transparent pointer-events-none" />
-
-      {/* Bottom Subtle Blue/Amber Accent Line */}
-      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-500/30 via-50% to-transparent pointer-events-none" />
-
+    <div className="relative z-20 overflow-hidden bg-slate-900 border-y border-slate-800 py-3 shadow-sm">
       {/* Left and Right Smooth Edge Gradient Fade Masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-linear-to-r from-[#070a14] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-linear-to-l from-[#070a14] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-linear-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-linear-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
 
-      {/* Continuous Seamless Infinite Marquee Track */}
+      {/* Continuous Seamless Marquee Track */}
       <motion.div
-        className="flex items-center gap-6 sm:gap-10 whitespace-nowrap will-change-transform"
+        className="flex items-center gap-8 sm:gap-12 whitespace-nowrap will-change-transform"
         animate={{ x: ['0%', '-50%'] }}
         transition={{
           x: {
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 28,
+            duration: 35,
             ease: 'linear',
           },
         }}
@@ -63,27 +57,23 @@ export const Scrooling: React.FC = () => {
           return (
             <div
               key={index}
-              className="inline-flex items-center gap-3  transition-all duration-300 group cursor-default shadow-md backdrop-blur-md"
+              className="inline-flex items-center gap-3 cursor-default"
             >
-              {/* Glowing Icon Badge */}
-              <div className="w-6 h-6 rounded-full bg-linear-to-tr from-primary-orange/25 to-amber-400/15 border border-primary-orange/40 flex items-center justify-center text-primary-orange group-hover:scale-110 transition-transform shadow-[0_0_8px_rgba(241,130,35,0.3)]">
-                <IconComponent size={13} className="group-hover:rotate-12 transition-transform text-primary-orange" />
+              <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-primary-orange">
+                <IconComponent size={14} />
               </div>
 
-              {/* Main Label */}
-              <span className="text-xs sm:text-sm font-bold tracking-wider text-slate-100 group-hover:text-white uppercase font-sans drop-shadow-xs">
+              <span className="text-xs sm:text-sm font-semibold tracking-wider text-slate-200 uppercase font-sans">
                 {item.label}
               </span>
 
-              {/* Sub-tag Highlight Pill */}
               {item.highlight && (
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-primary-orange/15 text-amber-300 border border-primary-orange/30">
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-slate-800 text-amber-300 border border-slate-700">
                   {item.highlight}
                 </span>
               )}
 
-              {/* Sparkling Diamond Separator */}
-              <span className="text-amber-400/60 text-xs font-bold pl-2">✦</span>
+              <span className="text-slate-600 text-xs pl-2">•</span>
             </div>
           );
         })}

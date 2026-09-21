@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, MapPin, Mail, PhoneCall } from 'lucide-react';
-import { motion, AnimatePresence, animate } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
@@ -13,280 +13,92 @@ interface NavLinkItem {
   href: string;
 }
 
-interface SpotlightNavProps {
+interface NavProps {
   navLinks: NavLinkItem[];
   isHomePage: boolean;
   handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
-  activeSection: string;
-  isFloating?: boolean;
 }
 
-const SpotlightNav: React.FC<SpotlightNavProps> = ({
+const DesktopNav: React.FC<NavProps> = ({
   navLinks,
   isHomePage,
   handleNavClick,
-  activeSection,
-  isFloating = false,
 }) => {
-  const navRef = useRef<HTMLElement>(null);
-  const activeIndex = Math.max(
-    0,
-    navLinks.findIndex((l) => l.href.replace('#', '') === activeSection)
-  );
-  const [hoverX, setHoverX] = useState<number | null>(null);
-
-  // Refs for imperative spring animation
-  const spotlightX = useRef(0);
-  const ambienceX = useRef(0);
-
-  // Mouse move and leave listener for spotlight
-  useEffect(() => {
-    if (!navRef.current) return;
-    const nav = navRef.current;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = nav.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      setHoverX(x);
-      spotlightX.current = x;
-      nav.style.setProperty('--spotlight-x', `${x}px`);
-    };
-
-    const handleMouseLeave = () => {
-      setHoverX(null);
-      const activeItem = nav.querySelector(`[data-index="${activeIndex}"]`);
-      if (activeItem) {
-        const navRect = nav.getBoundingClientRect();
-        const itemRect = activeItem.getBoundingClientRect();
-        const targetX = itemRect.left - navRect.left + itemRect.width / 2;
-
-        animate(spotlightX.current, targetX, {
-          type: 'spring',
-          stiffness: 200,
-          damping: 20,
-          onUpdate: (v) => {
-            spotlightX.current = v;
-            nav.style.setProperty('--spotlight-x', `${v}px`);
-          },
-        });
-      }
-    };
-
-    nav.addEventListener('mousemove', handleMouseMove);
-    nav.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      nav.removeEventListener('mousemove', handleMouseMove);
-      nav.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [activeIndex]);
-
-  // Ambience active position movement
-  useEffect(() => {
-    if (!navRef.current) return;
-    const nav = navRef.current;
-    const activeItem = nav.querySelector(`[data-index="${activeIndex}"]`);
-
-    if (activeItem) {
-      const navRect = nav.getBoundingClientRect();
-      const itemRect = activeItem.getBoundingClientRect();
-      const targetX = itemRect.left - navRect.left + itemRect.width / 2;
-
-      animate(ambienceX.current, targetX, {
-        type: 'spring',
-        stiffness: 220,
-        damping: 22,
-        onUpdate: (v) => {
-          ambienceX.current = v;
-          nav.style.setProperty('--ambience-x', `${v}px`);
-        },
-      });
-    }
-  }, [activeIndex]);
-
   return (
-    <nav
-      ref={navRef}
-      className={`relative hidden font-serif lg:flex items-center h-11 px-2 rounded-full transition-all duration-300 overflow-hidden ${
-        isFloating
-          ? ''
-          : ''
-      }`}
-      style={{
-        ['--spotlight-color' as any]: 'rgba(241, 130, 35, 0.18)',
-        ['--ambience-color' as any]: '#F18223',
-      }}
-    >
-      {/* 1. Moving Spotlight Layer (Follows Mouse Cursor) */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
-        style={{
-          opacity: hoverX !== null ? 1 : 0,
-          background: `radial-gradient(120px circle at var(--spotlight-x, 0px) 50%, var(--spotlight-color, rgba(241,130,35,0.18)) 0%, transparent 65%)`,
-        }}
-      />
-
-      {/* 2. Active Ambience Layer (Glow bar at bottom of active item) */}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 w-full h-[2.5px] z-2"
-        style={{
-          background: `radial-gradient(70px circle at var(--ambience-x, 0px) 0%, var(--ambience-color, #F18223) 0%, transparent 100%)`,
-        }}
-      />
-
-      {/* Navigation Items */}
-      <ul className="relative z-10 flex items-center h-full gap-0.2  ">
-        {navLinks.map((link, idx) => {
-          const isActive = activeIndex === idx;
-
-          return (
-            <li key={link.name} className="relative h-full flex items-center   justify-center">
-              {isHomePage ? (
-                <a
-                  href={link.href}
-                  data-index={idx}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-3.5 py-1.5 text-lg    rounded-full transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange ${
-                    isActive
-                      ? 'text-primary-orange font-bold'
-                      : 'text-black hover:text-primary-orange'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <Link
-                  to={`/${link.href}`}
-                  data-index={idx}
-                  className={`px-3.5 py-1.5 text-sm uppercase tracking-[0.14em] font-semibold rounded-full transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange ${
-                    isActive
-                      ? 'text-primary-orange font-bold'
-                      : 'text-black hover:text-primary-orange'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )}
-            </li>
-          );
-        })}
+    <nav className="hidden lg:flex items-center h-11 px-2">
+      <ul className="flex items-center gap-1">
+        {navLinks.map((link) => (
+          <li key={link.name}>
+            {isHomePage ? (
+              <a
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="px-3 py-1.5 text-sm font-semibold text-slate-800 hover:text-primary-orange hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                to={`/${link.href}`}
+                className="px-3 py-1.5 text-sm font-semibold text-slate-800 hover:text-primary-orange hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
+              >
+                {link.name}
+              </Link>
+            )}
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
 
-interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface CorporateButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
 }
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({
+const CorporateButton: React.FC<CorporateButtonProps> = ({
   children = 'Get A Free Quote',
   className = '',
   onClick,
   ...rest
 }) => {
   return (
-    <motion.button
+    <button
       onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{
-        type: 'spring',
-        stiffness: 500,
-        damping: 30,
-        mass: 0.5,
-      }}
-      className={`group relative inline-flex items-center justify-center overflow-hidden font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-orange disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${className}`}
-      {...(rest as any)}
+      className={`inline-flex items-center justify-center font-bold tracking-wider uppercase transition-colors duration-200 cursor-pointer ${className}`}
+      {...rest}
     >
-      {/* Text with shine mask */}
-      <motion.span
-        className="tracking-wider uppercase flex items-center justify-center h-full w-full relative z-10"
-        style={{
-          WebkitMaskImage:
-            'linear-gradient(-75deg, white calc(var(--mask-x) + 20%), transparent calc(var(--mask-x) + 30%), white calc(var(--mask-x) + 100%))',
-          maskImage:
-            'linear-gradient(-75deg, white calc(var(--mask-x) + 20%), transparent calc(var(--mask-x) + 30%), white calc(var(--mask-x) + 100%))',
-        }}
-        initial={{ ['--mask-x' as any]: '100%' } as any}
-        animate={{ ['--mask-x' as any]: '-100%' } as any}
-        transition={{
-          repeat: Infinity,
-          duration: 1.5,
-          ease: 'linear',
-          repeatDelay: 1,
-        }}
-      >
-        {children}
-      </motion.span>
-
-      {/* Border shine effect uses the --shine variable */}
-      <motion.span
-        className="block absolute inset-0 rounded-inherit p-px pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(-75deg, transparent 30%, var(--shine, rgba(255,255,255,0.85)) 50%, transparent 70%)',
-          backgroundSize: '200% 100%',
-          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          maskComposite: 'exclude',
-          WebkitMask:
-            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          WebkitMaskComposite: 'xor',
-        }}
-        initial={{ backgroundPosition: '100% 0', opacity: 0 }}
-        animate={{ backgroundPosition: ['100% 0', '0% 0'], opacity: [0, 1, 0] }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          ease: 'linear',
-          repeatDelay: 1,
-        }}
-      />
-    </motion.button>
+      {children}
+    </button>
   );
 };
 
 export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('home');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 180);
-
-      if (isHomePage) {
-        const sections = ['testimonials', 'why-us', 'projects', 'services', 'about', 'home'];
-        const scrollPosition = window.scrollY + 260;
-
-        for (const sectionId of sections) {
-          const el = document.getElementById(sectionId);
-          if (el) {
-            const top = el.getBoundingClientRect().top + window.scrollY;
-            if (scrollPosition >= top) {
-              setActiveSection(sectionId);
-              break;
-            }
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 120);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, []);
 
   const navLinks: NavLinkItem[] = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
+    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Why Us', href: '#why-us' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Process', href: '#process' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Partners', href: '#partners' },
+    { name: 'Reviews', href: '#testimonials' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -294,8 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
       e.preventDefault();
       const element = document.querySelector(href);
       if (element) {
-        // Offset for the floating pill
-        const offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
+        const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       }
       setIsMobileMenuOpen(false);
@@ -355,49 +166,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             </svg>
           </div>
 
-          {/* Ambient Solar Glow Behind Logo Area */}
-          <div className="absolute -top-12 -left-12 w-80 h-44 bg-linear-to-br from-primary-orange/15 via-blue-500/10 to-transparent rounded-full blur-2xl pointer-events-none -z-10" />
+          <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-20 relative">
 
-          <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-20 lg:h-20 relative">
-
-            {/* Logo with Dynamic Background Graphics */}
-            <Link to="/" className="relative flex items-center gap-3 group py-1.5" onClick={() => { if (isHomePage) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-              {/* Radial Flare Glow */}
-              <div className="absolute -inset-3 bg-linear-to-r from-orange-500/20 via-blue-600/10 to-transparent rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-all duration-500 pointer-events-none -z-10" />
-
-              {/* Technical Solar Orbit / Compass SVG Graphic */}
-              <div className="absolute top-0 -left-4 w-20 h-20 opacity-10 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 pointer-events-none -z-10">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary-orange">
-                  <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-                  <circle cx="50" cy="50" r="34" stroke="#203A96" strokeWidth="0.75" />
-                  <path d="M50 0V100M0 50H100" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.5" strokeDasharray="2 2" />
-                  <circle cx="50" cy="4" r="2" fill="currentColor" />
-                  <circle cx="96" cy="50" r="2" fill="#203A96" />
-                </svg>
-              </div>
-
-              {/* Framed Glass Container for Logo */}
-              <div className="relative transition-all duration-300">
-                <img src={logo} alt="Amrit Electricals Logo" className="h-11 lg:h-14 w-auto object-contain" />
-              </div>
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3 py-1.5" onClick={() => { if (isHomePage) window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <img src={logo} alt="Amrit Electricals Logo" className="h-11 lg:h-14 w-auto object-contain" />
             </Link>
 
-            {/* Desktop Nav with Spotlight Animation */}
-            <SpotlightNav
+            {/* Desktop Navigation */}
+            <DesktopNav
               navLinks={navLinks}
               isHomePage={isHomePage}
               handleNavClick={handleNavClick}
-              activeSection={activeSection}
             />
 
-            {/* Desktop CTA Animated Button */}
+            {/* Desktop CTA Button */}
             <div className="hidden lg:block">
-              <AnimatedButton
+              <CorporateButton
                 onClick={onOpenContact}
-                className="bg-white rounded-full border border-primary-orange hover:bg-primary-orange text-black hover:text-white px-8 py-2.5   font-serif hover:shadow-lg text-sm uppercase tracking-wider [--shine:rgba(255,255,255,0.9)]"
+                className="bg-primary-orange hover:bg-orange-600 text-white rounded-lg px-7 py-2.5 shadow-sm text-sm"
               >
                 Get A Free Quote
-              </AnimatedButton>
+              </CorporateButton>
             </div>
 
             {/* Mobile Menu Button */}
@@ -411,56 +201,46 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         </div>
       </header>
 
-      {/* === UNIQUE FLOATING NAVBAR (Sticky State with Spotlight Animation) === */}
-      <AnimatePresence>
-        {isScrolled && (
-          <motion.div
-            initial={{ y: -100, opacity: 0, x: '-50%' }}
-            animate={{ y: 0, opacity: 1, x: '-50%' }}
-            exit={{ y: -100, opacity: 0, x: '-50%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-2 left-1/2 z-50 w-[98%]  bg-white backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full border border-gray-200/60 px-4 md:px-4 py-3 flex justify-between items-center"
-          >
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group" onClick={() => window.scrollTo(0, 0)}>
-              <img src={logo} alt="Amrit Electricals Logo" className="h-9 sm:h-11 w-auto" />
-            </Link>
+      {/* === STICKY NAVBAR === */}
+      {isScrolled && (
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200 px-4 md:px-8 py-2.5 flex justify-between items-center transition-all duration-200">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src={logo} alt="Amrit Electricals Logo" className="h-9 sm:h-10 w-auto" />
+          </Link>
 
-            {/* Desktop Floating Spotlight Nav */}
-            <SpotlightNav
-              navLinks={navLinks}
-              isHomePage={isHomePage}
-              handleNavClick={handleNavClick}
-              activeSection={activeSection}
-              isFloating={true}
-            />
+          {/* Desktop Nav */}
+          <DesktopNav
+            navLinks={navLinks}
+            isHomePage={isHomePage}
+            handleNavClick={handleNavClick}
+          />
 
-            {/* Right Side (Phone + Animated Quote Button) */}
-            <div className="hidden lg:flex items-center gap-5">
-              <a href="tel:+919700705020" className="flex items-center gap-2 text-gray-900 hover:text-primary-orange transition-colors">
-                <PhoneCall className="w-4 h-4 text-primary-orange" />
-                <p className="font-bold text-sm">+91 97007 05020</p>
-              </a>
-              <AnimatedButton
-                onClick={onOpenContact}
-                className="bg-white rounded-full border border-primary-orange hover:bg-primary-orange text-black hover:text-white px-4 py-1.5 text-sm [--shine:rgba(255,255,255,0.9)]"
-              >
-                Get A Quote
-              </AnimatedButton>
-            </div>
+          {/* Right Side Phone + Quote Button */}
+          <div className="hidden lg:flex items-center gap-5">
+            <a href="tel:+919700705020" className="flex items-center gap-2 text-slate-800 hover:text-primary-orange transition-colors">
+              <PhoneCall className="w-4 h-4 text-primary-orange" />
+              <span className="font-bold text-sm">+91 97007 05020</span>
+            </a>
+            <CorporateButton
+              onClick={onOpenContact}
+              className="bg-primary-orange hover:bg-orange-600 text-white rounded-lg px-5 py-2 text-xs"
+            >
+              Get A Quote
+            </CorporateButton>
+          </div>
 
-            {/* Mobile Actions */}
-            <div className="flex items-center gap-3 lg:hidden">
-              <button onClick={onOpenContact} className="bg-primary-orange text-white px-4 py-1.5 text-sm rounded-full font-bold shadow-md">
-                Quote
-              </button>
-              <button className="text-gray-900 p-1 bg-gray-100 rounded-full" onClick={() => setIsMobileMenuOpen(true)}>
-                <Menu size={24} />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <button onClick={onOpenContact} className="bg-primary-orange text-white px-4 py-1.5 text-sm rounded-md font-bold shadow-xs">
+              Quote
+            </button>
+            <button className="text-gray-900 p-1 bg-gray-100 rounded-md" onClick={() => setIsMobileMenuOpen(true)}>
+              <Menu size={24} />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* === MOBILE FULLSCREEN MENU === */}
       <AnimatePresence>
@@ -483,11 +263,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <div className="flex-1 flex flex-col justify-center items-center gap-8 p-8">
               {navLinks.map((link) => (
                 isHomePage ? (
-                  <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-3xl font-black text-gray-800 hover:text-primary-orange transition-colors">
+                  <a key={link.name} href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="text-2xl font-bold text-gray-800 hover:text-primary-orange transition-colors">
                     {link.name}
                   </a>
                 ) : (
-                  <Link key={link.name} to={`/${link.href}`} onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-black text-gray-800 hover:text-primary-orange transition-colors">
+                  <Link key={link.name} to={`/${link.href}`} onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-gray-800 hover:text-primary-orange transition-colors">
                     {link.name}
                   </Link>
                 )
@@ -499,15 +279,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 <PhoneCall className="w-6 h-6 text-primary-orange" />
                 <span className="font-bold text-xl">+91 97007 05020</span>
               </a>
-              <AnimatedButton
+              <CorporateButton
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenContact();
                 }}
-                className="w-full bg-primary-orange hover:bg-orange-600 text-white py-4 rounded-xl text-lg shadow-lg [--shine:rgba(255,255,255,0.9)]"
+                className="w-full bg-primary-orange hover:bg-orange-600 text-white py-3.5 rounded-xl text-base shadow-md"
               >
                 Get a Free Quote
-              </AnimatedButton>
+              </CorporateButton>
             </div>
           </motion.div>
         )}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export const FAQSection: React.FC = () => {
   const faqs = [
@@ -33,115 +32,66 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-12 lg:py-16 bg-linear-to-b from-white via-slate-50 to-white overflow-hidden selection:bg-primary-orange selection:text-white">
-      {/* Background Glowing Ambient Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary-orange/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-blue/10 rounded-full blur-[130px] pointer-events-none" />
-
-      <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
+    <section className="py-16 bg-slate-50 border-b border-slate-200">
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          {/* Eyebrow Pill Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs mb-4"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary-orange animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-              Clear Answers // Technical Clarifications
-            </span>
-          </motion.div>
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
+            FAQs
+          </span>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif font-black text-slate-900 mb-4"
-          >
-            Frequently Asked <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Questions</span>
-          </motion.h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+            Frequently Asked Questions
+          </h2>
 
-          {/* Shimmer Line */}
-          <div className="relative w-32 h-1 bg-linear-to-r from-primary-blue via-primary-orange to-amber-400 rounded-full mx-auto shadow-[0_0_12px_rgba(241,130,35,0.6)] overflow-hidden">
-            <motion.div
-              animate={{ x: ['-100%', '200%'] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-              className="w-1/2 h-full bg-white/80"
-            />
-          </div>
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Find answers to common questions about our solar equipment, turnkey kits, warranties, and DISCOM net-metering.
+          </p>
         </div>
 
         {/* FAQs List */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className={`group relative rounded-2xl overflow-hidden transition-all duration-300 border ${
-                  isOpen
-                    ? 'border-primary-orange/60 shadow-[0_10px_30px_-8px_rgba(241,130,35,0.25)] bg-white ring-1 ring-primary-orange/20'
-                    : 'border-slate-200/80 bg-white hover:border-slate-300 shadow-sm hover:shadow-md'
-                }`}
+                className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-xs"
               >
-                {/* Left Active Glow Stripe */}
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-1.5 bg-linear-to-b from-primary-orange to-amber-500 transition-opacity duration-300 ${
-                    isOpen ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left bg-transparent transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer hover:bg-slate-50 transition-colors"
                 >
-                  <span className={`font-bold text-base sm:text-lg transition-colors font-sans pr-4 ${
-                    isOpen ? 'text-primary-orange' : 'text-slate-800 group-hover:text-primary-blue'
+                  <span className={`font-semibold text-base sm:text-lg transition-colors pr-4 ${
+                    isOpen ? 'text-primary-orange' : 'text-slate-900'
                   }`}>
                     {faq.question}
                   </span>
                   
-                  <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                    isOpen
-                      ? 'bg-linear-to-tr from-primary-orange to-amber-500 text-white shadow-md shadow-orange-500/30 scale-105'
-                      : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-primary-blue'
-                  }`}>
-                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                  </div>
+                  <ChevronDown
+                    size={20}
+                    className={`text-slate-500 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-primary-orange' : ''
+                    }`}
+                  />
                 </button>
 
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    >
-                      <div className="px-5 sm:px-6 pb-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100 font-normal">
-                        <div className="pt-3.5">
-                          {faq.answer}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                {isOpen && (
+                  <div className="px-4 sm:px-5 pb-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+                    <div className="pt-3">
+                      {faq.answer}
+                    </div>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
 };
 
 export default FAQSection;
-

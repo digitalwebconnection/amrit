@@ -245,39 +245,22 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
         <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
           
           {/* Eyebrow badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs mb-3.5"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs mb-3.5">
+            <span className="w-2 h-2 rounded-full bg-primary-orange" />
             <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
               Project Portfolio // Click Image for Full Specs
             </span>
-          </motion.div>
+          </div>
 
           {/* Heading */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-4"
-          >
-            Recent Flagship <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-primary-blue via-blue-700 to-primary-orange">Projects</span>
-          </motion.h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            Recent Flagship <br /> <span className="text-[#203A96]">Projects</span>
+          </h2>
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-slate-900 text-sm sm:text-base max-w-6xl mx-auto leading-relaxed mb-8"
-          >
+          <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed mb-8">
             Click on any project image below to inspect full engineering blueprints, technical specifications, and delivered impact.
-          </motion.p>
+          </p>
 
           {/* Minimalist Filter Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2">
@@ -290,10 +273,10 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                     setActiveTab(tab.id);
                     setShowAll(false);
                   }}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
                     isSelected
-                      ? 'bg-slate-900 text-white shadow-md'
-                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80 shadow-2xs'
+                      ? 'bg-slate-900 text-white shadow-xs'
+                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   {tab.label}
@@ -304,66 +287,56 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
         </div>
 
         {/* ================= CLEAN IMAGE GALLERY GRID (3 COLUMNS) ================= */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence>
-            {displayedProjects.map((project, idx) => (
-              <motion.div
-                layout
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                onClick={() => setSelectedProject(project)}
-                className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl border border-slate-200/80 cursor-pointer bg-slate-900"
-              >
-                {/* Full-Cover Image with Hover Zoom */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 brightness-95 group-hover:brightness-105"
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedProjects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-slate-200 cursor-pointer bg-slate-900 transition-all"
+            >
+              {/* Full-Cover Image with Hover Zoom */}
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              />
 
-                {/* Dark Vignette Gradient Overlays */}
-                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-primary-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              {/* Dark Vignette Gradient Overlays */}
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-                {/* Top Corner Badges */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider shadow-sm border border-white/20">
-                    {project.category}
-                  </span>
+              {/* Top Corner Badges */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                <span className="px-3 py-1 rounded-full bg-slate-950/80 text-white text-[11px] font-bold uppercase tracking-wider border border-white/20">
+                  {project.category}
+                </span>
 
-                  {/* Expand / View Details Icon Badge */}
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-primary-orange text-white flex items-center justify-center transition-all duration-300 shadow-md group-hover:scale-110">
-                    <Maximize2 size={14} />
-                  </div>
+                <div className="w-8 h-8 rounded-full bg-white/20 group-hover:bg-primary-orange text-white flex items-center justify-center transition-colors">
+                  <Maximize2 size={14} />
+                </div>
+              </div>
+
+              {/* Bottom Overlay Info */}
+              <div className="absolute bottom-4 left-4 right-4 z-10">
+                <div className="flex items-center gap-1.5 text-amber-300 text-xs font-semibold mb-1">
+                  <MapPin size={12} className="shrink-0 text-primary-orange" />
+                  <span className="truncate">{project.location}</span>
                 </div>
 
-                {/* Bottom Overlay Info (Clean & Elegant) */}
-                <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <div className="flex items-center gap-1.5 text-amber-300 text-xs font-semibold mb-1">
-                    <MapPin size={12} className="shrink-0 text-primary-orange" />
-                    <span className="truncate">{project.location}</span>
-                  </div>
+                <h3 className="text-base sm:text-lg font-bold text-white leading-snug font-serif line-clamp-2">
+                  {project.title}
+                </h3>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-amber-200 transition-colors font-serif line-clamp-2">
-                    {project.title}
-                  </h3>
-
-                  {/* Hover "Click to View Details" prompt */}
-                  <div className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-primary-orange mt-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <span>Click to view full specs</span>
-                    <ArrowRight size={12} />
-                  </div>
+                <div className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-primary-orange mt-2">
+                  <span>Click to view full specs</span>
+                  <ArrowRight size={12} />
                 </div>
+              </div>
 
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+            </div>
+          ))}
+        </div>
 
         {/* View More / Show Less Projects Button */}
         {filteredProjects.length > 3 && (
