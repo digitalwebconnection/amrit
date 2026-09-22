@@ -15,13 +15,13 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="w-full max-w-sm rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white p-2 mb-4">
               <img
-                src="https://media.licdn.com/dms/image/v2/C4D03AQFsJ3w9AGWI1w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1641607147971?e=2147483647&v=beta&t=3zmBhoKl2K7T5Z8NV5Rnk5ZTiHY-XXDVZS4-BaYfG6k"
+                src="/images/amritpal_singh.webp"
                 alt="Amritpal Singh - Founder & CEO, Amrit Electricals"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-80 sm:h-96 object-cover object-top rounded-md"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                  (e.target as HTMLImageElement).src = '/images/leadership_director.webp';
                 }}
               />
             </div>
@@ -87,7 +87,7 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs transition-colors cursor-pointer"
               >
                 <span>Connect with Leadership Desk</span>
                 <ArrowRight size={14} />

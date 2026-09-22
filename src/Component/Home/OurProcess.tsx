@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollStack, { ScrollStackItem } from './ScrollStack';
 import {
   ClipboardCheck,
   PenTool,
@@ -42,7 +41,7 @@ const steps: ProcessStep[] = [
       "Exact electricity bill audit & solar sizing",
       "Net-metering feasibility filing preparation"
     ],
-    image: "/images/process_1.png"
+    image: "/images/process_1.webp"
   },
   {
     id: 1,
@@ -58,7 +57,7 @@ const steps: ProcessStep[] = [
       "Factory flash test & warranty reports included",
       "Pre-wired IP65 ACDB & DCDB distribution boxes"
     ],
-    image: "/images/process_2.png"
+    image: "/images/process_2.webp"
   },
   {
     id: 2,
@@ -74,7 +73,7 @@ const steps: ProcessStep[] = [
       "CITEL Type 1+2 surge arresters on AC/DC sides",
       "Dual copper chemical earthing below 1 Ohm"
     ],
-    image: "/images/process_3.png"
+    image: "/images/process_3.webp"
   },
   {
     id: 3,
@@ -90,14 +89,14 @@ const steps: ProcessStep[] = [
       "Official DISCOM grid synchronization clearance",
       "25-year manufacturer linear warranty handover"
     ],
-    image: "/images/process_4.png"
+    image: "/images/process_4.webp"
   }
 ];
 
 export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
   return (
     <section id="process" className="py-16 lg:py-24 bg-white border-b border-slate-200 relative select-none">
-      {/* Background Graphic Grid - isolated with overflow-hidden to allow sticky children */}
+      {/* Background Graphic Grid */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[24px_24px] opacity-60" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl" />
@@ -109,7 +108,7 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 lg:mb-18">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-            <Sparkles size={13} className="text-primary-orange animate-pulse" />
+            <Sparkles size={13} className="text-primary-orange" />
             <span>Turnkey Execution Roadmap</span>
           </div>
 
@@ -122,35 +121,28 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
           </p>
         </div>
 
-        {/* ================= STACKING CARDS SCROLL ANIMATION (W-FULL IN LINE) ================= */}
-        <ScrollStack
-          topOffset={84}
-          itemDistance={18}
-          scaleStep={0.035}
-          dimStep={0.025}
-          cardSpacing="45vh"
-          className="w-full relative"
-        >
-          {steps.map((step) => {
+        {/* ================= STATIC PROCESS CARDS ================= */}
+        <div className="space-y-8 lg:space-y-10">
+          {steps.map((step, index) => {
             const Icon = step.icon;
 
             return (
-              <ScrollStackItem
+              <article
                 key={step.id}
-                itemClassName="w-full bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/70 p-6 sm:p-8 lg:p-10 transition-all duration-300 overflow-hidden group relative"
+                className="w-full bg-white rounded-xl border border-blue-500 shadow-xl shadow-slate-200/70 p-6 sm:p-8 lg:p-10 overflow-hidden relative"
               >
                 {/* Top Accent Gradient Strip */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-primary-orange via-amber-400 to-primary-blue rounded-t-3xl" />
 
                 {/* Big Watermark Step Number in Background */}
-                <div className="absolute top-4 right-8 font-mono text-7xl sm:text-8xl font-black text-slate-100 select-none pointer-events-none group-hover:text-orange-50 transition-colors">
+                <div className="absolute top-4 right-8 font-mono text-7xl sm:text-8xl font-black text-slate-100 select-none pointer-events-none">
                   {step.stepNumber}
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
                   
                   {/* LEFT SIDE: STEP CONTENT & BULLETS */}
-                  <div className="lg:col-span-7 flex flex-col justify-center">
+                  <div className={`lg:col-span-7 flex flex-col justify-center ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                     
                     {/* Phase Header Badge */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-50 border border-orange-200/80 text-primary-orange text-[11px] font-bold uppercase tracking-wider mb-3 w-fit shadow-2xs">
@@ -159,7 +151,7 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1.5 leading-snug group-hover:text-primary-orange transition-colors">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1.5 leading-snug">
                       {step.title}
                     </h3>
 
@@ -194,27 +186,26 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
                       <button
                         onClick={onOpenContact ? onOpenContact : () => {
                           const el = document.getElementById('contact');
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          if (el) el.scrollIntoView();
                         }}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-primary-orange text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-xs"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-primary-orange text-white text-xs font-bold uppercase tracking-wider rounded-xl cursor-pointer shadow-xs"
                       >
                         <span>Inquire Step</span>
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={14} />
                       </button>
                     </div>
 
                   </div>
 
-                  {/* RIGHT SIDE: HIGH QUALITY STEP GRAPHIC */}
-                  <div className="lg:col-span-5 flex items-center justify-center relative">
-                    <div className="relative w-full h-64 sm:h-76 lg:h-84 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-md group">
+                  {/* Supporting process image — alternates left and right on desktop */}
+                  <div className={`lg:col-span-5 flex items-center justify-center relative ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div className="relative w-full h-64 sm:h-76 lg:h-84 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-md">
                       <img
                         src={step.image}
                         alt={step.title}
                         loading="lazy"
-                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover object-center"
                       />
-                      <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       {/* Floating Step Number Stamp */}
                       <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-xs text-white text-xs font-mono font-bold px-3 py-1.5 rounded-lg shadow-sm border border-white/10">
@@ -224,19 +215,19 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
                   </div>
 
                 </div>
-              </ScrollStackItem>
+              </article>
             );
           })}
-        </ScrollStack>
+        </div>
 
         {/* Bottom CTA Banner */}
         <div className="mt-14 text-center">
           <button
             onClick={onOpenContact ? onOpenContact : () => {
               const el = document.getElementById('contact');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              if (el) el.scrollIntoView();
             }}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-orange-500/25 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-orange-500/25 cursor-pointer"
           >
             <span>Book Free Site Assessment &amp; System Sizing</span>
             <ArrowRight size={16} />

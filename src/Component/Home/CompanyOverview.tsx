@@ -69,7 +69,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
             return (
               <div
                 key={h.title}
-                className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all text-center"
+                className="bg-slate-50 rounded-xl p-6 border border-blue-900 hover:border-slate-300 shadow-lg shadow-black hover:shadow-lg hover:shadow-black transition-all text-center"
               >
                 <div className="mb-4 flex justify-center">
                   <div className="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
@@ -110,7 +110,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
           >
             <span>Get A Free Turnkey Solar Estimate</span>
             <ArrowRight size={15} />

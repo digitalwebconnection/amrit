@@ -8,7 +8,7 @@ export const Testimonials: React.FC = () => {
       role: "CLIENT REVIEW",
       content: "Great experience and impressive product. It was a very professional and technically competent job from the whole team.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_galbale.webp",
       location: "Commercial Rooftop Solar"
     },
     {
@@ -16,7 +16,7 @@ export const Testimonials: React.FC = () => {
       role: "COMMERCIAL CLIENT",
       content: "Best Solar Products Availability, Under one roof. Prompt supply and genuine authorized quality.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_shrikhande.webp",
       location: "Industrial Solar Sizing"
     },
     {
@@ -24,7 +24,7 @@ export const Testimonials: React.FC = () => {
       role: "FOUNDER & CEO",
       content: "Well organised Technical staff, Service oriented. Reliable execution and excellent turnaround times.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_hingne.webp",
       location: "Turnkey EPC Project"
     },
     {
@@ -32,7 +32,7 @@ export const Testimonials: React.FC = () => {
       role: "SYSTEM INTEGRATOR",
       content: "Complete Solar didn't waste any time and got right to it like they said they were going to do. Excellent communication and support.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_bhattad.webp",
       location: "Authorized Kit Supply"
     },
     {
@@ -40,7 +40,7 @@ export const Testimonials: React.FC = () => {
       role: "LOCAL GUIDE",
       content: "One stop solution for Solar power systems. Quality with best pricing and authentic Tier-1 panels.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_medisetti.webp",
       location: "Residential Solar PV"
     },
     {
@@ -48,7 +48,7 @@ export const Testimonials: React.FC = () => {
       role: "SOLAR INSTALLER",
       content: "Purchased Adani Solar Panels and Polycab Junction boxes. On time delivery and competitive pricing. Thanks.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
+      image: "/images/testimonials/client_govarthan.webp",
       location: "OEM Supply & BOS"
     }
   ];

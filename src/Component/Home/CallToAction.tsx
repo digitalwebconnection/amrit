@@ -259,7 +259,7 @@ export const CallToAction: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-primary-orange hover:bg-orange-600 disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer mt-2"
+                  className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white  disabled:opacity-75 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer mt-2"
                 >
                   {isSubmitting ? (
                     <>

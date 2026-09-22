@@ -4,21 +4,21 @@ import { Calendar, ArrowRight } from 'lucide-react';
 
 const articles = [
   {
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=600",
+    image: "/images/blogs/blog_1.webp",
     date: "Nov 13, 2025",
     category: "Solar Energy",
     title: "How Solar Power Can Cut Your Electricity Bills by Up to 80%",
     excerpt: "With electricity tariffs rising across India, explore how high-efficiency rooftop solar systems drastically reduce operational power costs."
   },
   {
-    image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&q=80&w=600",
+    image: "/images/blogs/blog_2.webp",
     date: "Nov 06, 2025",
     category: "Adani Solar",
     title: "Adani Solar Driving India's Biggest Rooftop Energy Movement",
     excerpt: "Discover how Tier-1 TOPCon and Mono-PERC solar PV modules are transforming residential and industrial rooftops with 25-year warranties."
   },
   {
-    image: "https://images.unsplash.com/photo-1565439399435-010abfb9d4cf?auto=format&fit=crop&q=80&w=600",
+    image: "/images/blogs/blog_3.webp",
     date: "Oct 16, 2025",
     category: "Solar Technology",
     title: "How Off-Grid, On-Grid & Hybrid Solar Systems Work",

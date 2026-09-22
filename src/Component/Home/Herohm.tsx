@@ -15,42 +15,42 @@ export const Herohm: React.FC<HeroProps> = () => {
   const banners: HeroBannerItem[] = [
     {
       id: "adani-panels",
-      image: "/hero/products/panel_adani.jpg",
+      image: "/hero/products/panel_adani.webp",
       alt: "Adani Solar PV Panels Banner"
     },
     {
       id: "polycab-inverter",
-      image: "/hero/products/inverter_polycab.jpg",
+      image: "/hero/products/inverter_polycab.webp",
       alt: "Polycab Grid-Tie Inverters Banner"
     },
     {
       id: "solar-kits",
-      image: "/hero/products/solar_kit.jpg",
+      image: "/hero/products/solar_kit.webp",
       alt: "Turnkey Solar KITs Banner"
     },
     {
       id: "acdb-dcdb",
-      image: "/hero/products/acdb_dcdb.jpg",
+      image: "/hero/products/acdb_dcdb.webp",
       alt: "ACDB & DCDB Distribution Panels Banner"
     },
     {
       id: "dlms-meters",
-      image: "/hero/products/dlms_meter.jpg",
+      image: "/hero/products/dlms_meter.webp",
       alt: "DLMS Net-Meters Banner"
     },
     {
       id: "dc-cables",
-      image: "/hero/products/dc_cables.jpg",
+      image: "/hero/products/dc_cables.webp",
       alt: "Polycab Solar DC Cables Banner"
     },
     {
       id: "citel-spd",
-      image: "/hero/products/citel_spd.jpg",
+      image: "/hero/products/citel_spd.webp",
       alt: "CITEL Surge Protectors Banner"
     },
     {
       id: "chemical-earthing",
-      image: "/hero/products/chemical_earthing.jpg",
+      image: "/hero/products/chemical_earthing.webp",
       alt: "Chemical Earthing & BOS Banner"
     }
   ];

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight,
-  Sparkles,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
@@ -23,7 +22,7 @@ const services: ServiceItem[] = [
     title: "Solar Rooftop EPC",
     category: "Residential & Commercial",
     description: "Turnkey rooftop and captive solar power plants engineered for maximum yield with statutory DISCOM net-metering sanctions.",
-    image: "/images/services/solar_rooftop.jpg",
+    image: "/images/services/solar_rooftop.webp",
     tags: ["Up to 80% Savings", "25-Yr Performance"]
   },
   {
@@ -32,7 +31,7 @@ const services: ServiceItem[] = [
     title: "Turnkey Solar KITs",
     category: "1-Box Complete Solution",
     description: "Pre-engineered all-in-one solar packages with panels, inverter, distribution boxes, and cables ready for fast dispatch.",
-    image: "/images/services/solar_kits.jpg",
+    image: "/images/services/solar_kits.webp",
     tags: ["1 kW – 25 kW Ready", "Zero Sourcing Delays"]
   },
   {
@@ -41,7 +40,7 @@ const services: ServiceItem[] = [
     title: "Polycab Solar Inverters",
     category: "Grid-Tie & Hybrid",
     description: "Authorized high-yield on-grid string inverters featuring 98.8% MPPT efficiency and built-in wireless SCADA cloud telemetry.",
-    image: "/images/services/solar_inverters.jpg",
+    image: "/images/services/solar_inverters.webp",
     tags: ["98.8% MPPT Yield", "PM KUSUM Approved"]
   },
   {
@@ -50,7 +49,7 @@ const services: ServiceItem[] = [
     title: "DLMS Net-Meters & CTs",
     category: "DISCOM Statutory Sync",
     description: "Class 0.5S bi-directional smart net-meters and precision current transformers for utility solar grid synchronization.",
-    image: "/images/services/energy_meters.jpg",
+    image: "/images/services/energy_meters.webp",
     tags: ["Utility Pre-Approved", "Class 0.5S Accuracy"]
   },
   {
@@ -59,7 +58,7 @@ const services: ServiceItem[] = [
     title: "Balance of System (BOS)",
     category: "Electrical Protection",
     description: "Custom IP65 ACDB/DCDB protection boxes, TUV certified flame-retardant DC cables, and CITEL Type 1+2 surge arresters.",
-    image: "/images/services/bos_protection.jpg",
+    image: "/images/services/bos_protection.webp",
     tags: ["IP65 Weatherproof", "CITEL Type 1+2 SPD"]
   },
   {
@@ -68,7 +67,7 @@ const services: ServiceItem[] = [
     title: "EPC Engineering Support",
     category: "Turnkey Technical Support",
     description: "In-house team of certified solar engineers providing system sizing, single-line diagrams (SLD), and testing verification.",
-    image: "/images/services/solar_engineering.jpg",
+    image: "/images/services/solar_engineering.webp",
     tags: ["SLD & System Sizing", "Dedicated Engineers"]
   }
 ];
@@ -80,7 +79,7 @@ interface BusinessVerticalsProps {
 export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenContact }) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [, setActiveIndex] = useState(0);
 
   // Slide one card forward or backward
   const slideOne = (direction: 'prev' | 'next') => {
@@ -130,16 +129,6 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
   };
 
   // Scroll directly to a specific slide dot
-  const scrollToSlide = (index: number) => {
-    if (!sliderRef.current) return;
-    const container = sliderRef.current;
-    const firstCard = container.firstElementChild as HTMLElement;
-    if (firstCard) {
-      const cardWidth = firstCard.offsetWidth + 24;
-      container.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
-      setActiveIndex(index);
-    }
-  };
 
   return (
     <section 
@@ -158,10 +147,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
         {/* Section Header with Slider Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-              <Sparkles size={13} className="text-primary-orange animate-pulse" />
-              <span>End-to-End Capabilities</span>
-            </div>
+            
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
               Our Business Verticals
             </h2>
@@ -175,14 +161,14 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
             <button
               onClick={() => slideOne('prev')}
               aria-label="Previous service"
-              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-primary-orange hover:text-white hover:border-primary-orange text-slate-700 flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
+              className="w-10 h-10 rounded-full border border-slate-800 bg-white hover:bg-primary-orange hover:text-white hover:border-primary-orange text-slate-700 flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={() => slideOne('next')}
               aria-label="Next service"
-              className="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-primary-orange hover:text-white hover:border-primary-orange text-slate-700 flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
+              className="w-10 h-10 rounded-full border border-slate-800 bg-white hover:bg-primary-orange hover:text-white hover:border-primary-orange text-slate-700 flex items-center justify-center transition-all duration-200 shadow-xs cursor-pointer"
             >
               <ChevronRight size={20} />
             </button>
@@ -200,7 +186,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
             return (
               <div
                 key={service.id}
-                className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-orange-500/10 hover:border-primary-orange/60 transition-all duration-300 flex flex-col justify-between"
+                className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group relative border border-blue-800 bg-white rounded-xl shadow-lg shadow-black  overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 hover:border-primary-orange/60 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Top Visual Graphic Image */}
                 <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-slate-100">
@@ -254,21 +240,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
           })}
         </div>
 
-        {/* ================= PAGINATION SLIDE DOTS ================= */}
-        <div className="flex items-center justify-center gap-2 mt-6">
-          {services.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => scrollToSlide(idx)}
-              aria-label={`Slide ${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === activeIndex
-                  ? 'w-8 bg-primary-orange shadow-xs'
-                  : 'w-2 bg-slate-300 hover:bg-slate-400'
-              }`}
-            />
-          ))}
-        </div>
+       
 
       </div>
     </section>

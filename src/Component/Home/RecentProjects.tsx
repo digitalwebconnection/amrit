@@ -41,7 +41,7 @@ const projectsData: Project[] = [
       "580 Tons annual CO2 reduction",
       "3.4 Years calculated payback"
     ],
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_commercial_rooftop.webp"
   },
   {
     id: "p2",
@@ -59,7 +59,7 @@ const projectsData: Project[] = [
       "Dual-incomer power distribution",
       "Automated SCADA fault protection"
     ],
-    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_substation_33kv.webp"
   },
   {
     id: "p3",
@@ -77,7 +77,7 @@ const projectsData: Project[] = [
       "Powers 70% of factory operations",
       "25-Year performance warranty"
     ],
-    image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_industrial_shed.webp"
   },
   {
     id: "p4",
@@ -95,7 +95,7 @@ const projectsData: Project[] = [
       "65% diesel generator fuel saved",
       "Remote IoT telemetry with SMS alerts"
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_warehouse_kit.webp"
   },
   {
     id: "p5",
@@ -113,7 +113,7 @@ const projectsData: Project[] = [
       "Automated generation & billing reports",
       "Predictive preventive maintenance"
     ],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_dlms_metering.webp"
   },
   {
     id: "p6",
@@ -131,7 +131,7 @@ const projectsData: Project[] = [
       "3.8 Lakh units clean solar generation",
       "Cyclone-rated galvanized structure"
     ],
-    image: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&q=80&w=1200"
+    image: "/images/projects/project_inverter_scada.webp"
   }
 ];
 

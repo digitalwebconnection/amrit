@@ -111,7 +111,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
               
               {/* Cover 3D Render Image */}
               <img
-                src="/images/certifications_showcase.jpg"
+                src="/images/certifications_showcase.webp"
                 alt="Solar EPC Certifications and Accreditations"
                 loading="lazy"
                 decoding="async"

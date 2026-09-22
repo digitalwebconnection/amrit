@@ -32,7 +32,7 @@ const products: ProductItem[] = [
       '25-Year Linear Power Warranty',
       'PID Resistant & Extreme Weather Tested'
     ],
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/solar_panel_mono.webp',
     glowColor: 'rgba(241, 130, 35, 0.3)'
   },
   {
@@ -46,7 +46,7 @@ const products: ProductItem[] = [
       'Integrated Cloud & Mobile IoT Telemetry',
       'IP65 / IP66 Weatherproof Outdoor Enclosure'
     ],
-    image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/solar_inverter_unit.webp',
     glowColor: 'rgba(32, 58, 150, 0.3)'
   },
   {
@@ -60,7 +60,7 @@ const products: ProductItem[] = [
       'ACDB, DCDB & CITEL Surge Protectors',
       'DISCOM Net-Metering DLMS Meters Included'
     ],
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/solar_turnkey_kit.webp',
     glowColor: 'rgba(16, 185, 129, 0.3)'
   }
 ];

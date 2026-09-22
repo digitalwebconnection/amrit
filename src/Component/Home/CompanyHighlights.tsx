@@ -48,10 +48,10 @@ export const CompanyHighlights: React.FC = () => {
           return (
             <div
               key={index}
-              className="w-68 sm:w-76 md:w-80 shrink-0 bg-white p-6 md:p-7 rounded-2xl border border-slate-300 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center text-center cursor-default"
+              className="w-68 sm:w-76 md:w-80 shrink-0  border-2 border-blue-800 bg-white p-6 md:p-7 rounded-2xl  shadow-md hover:shadow-lg transition-shadow flex flex-col items-center text-center cursor-default"
             >
               <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                className={`w-12 h-12 rounded-xl  flex items-center justify-center mb-4 ${
                   isOrange
                     ? 'bg-orange-50 text-primary-orange'
                     : 'bg-blue-50 text-primary-blue'

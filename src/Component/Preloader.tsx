@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 export const Preloader: React.FC = () => {
   const [progress, setProgress] = useState(15);

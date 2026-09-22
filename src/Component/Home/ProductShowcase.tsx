@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {
   Sun,
-  Cpu,
   Layers,
   ShieldCheck,
   Activity,
   Zap,
-  Award,
-  Wrench,
+
   ArrowRight,
   PhoneCall,
   CheckCircle2,
@@ -28,85 +26,56 @@ interface ProductItem {
 
 const productBanners: ProductItem[] = [
   {
-    id: "adani-panels",
+    id: "adani-solar-complete-range",
     icon: Sun,
-    label: "Adani Solar PV Panels",
-    highlight: "Mono PERC & TOPCon",
-    subtitle: "Tier-1 high efficiency solar PV modules engineered for maximum yield, featuring 25-year linear performance warranty for residential and commercial MW installations.",
-    bullets: ["550Wp – 580Wp N-Type TOPCon & Bifacial modules", "Direct factory wholesale pallet supply with flash test reports"],
-    image: "/images/products/solar_panel_mono.jpg",
-    oemTag: "Adani Solar Direct OEM"
+    label: "Adani Solar Complete Product Range",
+    highlight: "Complete Rooftop Solution",
+    subtitle: "A complete solar product collection with PV modules, inverter, battery backup, distribution boxes, DC cables, connectors, and mounting hardware for a coordinated rooftop installation.",
+    bullets: ["Panels, inverter, battery storage, monitoring, and protection equipment", "Mounting rails, clamps, connectors, and solar cables in one solution"],
+    image: "/generated/product-sets/adani_solar_complete_set.png",
+    oemTag: "Complete Solar Range"
   },
   {
-    id: "polycab-inverter",
-    icon: Cpu,
-    label: "Polycab Grid-Tie Inverters",
-    highlight: "98.8% MPPT Efficiency",
-    subtitle: "Next-generation single-phase & 3-phase grid-tied string inverters up to 350kW approved for PM KUSUM and state utility DISCOM grid connection.",
-    bullets: ["Quad MPPT tracking with built-in Wi-Fi & remote cloud SCADA", "IP65 weatherproof enclosure with smart active heat dissipation"],
-    image: "/images/products/solar_inverter_unit.jpg",
-    oemTag: "Polycab Authorized Master"
-  },
-  {
-    id: "solar-kits",
+    id: "adani-solar-residential-range",
     icon: Layers,
-    label: "Turnkey Solar KITs (1-25 kW)",
-    highlight: "1-Box Complete Solution",
-    subtitle: "All-in-one pre-engineered solar rooftop packages with modules, inverter, ACDB/DCDB, mounting structure, and cables ready for same-day dispatch.",
-    bullets: ["Eliminates multi-vendor procurement delays & mismatches", "Includes certified SLD design, structure drawings & user guide"],
-    image: "/images/products/solar_turnkey_kit.jpg",
-    oemTag: "Complete BOS In A Box"
+    label: "Adani Solar Residential Energy Set",
+    highlight: "Residential Solar Package",
+    subtitle: "A residential-ready solar system view featuring photovoltaic panels, hybrid inverter, battery storage, protection panels, cables, and rooftop mounting components.",
+    bullets: ["Designed to present the full residential solar ecosystem", "Clean product grouping for rooftop project enquiries and quotations"],
+    image: "/generated/product-sets/adani_solar_residential_set.png",
+    oemTag: "Residential Solar Set"
   },
   {
-    id: "acdb-dcdb",
-    icon: ShieldCheck,
-    label: "ACDB & DCDB Distribution Panels",
-    highlight: "IP65 Weatherproof BOS",
-    subtitle: "Custom-engineered electrical distribution boxes with Type 1+2 surge arresters, high-breaking MCBs, and UV-stabilized polycarbonate enclosures.",
-    bullets: ["CITEL surge arresters with dual line protection", "Hensel / Fibox IP65 certified UV-proof industrial enclosures"],
-    image: "/images/products/solar_acdb_dcdb.jpg",
-    oemTag: "In-House Quality Tested"
-  },
-  {
-    id: "dlms-meters",
+    id: "adani-solar-commercial-range",
     icon: Activity,
-    label: "DLMS Net-Meters & CTs",
-    highlight: "DISCOM Approved Class 0.5S",
-    subtitle: "Bi-directional smart energy meters (Secure & L&T) and Ashmor current transformers for fast DISCOM solar grid synchronization and net-billing.",
-    bullets: ["DLMS compliant optical port communication for utility audits", "Pre-tested and pre-approved for statutory state utility sync"],
-    image: "/images/products/solar_dlms_meter.jpg",
-    oemTag: "DISCOM Statutory Approved"
+    label: "Adani Solar Commercial Product Set",
+    highlight: "Commercial Solar BOS",
+    subtitle: "A professional solar equipment collection with photovoltaic modules, inverter, storage, monitoring gateway, combiner panels, cables, and structural mounting accessories.",
+    bullets: ["Commercial-scale solar components presented in one clear product view", "Includes electrical protection, monitoring, cabling, and mounting hardware"],
+    image: "/generated/product-sets/adani_solar_commercial_set.png",
+    oemTag: "Commercial Solar Set"
   },
   {
-    id: "dc-cables",
+    id: "polycab-home-wiring-range",
     icon: Zap,
-    label: "Polycab Solar DC Cables",
-    highlight: "Electron-Beam Cross-Linked",
-    subtitle: "TUV certified electron-beam cross-linked solar DC cables and armored copper/aluminum cables resistant to UV radiation, ozone, and extreme weather.",
-    bullets: ["4 sq.mm & 6 sq.mm red & black twin-core with pure copper", "1500V DC rated flame-retardant XLPO insulation"],
-    image: "/images/products/solar_dc_cables.jpg",
-    oemTag: "TUV Rhineland Certified"
+    label: "Polycab Home Wiring Product Range",
+    highlight: "Wiring & Modular Accessories",
+    subtitle: "A complete home-electrical product collection featuring colour-coded house wires, cable reel, modular switches, MCB panel, LED lighting, conduits, and installation accessories.",
+    bullets: ["House wires, switches, sockets, lighting, conduits, and junction boxes", "A clear one-image view for residential electrical requirements"],
+    image: "/generated/product-sets/polycab_home_wiring_set.png",
+    oemTag: "Home Electrical Range"
   },
   {
-    id: "citel-spd",
-    icon: Award,
-    label: "CITEL Surge Protectors",
-    highlight: "Heavy Duty Type 1+2 SPD",
-    subtitle: "World-class European surge arresters engineered to safeguard solar inverters, PV arrays, and substation electronics against lightning voltage transients.",
-    bullets: ["Replaceable plug-in cartridge modules for easy maintenance", "Visual operational status windows & remote signaling contacts"],
-    image: "/images/products/solar_spd_arrester.jpg",
-    oemTag: "French Engineering Standard"
+    id: "polycab-electrical-solutions-range",
+    icon: ShieldCheck,
+    label: "Polycab Electrical Solutions Set",
+    highlight: "Complete Electrical Solutions",
+    subtitle: "A broad electrical product display with cable coils, distribution protection, modular accessories, LED lighting, conduit systems, and a contemporary ceiling fan.",
+    bullets: ["Cables, switchgear, lighting, fan, wiring accessories, and power outlets", "Ideal for home, shop, and project electrical supply enquiries"],
+    image: "/generated/product-sets/polycab_electrical_solutions_set.png",
+    oemTag: "Electrical Solutions"
   },
-  {
-    id: "chemical-earthing",
-    icon: Wrench,
-    label: "Chemical Earthing & Lightning BOS",
-    highlight: "Maintenance-Free 25-Yr Life",
-    subtitle: "Pure copper-bonded chemical earthing electrodes and Faradel backfill compound ensuring low soil resistivity below 1 Ohm for statutory electrical safety.",
-    bullets: ["UL & IEEE-80 compliant low-impedance grounding system", "Includes copper lightning arrester & complete rooftop kit"],
-    image: "/images/products/solar_chemical_earthing.jpg",
-    oemTag: "IEEE-80 & UL Verified"
-  }
+
 ];
 
 interface ProductShowcaseProps {
@@ -123,7 +92,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenContact 
 
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % productBanners.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -201,7 +170,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenContact 
                     const el = document.getElementById('contact');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg hover:shadow-orange-500/25"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-950 text-white  font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg hover:shadow-orange-500/25"
                 >
                   <span>Request Price Quote</span>
                   <ArrowRight size={15} />

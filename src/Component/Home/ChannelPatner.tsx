@@ -9,9 +9,9 @@ import {
   Zap,
   FileCheck
 } from 'lucide-react';
-import adani from "../../assets/adani.png";
-import polycab from "../../assets/polycab.png";
-import secure from "../../assets/secure.png";
+import adani from "../../assets/adani.webp";
+import polycab from "../../assets/polycab.webp";
+import secure from "../../assets/secure.webp";
 
 interface PartnerInfo {
   name: string;
@@ -29,7 +29,7 @@ const partners: PartnerInfo[] = [
   {
     name: 'Adani Solar',
     img: adani,
-    image: '/images/products/solar_panel_mono.jpg',
+    image: '/images/products/solar_panel_mono.webp',
     category: 'Tier-1 Solar PV Modules',
     badge: 'Direct OEM Partner',
     products: '580Wp N-Type TOPCon Bifacial Panels',
@@ -40,7 +40,7 @@ const partners: PartnerInfo[] = [
   {
     name: 'Polycab Solar',
     img: polycab,
-    image: '/images/products/solar_inverter_unit.jpg',
+    image: '/images/products/solar_inverter_unit.webp',
     category: 'Cables & Inverter Systems',
     badge: 'Authorized Distributor',
     products: 'Grid-Tie Inverters & DC Solar Cables',
@@ -51,7 +51,7 @@ const partners: PartnerInfo[] = [
   {
     name: 'SECURE Meters',
     img: secure,
-    image: '/images/products/solar_dlms_meter.jpg',
+    image: '/images/products/solar_dlms_meter.webp',
     category: 'Smart Net-Metering Tech',
     badge: 'DISCOM Certified',
     products: 'Class 0.5S DLMS Bi-Directional Net-Meters',

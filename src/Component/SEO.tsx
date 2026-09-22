@@ -17,7 +17,7 @@ export const SEO: React.FC<SEOProps> = ({
   description = 'Authorized Channel Partner for Adani Solar, Polycab & Secure Meters. Turnkey commercial solar EPC, wholesale BOS supply, and HT/LT substations with 25-year performance warranty.',
   keywords = 'solar epc, adani solar distributor, polycab solar cables, dlms net meter, commercial rooftop solar, industrial solar plant, ht lt substation, solar installer pune maharashtra, 1-box solar kit',
   canonical,
-  ogImage = 'https://www.amritelectricals.com/images/commercial_solar_rooftop.jpg',
+  ogImage = 'https://www.amritelectricals.com/images/commercial_solar_rooftop.webp',
   ogType = 'website',
   schema
 }) => {
@@ -33,7 +33,7 @@ export const SEO: React.FC<SEOProps> = ({
         "@id": "https://www.amritelectricals.com/#organization",
         "name": "Amrit Electricals",
         "url": "https://www.amritelectricals.com/",
-        "logo": "https://www.amritelectricals.com/logo.png",
+        "logo": "https://www.amritelectricals.com/logo.webp",
         "description": "Authorized Channel Partner for Adani Solar, Polycab, and Secure Meters.",
         "contactPoint": [
           {
@@ -50,7 +50,7 @@ export const SEO: React.FC<SEOProps> = ({
         "@id": "https://www.amritelectricals.com/#localbusiness",
         "name": "Amrit Electricals & Solar Solutions",
         "url": "https://www.amritelectricals.com/",
-        "image": "https://www.amritelectricals.com/images/commercial_solar_rooftop.jpg",
+        "image": "https://www.amritelectricals.com/images/commercial_solar_rooftop.webp",
         "telephone": "+91-97007-05020",
         "email": "info@amritelectricals.com",
         "priceRange": "₹₹₹",

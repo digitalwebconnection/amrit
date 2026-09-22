@@ -14,8 +14,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
       num: "01",
       title: "One-Stop Solar Solution",
       description: "All rooftop BOS components under one roof – Tier-1 modules, inverters, distribution boxes, and net-meters.",
-      thumbnail: "/images/products/solar_acdb_dcdb.jpg",
-      previewImage: "/images/why_choose_advantage.jpg",
+      thumbnail: "/images/products/solar_acdb_dcdb.webp",
+      previewImage: "/images/why_choose_advantage.webp",
       tag: "All-in-One Supply",
       badge: "Complete Solar Ecosystem"
     },
@@ -23,8 +23,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
       num: "02",
       title: "1-Box Ready Solar KITs",
       description: "Pre-engineered 1 kW to 25 kW turnkey rooftop packages that eliminate multi-vendor procurement delays.",
-      thumbnail: "/images/products/solar_turnkey_kit.jpg",
-      previewImage: "/images/products/solar_turnkey_kit.jpg",
+      thumbnail: "/images/products/solar_turnkey_kit.webp",
+      previewImage: "/images/products/solar_turnkey_kit.webp",
       tag: "Ready Dispatch",
       badge: "Pre-Engineered 1-Box"
     },
@@ -32,8 +32,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
       num: "03",
       title: "In-House Solar Engineers",
       description: "Certified in-house engineering team supporting installers with system sizing, SLD design, and utility sanctions.",
-      thumbnail: "/images/services/solar_engineering.jpg",
-      previewImage: "/images/services/solar_engineering.jpg",
+      thumbnail: "/images/services/solar_engineering.webp",
+      previewImage: "/images/services/solar_engineering.webp",
       tag: "Certified Team",
       badge: "CAD & SLD Engineering"
     },
@@ -41,8 +41,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
       num: "04",
       title: "25-Year Linear Warranty",
       description: "Direct OEM manufacturer backed 25-year performance warranties on solar modules and replacement on inverters.",
-      thumbnail: "/images/products/solar_panel_mono.jpg",
-      previewImage: "/images/products/solar_panel_mono.jpg",
+      thumbnail: "/images/products/solar_panel_mono.webp",
+      previewImage: "/images/products/solar_panel_mono.webp",
       tag: "Direct OEM Backed",
       badge: "Tier-1 25-Yr Warranty"
     }
