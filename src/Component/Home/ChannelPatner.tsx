@@ -76,7 +76,7 @@ export const ChannelPatner: React.FC = () => {
   const current = partners[activePartner];
 
   return (
-    <section id="partners" className="py-14 lg:py-20 bg-white border-t-2 border-b-2 border-primary-orange relative overflow-hidden select-none">
+    <section id="partners" className="py-14 lg:py-20 bg-white border-t-2 border-b-2 border-primary-orange relative overflow-hidden ">
       
       {/* Background Graphic Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
@@ -108,7 +108,7 @@ export const ChannelPatner: React.FC = () => {
           
           {/* LEFT: SYNCHRONIZED AUTO-CHANGING PARTNER GRAPHIC */}
           <div className="lg:col-span-5 relative group flex flex-col">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-primary-orange/50 bg-slate-950 shadow-xl shadow-orange-500/15 h-88 sm:h-100 lg:h-full min-h-95 lg:min-h-110 flex flex-col justify-between transition-all duration-500">
+            <div className="relative rounded-xl overflow-hidden border-2 border-primary-orange/50 bg-slate-950 shadow-xl shadow-orange-500/15 h-88 sm:h-100 lg:h-full min-h-95 lg:min-h-110 flex flex-col justify-between transition-all duration-500">
               
               {/* Animated Crossfade Image */}
               <AnimatePresence mode="wait">
@@ -161,7 +161,7 @@ export const ChannelPatner: React.FC = () => {
                 <div
                   key={index}
                   onClick={() => setActivePartner(index)}
-                  className={`group relative rounded-2xl p-5 sm:p-6 transition-all duration-300 cursor-pointer bg-white border ${
+                  className={`group relative rounded-lg p-5 sm:p-4 transition-all duration-300 cursor-pointer bg-white border ${
                     isActive
                       ? 'border-2 border-primary-orange shadow-xl shadow-orange-500/15 scale-[1.015]'
                       : 'border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-md'
@@ -175,13 +175,13 @@ export const ChannelPatner: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
                     
                     {/* Brand Logo Container */}
-                    <div className="sm:col-span-4 flex items-center justify-center p-3 rounded-xl bg-slate-50 border border-slate-200/80 group-hover:bg-white transition-colors h-24 sm:h-28">
+                    <div className="sm:col-span-4 flex items-center justify-center  rounded-xl bg-slate-50 border border-slate-200/80 group-hover:bg-white transition-colors h-24 sm:h-28">
                       <img
                         src={partner.img}
                         alt={partner.name}
                         loading="lazy"
                         decoding="async"
-                        className="max-h-16 max-w-full object-contain"
+                        className="max-h-26 max-w-full object-contain"
                         onError={(e) => {
                           (e.target as HTMLImageElement).style.display = 'none';
                           const sibling = (e.target as HTMLImageElement).nextElementSibling;
@@ -241,7 +241,7 @@ export const ChannelPatner: React.FC = () => {
     
 
         {/* BOTTOM TRUST STRIP WITH BRAND BORDER ACCENTS */}
-        <div className="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 border-2 border-primary-orange/50 rounded-2xl py-6 px-6 sm:px-8 shadow-lg text-white">
+        <div className="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 border-2 border-primary-orange/50 rounded-lg py-6 px-6 sm:px-8 shadow-lg text-white">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Pillar 1 */}

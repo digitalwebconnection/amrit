@@ -93,25 +93,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenContact }) => {
           })}
         </div>
 
-        {/* Still have questions card */}
-        <div className="mt-10 text-center bg-white p-6 rounded-xl border border-slate-200 shadow-xs max-w-xl mx-auto">
-          <h4 className="text-base font-bold text-slate-900 mb-1">
-            Have more questions about your solar project?
-          </h4>
-          <p className="text-xs text-slate-500 mb-4">
-            Our certified solar engineers are ready to assist with sizing, technical feasibility, and DISCOM sanctions.
-          </p>
-          <button
-            onClick={onOpenContact ? onOpenContact : () => {
-              const el = document.getElementById('contact');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer shadow-xs"
-          >
-            <span>Ask an Engineer</span>
-            <ArrowRight size={14} />
-          </button>
-        </div>
 
       </div>
     </section>

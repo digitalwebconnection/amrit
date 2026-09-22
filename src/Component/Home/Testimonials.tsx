@@ -66,13 +66,13 @@ export const Testimonials: React.FC = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <section 
-      id="testimonials" 
-      className="bg-slate-900 text-white py-14 lg:py-18 relative border-b border-slate-800"
+    <section
+      id="testimonials"
+      className="bg-slate-900 text-white py-10 lg:py-14 relative border-b border-slate-800"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
-          
+
           {/* Left Content */}
           <div className="lg:w-7/12 flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-slate-700 w-fit mb-6">
@@ -132,8 +132,8 @@ export const Testimonials: React.FC = () => {
           {/* Right Image */}
           <div className="lg:w-5/12 w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-800 h-80 sm:h-96">
-              <img 
-                src={current.image} 
+              <img
+                src={current.image}
                 alt={current.name}
                 loading="lazy"
                 decoding="async"

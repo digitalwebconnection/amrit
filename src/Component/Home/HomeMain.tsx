@@ -1,6 +1,5 @@
 import React from 'react';
 import Herohm from './Herohm';
-// import Scrooling from './Scrooling';
 import CompanyHighlights from './CompanyHighlights';
 import ProductShowcase from './ProductShowcase';
 import BusinessVerticals from './BusinessVerticals';
@@ -47,7 +46,6 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       {/* 8. Flagship Projects / Portfolio */}
       <RecentProjects onOpenContact={onOpenContact} />
 
-
       {/* 10. Authorized Channel Partners */}
       <ChannelPatner />
       
@@ -56,8 +54,6 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
 
       {/* 11. Certifications & Accreditations */}
       <Certifications onOpenContact={onOpenContact} />
-
-      
 
       {/* 12. Testimonials & Client Reviews */}
       <Testimonials />

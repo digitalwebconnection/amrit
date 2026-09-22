@@ -8,7 +8,7 @@ import {
   Layers,
   Zap,
   MapPin,
-  Sun
+
 } from 'lucide-react';
 import { toast } from 'react-toastify';
 
@@ -62,7 +62,6 @@ export const CallToAction: React.FC = () => {
               </span>
             </h2>
 
-            <div className="w-24 h-1 bg-primary-orange rounded-full mb-5 lg:mx-0 mx-auto" />
 
             <p className="text-slate-700 text-sm sm:text-base mb-6 leading-relaxed font-normal max-w-xl">
               As an authorized distributor for <strong>Adani Solar, Polycab, and Secure Meters</strong>, Amrit Electricals provides Tier-1 solar modules, inverters, and heavy HT/LT BOS components at wholesale ex-stock pricing, backed by full EPC execution.
@@ -99,24 +98,6 @@ export const CallToAction: React.FC = () => {
                 </div>
               </a>
 
-              {/* Location Pod */}
-              <a
-                href="https://maps.google.com/?q=Amrit+Electricals+PG+Road+Secunderabad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-4 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-emerald-500 transition-colors group cursor-pointer"
-              >
-                <div className="w-11 h-11 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 border border-emerald-200 shrink-0 mt-0.5">
-                  <MapPin size={18} />
-                </div>
-                <div className="text-left">
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider group-hover:text-emerald-700 transition-colors">Office &amp; Supply Depot</p>
-                  <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                    Ground Floor, Mecleodguda, Backside Mamta sweets, No 1, H, 8-107, PG Road, beside Marwadi School, Secunderabad, Telangana 500003
-                  </p>
-                </div>
-              </a>
-
             </div>
 
           </div>
@@ -127,19 +108,15 @@ export const CallToAction: React.FC = () => {
 
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-3xl font-bold text-slate-900  leading-tight">
+                  <h3 className="text-4xl font-bold text-slate-900  leading-tight">
                     Get Distributor &amp; EPC Quote
                   </h3>
-                  <p className="text-xs text-slate-500 font-medium mt-1">
-                    Receive ex-stock price lists, technical datasheets, and feasibility within 24 hours.
-                  </p>
+
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-primary-orange border border-orange-200 shrink-0">
-                  <Sun size={20} />
-                </div>
+
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-2">
 
                 {/* Row 1: Name & Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -282,9 +259,6 @@ export const CallToAction: React.FC = () => {
                   <ArrowRight size={15} />
                 </button>
 
-                <p className="text-[11px] text-slate-500 text-center font-normal">
-                  ⚡ 100% Privacy Assured. Verified technical &amp; commercial quotation sent within 24 hours.
-                </p>
               </form>
             </div>
           </div>
