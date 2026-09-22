@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQSectionProps {
   onOpenContact?: () => void;
 }
 
-export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenContact }) => {
+export const FAQSection: React.FC<FAQSectionProps> = ({ }) => {
   const faqs = [
     {
       question: "What products and brands does Amrit Electricals supply?",
