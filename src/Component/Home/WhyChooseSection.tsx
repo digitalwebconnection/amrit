@@ -1,85 +1,225 @@
-import React from "react";
-import { Award, Clock, Users, Wrench } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Sparkles, ShieldCheck } from "lucide-react";
 
-export const WhyChooseSection: React.FC = () => {
+interface WhyChooseSectionProps {
+  onOpenContact?: () => void;
+}
+
+export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
   const reasons = [
     {
-      icon: <Award size={22} />,
+      num: "01",
       title: "One-Stop Solar Solution",
-      description:
-        "All rooftop components under one roof – Adani panels, Polycab inverters, ACDB/DCDB, cables, and DLMS net-meters.",
+      description: "All rooftop BOS components under one roof – Tier-1 modules, inverters, distribution boxes, and net-meters.",
+      thumbnail: "/images/products/solar_acdb_dcdb.jpg",
+      previewImage: "/images/why_choose_advantage.jpg",
+      tag: "All-in-One Supply",
+      badge: "Complete Solar Ecosystem"
     },
     {
-      icon: <Wrench size={22} />,
+      num: "02",
       title: "1-Box Ready Solar KITs",
-      description:
-        "Pre-engineered 1 kW to 25 kW kits that eliminate multi-vendor sourcing and enable fast turnkey installation.",
+      description: "Pre-engineered 1 kW to 25 kW turnkey rooftop packages that eliminate multi-vendor procurement delays.",
+      thumbnail: "/images/products/solar_turnkey_kit.jpg",
+      previewImage: "/images/products/solar_turnkey_kit.jpg",
+      tag: "Ready Dispatch",
+      badge: "Pre-Engineered 1-Box"
     },
     {
-      icon: <Users size={22} />,
+      num: "03",
       title: "In-House Solar Engineers",
-      description:
-        "Certified in-house engineering team supporting installers and system integrators with design, SLD, and commissioning.",
+      description: "Certified in-house engineering team supporting installers with system sizing, SLD design, and utility sanctions.",
+      thumbnail: "/images/services/solar_engineering.jpg",
+      previewImage: "/images/services/solar_engineering.jpg",
+      tag: "Certified Team",
+      badge: "CAD & SLD Engineering"
     },
     {
-      icon: <Clock size={22} />,
+      num: "04",
       title: "25-Year Linear Warranty",
-      description:
-        "Direct OEM backed performance warranties on Adani Solar panels and world-class Polycab string/hybrid inverters.",
-    },
+      description: "Direct OEM manufacturer backed 25-year performance warranties on solar modules and replacement on inverters.",
+      thumbnail: "/images/products/solar_panel_mono.jpg",
+      previewImage: "/images/products/solar_panel_mono.jpg",
+      tag: "Direct OEM Backed",
+      badge: "Tier-1 25-Yr Warranty"
+    }
   ];
 
+  // Auto-change active item every 3.5 seconds (pauses on hover)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % reasons.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [isPaused, reasons.length]);
+
+  const activeReason = reasons[activeIdx];
+
   return (
-    <section id="why-us" className="py-16 bg-slate-50 border-b border-slate-200">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
+    <section 
+      id="why-us" 
+      className="py-16 lg:py-14 bg-white border-b border-slate-500 relative overflow-hidden select-none"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Background Graphic Grid */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[24px_24px] opacity-60 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Authentic Solar Team Image */}
-          <div className="lg:col-span-5">
-            <div className="rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
-              <img
-                src="/images/solar_team.png"
-                alt="Amrit Electricals Solar Engineering Team"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-72 sm:h-84 lg:h-105 object-cover rounded-md"
-              />
+          {/* ================= LEFT COLUMN: DYNAMIC 3D GRAPHIC DISPLAY ================= */}
+          <div className="lg:col-span-5 relative">
+            {/* Ambient Background Aura */}
+            <div className="absolute -inset-2 bg-linear-to-tr from-orange-400/20 via-amber-300/20 to-blue-500/20 rounded-3xl blur-xl -z-10 pointer-events-none" />
+
+            <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl shadow-slate-200/60 p-2 sm:p-2.5 group">
+              <div className="relative rounded-2xl overflow-hidden h-80 sm:h-96 lg:h-112 bg-slate-100">
+                
+                {/* Crossfading Feature Graphics */}
+                {reasons.map((reason, idx) => (
+                  <img
+                    key={reason.num}
+                    src={reason.previewImage}
+                    alt={reason.title}
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-in-out ${
+                      idx === activeIdx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-103 z-0 pointer-events-none'
+                    }`}
+                  />
+                ))}
+
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent z-15 pointer-events-none" />
+
+                {/* Top Floating Guarantee Badge with Active Badge Label */}
+                <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-xs text-slate-800 text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md border border-slate-200 flex items-center gap-2 z-20">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>{activeReason.badge}</span>
+                </div>
+
+                {/* Bottom Floating Metric Graphic Badge */}
+                <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-3.5 sm:p-4 rounded-xl border border-white/10 shadow-2xl flex items-center gap-3.5 z-20">
+                  <div className="w-11 h-11 rounded-lg bg-primary-orange/20 border border-primary-orange/40 flex items-center justify-center text-primary-orange shrink-0">
+                    <ShieldCheck size={24} />
+                  </div>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-black text-white leading-tight">
+                      1,200+ <span className="text-xs font-normal text-slate-300">Projects</span>
+                    </div>
+                    <p className="text-[11px] text-slate-300 font-medium">
+                      Delivered Across Telangana &amp; AP
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Clean Content & 4 Cards */}
+          {/* ================= RIGHT COLUMN: AUTO-CHANGING BORDER CARDS ================= */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
-                Why Choose Us
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
-                The Amrit Electricals Advantage
+            
+            {/* Section Header */}
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
+                <Sparkles size={13} className="text-primary-orange animate-pulse" />
+                <span>The Amrit Advantage</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                Why Solar Integrators &amp; Clients Choose Us
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                We don't just provide equipment; we build lasting partnerships. Here is why homeowners, contractors, and businesses trust us for their critical energy needs.
+                Direct authorized distributor pricing, pre-tested turnkey equipment, and dedicated technical engineering support for every installation.
               </p>
             </div>
 
-            {/* 4 Clean Standard WordPress Feature Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {reasons.map((reason, index) => (
-                <div
-                  key={index}
-                  className="p-4 rounded-lg bg-white border border-slate-200 shadow-xs hover:border-primary-orange hover:shadow-sm transition-all"
-                >
-                  <div className="w-10 h-10 rounded-md bg-orange-50 text-primary-orange border border-orange-100 flex items-center justify-center mb-3">
-                    {reason.icon}
+            {/* 4 Cards with Dynamic Auto-Changing Border & Glow */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {reasons.map((reason, index) => {
+                const isActive = index === activeIdx;
+
+                return (
+                  <div
+                    key={reason.num}
+                    onClick={() => setActiveIdx(index)}
+                    className={`group relative p-4 rounded-2xl transition-all duration-300 flex items-start gap-3.5 overflow-hidden cursor-pointer ${
+                      isActive
+                        ? 'border-2 border-primary-orange shadow-lg shadow-orange-500/15 bg-linear-to-br from-orange-50/70 via-white to-white scale-[1.02]'
+                        : 'border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs'
+                    }`}
+                  >
+                    {/* Top Animated Graphic Accent Line */}
+                    <div
+                      className={`absolute top-0 left-0 right-0 transition-all duration-300 ${
+                        isActive
+                          ? 'h-1 bg-linear-to-r from-primary-orange to-amber-400'
+                          : 'h-0.5 bg-transparent group-hover:bg-primary-orange/40'
+                      }`}
+                    />
+
+                    {/* Left Graphic Image Thumbnail */}
+                    <div
+                      className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-xl overflow-hidden shrink-0 bg-slate-50 transition-all duration-300 shadow-2xs ${
+                        isActive
+                          ? 'border-2 border-primary-orange ring-2 ring-primary-orange/30 scale-105'
+                          : 'border border-slate-200 group-hover:border-slate-300'
+                      }`}
+                    >
+                      <img
+                        src={reason.thumbnail}
+                        alt={reason.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div
+                        className={`absolute top-1 left-1 px-1.5 py-0.5 rounded-md font-mono text-[9px] font-bold transition-colors ${
+                          isActive
+                            ? 'bg-primary-orange text-white'
+                            : 'bg-slate-900/80 backdrop-blur-2xs text-white'
+                        }`}
+                      >
+                        {reason.num}
+                      </div>
+                    </div>
+
+                    {/* Right Card Text */}
+                    <div className="grow">
+                      <span
+                        className={`text-[10px] font-bold uppercase tracking-wider block mb-1 transition-colors ${
+                          isActive ? 'text-primary-orange' : 'text-slate-500'
+                        }`}
+                      >
+                        {reason.tag}
+                      </span>
+                      <h3
+                        className={`text-sm sm:text-base font-bold mb-1 leading-snug transition-colors ${
+                          isActive ? 'text-slate-900' : 'text-slate-800 group-hover:text-primary-orange'
+                        }`}
+                      >
+                        {reason.title}
+                      </h3>
+                      <p className="text-slate-600 text-xs leading-relaxed line-clamp-2">
+                        {reason.description}
+                      </p>
+                    </div>
+
+                    {/* Active Bottom Pulsing Progress Line */}
+                    {isActive && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-orange animate-pulse" />
+                    )}
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                    {reason.title}
-                  </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
+
           </div>
 
         </div>

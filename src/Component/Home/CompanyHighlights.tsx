@@ -23,7 +23,7 @@ export const CompanyHighlights: React.FC = () => {
   const duplicatedStats = [...stats, ...stats];
 
   return (
-    <section className="py-8 bg-slate-50/70 border-b border-slate-200/80 text-slate-800 relative overflow-hidden">
+    <section className="py-8 bg-slate-50/70 border-t-2 border-b-2 border-primary-orange text-slate-800 relative overflow-hidden">
       {/* Left and Right Edge Gradient Fade Masks */}
       <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-linear-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-linear-to-l from-slate-50 to-transparent z-10 pointer-events-none" />

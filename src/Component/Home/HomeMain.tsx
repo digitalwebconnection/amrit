@@ -1,9 +1,10 @@
 import React from 'react';
 import Herohm from './Herohm';
 // import Scrooling from './Scrooling';
-import CompanyOverview from './CompanyOverview';
 import CompanyHighlights from './CompanyHighlights';
+import ProductShowcase from './ProductShowcase';
 import BusinessVerticals from './BusinessVerticals';
+import CompanyOverview from './CompanyOverview';
 import WhyChooseSection from './WhyChooseSection';
 import OurProcess from './OurProcess';
 import RecentProjects from './RecentProjects';
@@ -25,27 +26,23 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       {/* 1. Hero Banner */}
       <Herohm onOpenContact={onOpenContact} />
 
-      {/* 2. Top Marquee Ticker */}
-      {/* <Scrooling /> */}
-
-      {/* 4. Company Highlights / Stats */}
+      {/* 2. Company Highlights / Stats */}
       <CompanyHighlights />
 
-        {/* 5. Business Verticals / Services */}
+      {/* 3. Featured Solar Equipment Showcase */}
+      <ProductShowcase onOpenContact={onOpenContact} />
+
+      {/* 4. Business Verticals / Services */}
       <BusinessVerticals onOpenContact={onOpenContact} />
 
-      {/* 3. About Company Overview */}
-      <CompanyOverview />
-
-      
-
-    
+      {/* 5. About Company Overview */}
+      <CompanyOverview onOpenContact={onOpenContact} />
 
       {/* 6. Why Choose Us */}
-      <WhyChooseSection />
+      <WhyChooseSection onOpenContact={onOpenContact} />
 
       {/* 7. Working Process / 4 Stages */}
-      <OurProcess />
+      <OurProcess onOpenContact={onOpenContact} />
 
       {/* 8. Flagship Projects / Portfolio */}
       <RecentProjects onOpenContact={onOpenContact} />
@@ -66,10 +63,10 @@ export const HomeMain: React.FC<HomeMainProps> = ({ onOpenContact }) => {
       <Testimonials />
 
       {/* 13. Executive Leadership */}
-      <Leadership />
+      <Leadership onOpenContact={onOpenContact} />
 
       {/* 14. Frequently Asked Questions */}
-      <FAQSection />
+      <FAQSection onOpenContact={onOpenContact} />
 
       {/* 15. Contact & Inquiry Form */}
       <CallToAction />

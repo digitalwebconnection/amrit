@@ -1,7 +1,11 @@
 import React from 'react';
-import { Award, CheckCircle2 } from 'lucide-react';
+import { Award, CheckCircle2, ArrowRight, Phone } from 'lucide-react';
 
-export const Leadership: React.FC = () => {
+interface LeadershipProps {
+  onOpenContact?: () => void;
+}
+
+export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
   return (
     <section id="leadership" className="py-16 bg-white border-b border-slate-200">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
@@ -74,6 +78,27 @@ export const Leadership: React.FC = () => {
                 <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
                 <span>25-Year Direct OEM Performance Warranty</span>
               </div>
+            </div>
+
+            {/* Direct Connect Action */}
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <button
+                onClick={onOpenContact ? onOpenContact : () => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs transition-colors cursor-pointer"
+              >
+                <span>Connect with Leadership Desk</span>
+                <ArrowRight size={14} />
+              </button>
+              <a
+                href="tel:+919700705020"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs uppercase tracking-wider rounded-lg transition-colors"
+              >
+                <Phone size={14} className="text-primary-orange" />
+                <span>+91 97007 05020</span>
+              </a>
             </div>
           </div>
 

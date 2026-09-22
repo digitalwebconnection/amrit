@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, TrendingUp, Award, Building } from "lucide-react";
+import { Shield, TrendingUp, Award, Building, ArrowRight } from "lucide-react";
 
 const BRAND = {
   primaryBlue: "#203A96",
@@ -34,7 +34,11 @@ const highlights = [
   },
 ];
 
-export const CompanyOverview: React.FC = () => {
+interface CompanyOverviewProps {
+  onOpenContact?: () => void;
+}
+
+export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact }) => {
   return (
     <section
       className="py-12 lg:py-16 bg-white border-b border-slate-200"
@@ -54,7 +58,7 @@ export const CompanyOverview: React.FC = () => {
           <span className="text-[#203A96]">Solar Rooftop Projects</span>
         </h2>
 
-        <p className="text-center text-sm md:text-base text-slate-700 max-w-4xl mx-auto mb-12 leading-relaxed">
+        <p className="text-center text-sm md:text-base text-slate-700 max-w-6xl mx-auto mb-12 leading-relaxed">
           Amrit Electricals is an Authorised channel partner for Polycab Inverters and Solar Panels, Adani Solar, Secure &amp; L&amp;T Energy Meters, Ashmor CTs, Polycab DC Cables &amp; MCBs, Citel SPDs, and Excel make earthing. We provide complete solar solutions tailored to your energy needs.
         </p>
 
@@ -97,6 +101,20 @@ export const CompanyOverview: React.FC = () => {
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#12225E]">
             25-Year Linear Power Warranty
           </span>
+        </div>
+
+        {/* Action Button */}
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={onOpenContact ? onOpenContact : () => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="inline-flex items-center gap-2 px-7 py-3 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
+          >
+            <span>Get A Free Turnkey Solar Estimate</span>
+            <ArrowRight size={15} />
+          </button>
         </div>
       </div>
     </section>

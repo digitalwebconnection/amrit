@@ -3,15 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
   MapPin,
-
-  Zap,
-
   CheckCircle2,
- 
-  Layers,
   ArrowRight,
   Maximize2,
- 
   Sparkles
 } from 'lucide-react';
 
@@ -26,171 +20,116 @@ interface Project {
   savings: string;
   completionYear: string;
   scope: string;
-  specs: {
-    modules: string;
-    inverter: string;
-    structure: string;
-    metering: string;
-  };
   highlights: string[];
   image: string;
 }
 
-const filterTabs = [
-  { id: "all", label: "All Projects" },
-  { id: "solar", label: "Solar EPC" },
-  { id: "substation", label: "HT/LT Substations" },
-  { id: "automation", label: "Automation & SCADA" },
-];
-
 const projectsData: Project[] = [
   {
     id: "p1",
-    title: "500 kWp Commercial Rooftop Solar EPC",
+    title: "500 kWp Commercial Rooftop Solar",
     category: "Solar EPC",
     filterCategory: "solar",
     client: "TechPark Solutions Hub",
-    location: "Chakan MIDC, Pune, Maharashtra",
-    capacity: "500 kWp DC Capacity",
-    savings: "₹42 Lakhs / Year Estimated Savings",
+    location: "Chakan, Pune",
+    capacity: "500 kWp",
+    savings: "₹42 Lakhs / Yr",
     completionYear: "2024",
-    scope: "Turnkey engineering, procurement, structural load strengthening, installation of 580Wp TOPCon solar modules, and DISCOM net-metering grid synchronization.",
-    specs: {
-      modules: "Tier-1 580Wp N-Type Bifacial TOPCon",
-      inverter: "High-Efficiency 110kW String Inverters",
-      structure: "Custom HDG Non-Penetrative Ballast",
-      metering: "33kV HT Net-Metering Synchronized"
-    },
+    scope: "Turnkey engineering, 580Wp TOPCon bifacial modules, and DISCOM net-metering synchronization.",
     highlights: [
       "7.2 Lakh kWh annual clean generation",
       "580 Tons annual CO2 reduction",
-      "3.4 Years calculated financial ROI payback",
-      "24/7 IoT cloud generation telemetry"
+      "3.4 Years calculated payback"
     ],
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: "p2",
-    title: "33kV Industrial Substation & Power Distribution",
+    title: "33kV Industrial Substation & Power Setup",
     category: "HT/LT Substations",
     filterCategory: "substation",
-    client: "Adani Logistics & Warehousing Park",
-    location: "JNPT Port SEZ, Navi Mumbai",
-    capacity: "5 MVA 33kV / 11kV Substation",
-    savings: "Zero Downtime & 100% CEA Compliance",
+    client: "Adani Logistics Park",
+    location: "JNPT Port, Navi Mumbai",
+    capacity: "5 MVA (33/11kV)",
+    savings: "100% CEA Compliant",
     completionYear: "2023",
-    scope: "Complete turnkey HT switchyard erection, 5 MVA oil-cooled transformer installation, HT VCB panels, capacitor banks, and statutory CEA electrical inspection clearance.",
-    specs: {
-      modules: "N/A (Substation EPC)",
-      inverter: "Schneider HT VCB & Protective Relays",
-      structure: "Hot-Dip Galvanized Switchyard Gantries",
-      metering: "Tri-Vector 0.2s Accuracy Metering"
-    },
+    scope: "Turnkey HT switchyard erection, 5 MVA oil-cooled transformer, and statutory CEA clearance.",
     highlights: [
-      "100% CEA electrical compliance cleared on first inspection",
-      "Redundant dual-incomer power distribution network",
-      "Automated SCADA tripping and fault protection",
-      "Heavy industrial grade harmonic filters installed"
+      "Zero electrical downtime record",
+      "Dual-incomer power distribution",
+      "Automated SCADA fault protection"
     ],
     image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: "p3",
-    title: "1.2 MW Industrial Ground-Mounted Solar Farm",
+    title: "1.2 MW Ground-Mounted Solar Farm",
     category: "Solar EPC",
     filterCategory: "solar",
-    client: "Apex Textile & Spinners Ltd",
-    location: "Surat Industrial Belt, Gujarat",
-    capacity: "1.2 MW Ground Mount Solar",
-    savings: "₹1.1 Crore / Year Power Bill Reduction",
+    client: "Apex Textile & Spinners",
+    location: "Surat, Gujarat",
+    capacity: "1.2 MW",
+    savings: "₹1.1 Crore / Yr",
     completionYear: "2024",
-    scope: "Land contour grading, pile foundation, 1.2 MW single-axis tracking solar PV array erection, dedicated 11kV step-up substation, and dedicated transmission line.",
-    specs: {
-      modules: "Tier-1 Mono-PERC 550Wp Certified",
-      inverter: "Central Inverter Stations with SCADA",
-      structure: "Hot-Dip Galvanized Rammed Steel Piles",
-      metering: "11kV Dedicated Bay at State DISCOM"
-    },
+    scope: "Single-axis tracking solar PV array erection with dedicated 11kV step-up transmission bay.",
     highlights: [
-      "18.5 Lakh kWh clean solar units generated annually",
-      "Powering 70% of manufacturing unit power demand",
-      "99.2% plant generation uptime achieved",
-      "25-Year performance warranty backed by OEM"
+      "18.5 Lakh clean solar units / yr",
+      "Powers 70% of factory operations",
+      "25-Year performance warranty"
     ],
     image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: "p4",
-    title: "Hospital Critical Power & 250kWh BESS Storage",
+    title: "Hospital Critical Power & 250kWh BESS",
     category: "HT/LT Substations",
     filterCategory: "substation",
     client: "City Multi-Speciality Hospital",
-    location: "Thane West, Mumbai",
-    capacity: "250 kWh Lithium-Ion BESS",
-    savings: "Zero Millisecond Grid Blackout Transfer",
+    location: "Thane, Mumbai",
+    capacity: "250 kWh BESS",
+    savings: "Zero-Loss Backup",
     completionYear: "2024",
-    scope: "Integration of 250 kWh high-density Lithium Iron Phosphate (LFP) Battery Energy Storage System with automated synchronizing PLC panels for instant zero-loss ICU power continuity.",
-    specs: {
-      modules: "Tier-1 LFP Battery Packs (1C Rating)",
-      inverter: "Bi-directional Hybrid 150kW Inverters",
-      structure: "Fire-Suppressed Outdoor Enclosure",
-      metering: "Smart Digital IoT Power Quality Analyzer"
-    },
+    scope: "High-density LFP Battery Energy Storage with automated PLC synchronizing for ICU power continuity.",
     highlights: [
-      "Zero millisecond transition time on grid failure",
-      "Diesel generator fuel consumption reduced by 65%",
-      "Harmonic distortion (THD) kept below 2.5%",
-      "Remote cloud monitoring with SMS alerts"
+      "Zero ms blackout transition",
+      "65% diesel generator fuel saved",
+      "Remote IoT telemetry with SMS alerts"
     ],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: "p5",
-    title: "Cloud SCADA & Automated PLC Energy Console",
+    title: "Cloud SCADA & Automated PLC Console",
     category: "Automation & SCADA",
     filterCategory: "automation",
     client: "Mahindra Green Tech Park",
-    location: "Industrial Corridor, Nashik",
-    capacity: "40+ Integrated PLC Nodes",
-    savings: "99.4% MPPT Synchronization",
+    location: "Nashik, Maharashtra",
+    capacity: "40+ PLC Nodes",
+    savings: "Real-time Telemetry",
     completionYear: "2023",
-    scope: "Development of custom cloud SCADA dashboard connecting multiple solar and HT transformer nodes for real-time telemetry, automated peak-shaving, and predictive maintenance.",
-    specs: {
-      modules: "IoT Gateway & Sensors Array",
-      inverter: "Modbus/RS485 Protocol Converters",
-      structure: "IP65 Weatherproof Industrial Panels",
-      metering: "Real-time Multi-parameter Cloud Sync"
-    },
+    scope: "Custom cloud SCADA connecting solar and HT transformer nodes for real-time telemetry and peak-shaving.",
     highlights: [
-      "Instant notification for underperforming strings",
-      "Daily automated generation and billing reports",
-      "Historical data logging and trend analytics",
-      "Role-based multi-user cloud access"
+      "Instant underperforming string alerts",
+      "Automated generation & billing reports",
+      "Predictive preventive maintenance"
     ],
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"
   },
   {
     id: "p6",
-    title: "250 kWp Elevated Commercial Solar Structure",
+    title: "250 kWp Elevated Rooftop Solar Setup",
     category: "Solar EPC",
     filterCategory: "solar",
     client: "CyberCity IT Corporate Towers",
     location: "Hitec City, Hyderabad",
-    capacity: "250 kWp Elevated Structure",
-    savings: "₹28 Lakhs / Year Power Cost Saved",
+    capacity: "250 kWp",
+    savings: "₹28 Lakhs / Yr",
     completionYear: "2024",
-    scope: "Custom 3.5-meter elevated super-structure installation allowing unobstructed rooftop corporate recreational space below, coupled with high-yield bifacial modules.",
-    specs: {
-      modules: "Bifacial 570Wp Dual Glass Panels",
-      inverter: "60kW Multi-MPPT Inverters",
-      structure: "Elevated High-Grade Galvanized Steel",
-      metering: "DISCOM LT Net-Metering Synchronized"
-    },
+    scope: "3.5-meter elevated super-structure preserving 100% usable recreational space on corporate rooftop.",
     highlights: [
-      "100% usable recreational rooftop space preserved",
-      "3.2 Years fast financial payback period",
-      "3.8 Lakh units clean solar generation annually",
-      "Weather-resistant cyclone-rated engineering"
+      "100% usable rooftop space preserved",
+      "3.8 Lakh units clean solar generation",
+      "Cyclone-rated galvanized structure"
     ],
     image: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&q=80&w=1200"
   }
@@ -201,7 +140,6 @@ interface RecentProjectsProps {
 }
 
 export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact }) => {
-  const [activeTab, setActiveTab] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -226,111 +164,82 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
     };
   }, [selectedProject]);
 
-  const filteredProjects = activeTab === "all"
-    ? projectsData
-    : projectsData.filter((p) => p.filterCategory === activeTab);
-
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
 
   return (
-    <section id="projects" className="relative py-8 lg:py-14 bg-slate-50/70 overflow-hidden border-t border-slate-200/80">
+    <section id="projects" className="relative py-12 lg:py-16 bg-slate-50/70 border-t border-slate-200/80">
       
       {/* Background Subtle Accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-orange/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-blue/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
-          
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs mb-3.5">
-            <span className="w-2 h-2 rounded-full bg-primary-orange" />
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs mb-3">
+            <Sparkles size={13} className="text-primary-orange" />
             <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-              Project Portfolio // Click Image for Full Specs
+              Execution Portfolio
             </span>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-            Recent Flagship <br /> <span className="text-[#203A96]">Projects</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+            Recent Flagship <span className="text-primary-blue">Projects</span>
           </h2>
 
-          {/* Subtitle */}
-          <p className="text-slate-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed mb-8">
-            Click on any project image below to inspect full engineering blueprints, technical specifications, and delivered impact.
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            High-yield solar EPC and heavy electrical turnkey installations delivered for commercial and industrial clients.
           </p>
-
-          {/* Minimalist Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {filterTabs.map((tab) => {
-              const isSelected = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => {
-                    setActiveTab(tab.id);
-                    setShowAll(false);
-                  }}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
-                    isSelected
-                      ? 'bg-slate-900 text-white shadow-xs'
-                      : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
         </div>
 
-        {/* ================= CLEAN IMAGE GALLERY GRID (3 COLUMNS) ================= */}
+        {/* Project Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg border border-slate-200 cursor-pointer bg-slate-900 transition-all"
+              className="group relative h-72 sm:h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 cursor-pointer bg-slate-900 transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Full-Cover Image with Hover Zoom */}
+              {/* Cover Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
-              {/* Dark Vignette Gradient Overlays */}
+              {/* Dark Gradient Overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-              {/* Top Corner Badges */}
+              {/* Top Badges */}
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                <span className="px-3 py-1 rounded-full bg-slate-950/80 text-white text-[11px] font-bold uppercase tracking-wider border border-white/20">
+                <span className="px-3 py-1 rounded-full bg-slate-900/80 text-white text-[11px] font-bold uppercase tracking-wider border border-white/15 backdrop-blur-xs">
                   {project.category}
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-white/20 group-hover:bg-primary-orange text-white flex items-center justify-center transition-colors">
-                  <Maximize2 size={14} />
+                  <Maximize2 size={13} />
                 </div>
               </div>
 
-              {/* Bottom Overlay Info */}
+              {/* Bottom Info */}
               <div className="absolute bottom-4 left-4 right-4 z-10">
                 <div className="flex items-center gap-1.5 text-amber-300 text-xs font-semibold mb-1">
                   <MapPin size={12} className="shrink-0 text-primary-orange" />
                   <span className="truncate">{project.location}</span>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white leading-snug font-serif line-clamp-2">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-snug line-clamp-2">
                   {project.title}
                 </h3>
 
-                <div className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-primary-orange mt-2">
-                  <span>Click to view full specs</span>
-                  <ArrowRight size={12} />
+                <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-white/10 text-xs">
+                  <span className="font-mono text-white/90 font-bold">{project.capacity}</span>
+                  <span className="text-primary-orange font-bold text-[11px] uppercase tracking-wide inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                    View Specs <ArrowRight size={12} />
+                  </span>
                 </div>
               </div>
 
@@ -338,155 +247,125 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
           ))}
         </div>
 
-        {/* View More / Show Less Projects Button */}
-        {filteredProjects.length > 3 && (
-          <div className="mt-10 flex justify-center">
+        {/* View More / Show Less Button */}
+        {projectsData.length > 3 && (
+          <div className="mt-8 flex justify-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-slate-900 hover:bg-primary-blue text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-primary-blue text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer"
             >
-              <span>{showAll ? "Show Less Projects" : `View More Projects (${filteredProjects.length - 3} More)`}</span>
-              <ArrowRight size={14} className={`transition-transform duration-300 ${showAll ? '-rotate-90' : 'group-hover:translate-x-1.5'}`} />
+              <span>{showAll ? "Show Less" : `View All Projects (${projectsData.length})`}</span>
+              <ArrowRight size={13} className={`transition-transform duration-300 ${showAll ? '-rotate-90' : ''}`} />
             </button>
           </div>
         )}
 
       </div>
 
-      {/* ================= FULL DETAILS MODAL POPUP ================= */}
+      {/* ================= COMPACT, CLEAN DETAILS MODAL ================= */}
       <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
             
-            {/* Backdrop Blur Overlay */}
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-40 cursor-pointer"
+              className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs z-40 cursor-pointer"
             />
 
-            {/* Modal Dialog Card */}
+            {/* Compact Modal Box */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 12 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-50 flex flex-col border border-slate-200"
+              exit={{ opacity: 0, scale: 0.95, y: 12 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden z-50 flex flex-col border border-slate-200 max-h-[92vh]"
             >
-              
-              {/* Top Modal Header with Close Button */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/80 sticky top-0 z-20">
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-wider">
-                    {selectedProject.category}
+              {/* Compact Image Header */}
+              <div className="relative h-44 sm:h-48 w-full bg-slate-900 shrink-0">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-950/40 to-black/20" />
+
+                {/* Top Actions: Category Badge & Close Button */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                  <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-xs text-slate-900 text-[11px] font-bold uppercase tracking-wider">
+                    {selectedProject.category} • {selectedProject.completionYear}
                   </span>
-                  <span className="text-xs font-semibold text-slate-500 hidden sm:inline">
-                    • Commissioned {selectedProject.completionYear}
-                  </span>
+
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    aria-label="Close modal"
+                    className="w-8 h-8 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  >
+                    <X size={16} />
+                  </button>
                 </div>
 
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
-                >
-                  <X size={18} />
-                </button>
+                {/* Bottom Title on Image */}
+                <div className="absolute bottom-3 left-3 right-3 text-white">
+                  <p className="text-[11px] font-bold text-primary-orange uppercase tracking-wider mb-0.5">
+                    {selectedProject.client}
+                  </p>
+                  <h3 className="text-base sm:text-lg font-extrabold leading-snug">
+                    {selectedProject.title}
+                  </h3>
+                </div>
               </div>
 
-              {/* Scrollable Modal Content */}
-              <div className="overflow-y-auto p-6 sm:p-8 space-y-6">
+              {/* Compact Modal Body */}
+              <div className="p-4 sm:p-5 space-y-4 overflow-y-auto">
                 
-                {/* Hero Image in Modal */}
-                <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden shadow-inner bg-slate-900">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <p className="text-xs font-bold text-primary-orange uppercase tracking-wider mb-1">
-                      {selectedProject.client}
-                    </p>
-                    <h3 className="text-xl sm:text-2xl font-bold font-serif">
-                      {selectedProject.title}
-                    </h3>
+                {/* 3 Metric Pills */}
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-100 text-center">
+                    <span className="text-[10px] font-bold text-slate-500 uppercase block">Capacity</span>
+                    <span className="text-xs sm:text-sm font-extrabold font-mono text-primary-blue mt-0.5 block truncate">
+                      {selectedProject.capacity}
+                    </span>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-center">
+                    <span className="text-[10px] font-bold text-slate-500 uppercase block">Impact</span>
+                    <span className="text-xs sm:text-sm font-extrabold font-mono text-emerald-700 mt-0.5 block truncate">
+                      {selectedProject.savings}
+                    </span>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-orange-50 border border-orange-100 text-center">
+                    <span className="text-[10px] font-bold text-slate-500 uppercase block">Location</span>
+                    <span className="text-xs font-bold text-slate-800 mt-0.5 block truncate">
+                      {selectedProject.location}
+                    </span>
                   </div>
                 </div>
 
-                {/* Key Metrics Strip (2x2 Grid) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-100">
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Total Capacity</p>
-                    <p className="text-base font-black font-mono text-primary-blue mt-0.5">{selectedProject.capacity}</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-100">
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Financial Impact</p>
-                    <p className="text-base font-black font-mono text-emerald-700 mt-0.5">{selectedProject.savings}</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-orange-50/70 border border-orange-100">
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Location</p>
-                    <p className="text-xs font-bold text-slate-800 mt-1 truncate">{selectedProject.location}</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-slate-100 border border-slate-200">
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Client</p>
-                    <p className="text-xs font-bold text-slate-800 mt-1 truncate">{selectedProject.client}</p>
-                  </div>
-                </div>
-
-                {/* Engineering Scope Description */}
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-2 flex items-center gap-2">
-                    <Layers size={16} className="text-primary-blue" />
-                    <span>Project Scope &amp; Engineering Execution</span>
-                  </h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-normal bg-slate-50 p-4 rounded-xl border border-slate-100">
+                {/* Scope: 1 concise sentence */}
+                <div className="bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">
+                    Project Scope
+                  </span>
+                  <p className="text-xs text-slate-700 leading-relaxed">
                     {selectedProject.scope}
                   </p>
                 </div>
 
-                {/* Technical Specifications Grid */}
+                {/* Key Highlights */}
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
-                    <Zap size={16} className="text-primary-orange" />
-                    <span>Technical Bill of Materials (BOM)</span>
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 rounded-lg border border-slate-200 bg-white">
-                      <span className="text-slate-400 font-bold block uppercase text-[10px]">PV Modules / Equipment</span>
-                      <span className="text-slate-800 font-semibold">{selectedProject.specs.modules}</span>
-                    </div>
-                    <div className="p-3 rounded-lg border border-slate-200 bg-white">
-                      <span className="text-slate-400 font-bold block uppercase text-[10px]">Inverter / Switchgear</span>
-                      <span className="text-slate-800 font-semibold">{selectedProject.specs.inverter}</span>
-                    </div>
-                    <div className="p-3 rounded-lg border border-slate-200 bg-white">
-                      <span className="text-slate-400 font-bold block uppercase text-[10px]">Mounting / Structure</span>
-                      <span className="text-slate-800 font-semibold">{selectedProject.specs.structure}</span>
-                    </div>
-                    <div className="p-3 rounded-lg border border-slate-200 bg-white">
-                      <span className="text-slate-400 font-bold block uppercase text-[10px]">Grid &amp; DISCOM Sync</span>
-                      <span className="text-slate-800 font-semibold">{selectedProject.specs.metering}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Delivered Highlights */}
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
-                    <Sparkles size={16} className="text-amber-500" />
-                    <span>Key Performance Highlights</span>
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {selectedProject.highlights.map((highlight, hIdx) => (
-                      <div key={hIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle2 size={14} className="text-emerald-600 shrink-0" />
-                        <span>{highlight}</span>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
+                    Key Highlights
+                  </span>
+                  <div className="space-y-1.5">
+                    {selectedProject.highlights.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-700">
+                        <CheckCircle2 size={13} className="text-emerald-600 shrink-0" />
+                        <span>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -494,11 +373,14 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
 
               </div>
 
-              {/* Modal Footer CTA */}
-              <div className="p-4 sm:p-6 border-t border-slate-100 bg-slate-50/80 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <p className="text-xs text-slate-500 text-center sm:text-left">
-                  Need a similar turnkey solar or electrical setup for your facility?
-                </p>
+              {/* Compact Modal Footer */}
+              <div className="p-3 sm:p-4 border-t border-slate-100 bg-slate-50/90 flex items-center justify-between gap-2">
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
 
                 <button
                   onClick={() => {
@@ -510,10 +392,10 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-primary-blue via-blue-800 to-primary-orange text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs hover:shadow-sm transition-all cursor-pointer"
                 >
-                  <span>Request Similar Project Scope</span>
-                  <ArrowRight size={14} />
+                  <span>Inquire Similar Scope</span>
+                  <ArrowRight size={13} />
                 </button>
               </div>
 
