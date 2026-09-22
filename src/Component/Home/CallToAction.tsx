@@ -22,6 +22,7 @@ export const CallToAction: React.FC = () => {
     capacity: '50 kW - 500 kW (Industrial / Commercial)',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,17 +34,21 @@ export const CallToAction: React.FC = () => {
       return;
     }
 
-    console.log("Solar Distribution / EPC Inquiry Submitted:", formData);
-    toast.success("Thank you! Our Distribution & EPC Desk will connect with your technical quote within 24 hours.");
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      city: '',
-      inquiryType: 'Solar EPC Project (Commercial / Industrial)',
-      capacity: '50 kW - 500 kW (Industrial / Commercial)',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setTimeout(() => {
+      console.log("Solar Distribution / EPC Inquiry Submitted:", formData);
+      toast.success("Thank you! Our Distribution & EPC Desk will connect with your technical quote within 24 hours.");
+      setIsSubmitting(false);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        inquiryType: 'Solar EPC Project (Commercial / Industrial)',
+        capacity: '50 kW - 500 kW (Industrial / Commercial)',
+        message: ''
+      });
+    }, 600);
   };
 
   return (
@@ -253,10 +258,20 @@ export const CallToAction: React.FC = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer mt-2"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-primary-orange hover:bg-orange-600 disabled:opacity-75 disabled:cursor-not-allowed text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer mt-2"
                 >
-                  <span>Request Distributor Price List &amp; Proposal</span>
-                  <ArrowRight size={15} />
+                  {isSubmitting ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                      <span>Submitting Request...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Request Distributor Price List &amp; Proposal</span>
+                      <ArrowRight size={15} />
+                    </>
+                  )}
                 </button>
 
               </form>

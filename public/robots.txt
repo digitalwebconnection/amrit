@@ -1,4 +1,30 @@
+# ==============================================================================
+# AMRIT ELECTRICALS - ROBOTS.TXT
+# ==============================================================================
+
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /logo.png
+Allow: /sitemap.xml
 
+# Disallow private source maps or backend assets
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
+# Search Engine Specific Crawl Directives
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /logo.png
+
+User-agent: Bingbot
+Allow: /
+
+# Canonical XML Sitemap Location
 Sitemap: https://www.amritelectricals.com/sitemap.xml

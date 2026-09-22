@@ -1,0 +1,30 @@
+{
+  "name": "Amrit Electricals | Tier-1 Solar EPC & Heavy Electrical Solutions",
+  "short_name": "Amrit Solar",
+  "description": "Authorized Channel Partner for Adani Solar, Polycab & Secure Meters. Turnkey commercial solar EPC and HT/LT substations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#F18223",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "business",
+    "utilities",
+    "productivity"
+  ],
+  "lang": "en-IN"
+}

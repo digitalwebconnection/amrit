@@ -1,0 +1,7 @@
+# Amrit Electricals Security & Administrative Policy
+Contact: mailto:info@amritelectricals.com
+Contact: tel:+919700705020
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, hi, mr
+Canonical: https://www.amritelectricals.com/.well-known/security.txt
+Policy: https://www.amritelectricals.com/terms-of-service

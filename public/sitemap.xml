@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Homepage (Primary Landing Page) -->
   <url>
     <loc>https://www.amritelectricals.com/</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Visual & 3D Engineering Images for Google Image Search -->
+    <image:image>
+      <image:loc>https://www.amritelectricals.com/images/commercial_solar_rooftop.jpg</image:loc>
+      <image:title>Commercial Rooftop Solar EPC Installation</image:title>
+      <image:caption>3D Architectural Visualization of Commercial Solar Rooftop Installation by Amrit Electricals</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.amritelectricals.com/images/solar_epc_engineering.jpg</image:loc>
+      <image:title>Solar EPC Layout &amp; Engineering Studio</image:title>
+      <image:caption>Solar Single Line Diagram and 3D PVSyst Shadow Analysis Engineering Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.amritelectricals.com/images/why_choose_advantage.jpg</image:loc>
+      <image:title>Complete Solar Rooftop Ecosystem &amp; Net-Metering</image:title>
+      <image:caption>Integrated Solar BOS Inverter, Distribution Panel and Smart Net-Meter System</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.amritelectricals.com/images/certifications_showcase.jpg</image:loc>
+      <image:title>MNRE CEIG and ISO Accreditations</image:title>
+      <image:caption>Tier-1 Solar Engineering Compliance and Grid Synchronization Standards</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.amritelectricals.com/images/channel_partner_ecosystem.jpg</image:loc>
+      <image:title>Authorized Channel Partner Distribution Hub</image:title>
+      <image:caption>Official Channel Partner for Adani Solar, Polycab, and Secure Meters</image:caption>
+    </image:image>
   </url>
+
+  <!-- 2. Privacy Policy Page -->
   <url>
     <loc>https://www.amritelectricals.com/privacy-policy</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- 3. Terms of Service Page -->
   <url>
     <loc>https://www.amritelectricals.com/terms-of-service</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+
 </urlset>
