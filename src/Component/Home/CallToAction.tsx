@@ -69,7 +69,7 @@ export const CallToAction: React.FC = () => {
 
 
             <p className="text-slate-700 text-sm sm:text-base mb-6 leading-relaxed font-normal max-w-xl">
-              As an authorized distributor for <strong>Adani Solar, Polycab, and Secure Meters</strong>, Amrit Electricals provides Tier-1 solar modules, inverters, and heavy HT/LT BOS components at wholesale ex-stock pricing, backed by full EPC execution.
+              Authorized distributor for <strong>Adani Solar, Polycab, and Secure Meters</strong>—delivering Tier-1 solar equipment and turnkey EPC at wholesale ex-stock pricing.
             </p>
 
             {/* Contact Information Pods */}
@@ -80,12 +80,12 @@ export const CallToAction: React.FC = () => {
                 href="tel:+919700705020"
                 className="flex items-center gap-4 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-primary-orange transition-colors group cursor-pointer"
               >
-                <div className="w-11 h-11 bg-orange-50 rounded-lg flex items-center justify-center text-primary-orange border border-orange-200">
-                  <Phone size={18} />
+                <div className=" flex items-center justify-center text-primary-orange">
+                  <Phone size={28} />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Distribution &amp; EPC Desk</p>
-                  <p className="font-mono font-bold text-slate-900 text-base group-hover:text-primary-orange transition-colors">+91 97007 05020</p>
+                  <p className="text-lg text-slate-500 font-bold uppercase tracking-wider">Distribution &amp; EPC Desk</p>
+                  <p className="font-mono font-bold text-slate-900 text-lg group-hover:text-primary-orange transition-colors">+91 97007 05020</p>
                 </div>
               </a>
 
@@ -94,12 +94,12 @@ export const CallToAction: React.FC = () => {
                 href="mailto:info@amritelectricals.com"
                 className="flex items-center gap-4 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-primary-blue transition-colors group cursor-pointer"
               >
-                <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center text-primary-blue border border-blue-200">
-                  <Mail size={18} />
+                <div className=" flex items-center justify-center text-primary-blue">
+                  <Mail size={28} />
                 </div>
                 <div className="text-left">
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Commercial Quotations</p>
-                  <p className="font-sans font-bold text-slate-900 text-sm group-hover:text-primary-blue transition-colors">info@amritelectricals.com</p>
+                  <p className="text-lg text-slate-500 font-bold uppercase tracking-wider">Commercial Quotations</p>
+                  <p className="font-sans font-bold text-slate-900 text-lg group-hover:text-primary-blue transition-colors">info@amritelectricals.com</p>
                 </div>
               </a>
 
@@ -259,7 +259,7 @@ export const CallToAction: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white  disabled:opacity-75 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer mt-2"
+                  className="w-full py-3.5 bg-[#203A96] hover:bg-[#12225E] text-white disabled:opacity-75 disabled:cursor-not-allowed font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer mt-2"
                 >
                   {isSubmitting ? (
                     <>

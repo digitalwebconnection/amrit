@@ -49,7 +49,7 @@ export const VideoSection: React.FC = () => {
 
         {/* Section Header */}
         <div className="text-center max-w-5xl mx-auto mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
+          <span className="text-lg font-bold uppercase tracking-wider text-primary-blue inline-block mb-3">
             Corporate Film
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-2">

@@ -8,7 +8,10 @@ export const TermsOfService: React.FC = () => {
 
   return (
     <>
-      <SEO title="Terms of Service - Amrit Electricals" />
+      <SEO 
+        title="Terms of Service | Amrit Electricals - Service Terms & Warranties"
+        description="Review the terms of service, equipment warranties, and project execution guidelines provided by Amrit Electricals for solar EPC and distribution."
+      />
       <div className="py-10 min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="">

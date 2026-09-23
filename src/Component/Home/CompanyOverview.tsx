@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Shield, TrendingUp, Award, Building, ArrowRight } from "lucide-react";
 
 const BRAND = {
@@ -39,6 +39,20 @@ interface CompanyOverviewProps {
 }
 
 export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact }) => {
+  // Index of the card currently flipped automatically (-1 when none)
+  const [activeFlippedIndex, setActiveFlippedIndex] = useState<number>(0);
+  const [userHoveredIndex, setUserHoveredIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    // If the user is currently hovering over any card, pause the auto rotation
+    if (userHoveredIndex !== null) return;
+
+    const interval = setInterval(() => {
+      setActiveFlippedIndex((prev) => (prev + 1) % highlights.length);
+    }, 2500); // changes card every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [userHoveredIndex]);
   return (
     <section
       className="py-12 lg:py-14 bg-white border-b border-slate-200"
@@ -47,7 +61,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Brand alignment header badge */}
         <div className="text-center mb-4">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-[#203A96] border border-blue-200">
+          <span className="inline-flex items-center gap-2 px-4  text-lg font-bold uppercase tracking-wider  text-[#203A96] ">
             <span className="w-2 h-2 rounded-full bg-primary-orange" />
             Sustainable, Reliable &amp; Affordable Energy
           </span>
@@ -62,46 +76,58 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
           Authorized distributor for Adani Solar, Polycab, Secure, and L&amp;T, delivering end-to-end solar equipment and turnkey rooftop solutions.
         </p>
 
-        {/* Highlights grid */}
+        {/* Highlights grid with auto sequential 180-degree flip + manual hover */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {highlights.map((h) => {
+          {highlights.map((h, index) => {
             const Icon = h.icon;
+            // A card is flipped if it's the currently auto-selected card OR if the user is hovering it
+            const isFlipped = userHoveredIndex !== null ? userHoveredIndex === index : activeFlippedIndex === index;
+
             return (
               <div
                 key={h.title}
-                className="bg-slate-50 rounded-xl p-6 border border-blue-900 hover:border-slate-300 shadow-lg shadow-black hover:shadow-lg hover:shadow-black transition-all text-center"
+                className="group perspective-1000 h-64 cursor-pointer"
+                onMouseEnter={() => setUserHoveredIndex(index)}
+                onMouseLeave={() => setUserHoveredIndex(null)}
+                onClick={() => setActiveFlippedIndex(index)}
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="w-14 h-14 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-xs">
-                    <Icon className="w-7 h-7" style={{ color: h.iconColor }} aria-hidden />
+                {/* 3D Flipping Card Container */}
+                <div
+                  className={`relative w-full h-full duration-700 transform-style-3d transition-transform ${
+                    isFlipped ? "rotate-y-180" : ""
+                  }`}
+                >
+                  {/* FRONT FACE: Big Icon & Clean Title */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden bg-slate-50 rounded-xl p-6 border-2 border-blue-900/40 hover:border-blue-900 shadow-md flex flex-col items-center justify-center text-center transition-all">
+                    <div className="w-24 h-24  flex items-center justify-center mb-4  transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="w-25 h-25" style={{ color: h.iconColor }} aria-hidden />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-serif font-bold text-slate-900 line-clamp-2 px-1">
+                      {h.title}
+                    </h3>
+                    <span className="mt-3 text-[11px] font-semibold text-primary-orange uppercase tracking-wider flex items-center gap-1">
+                      Hover to explore &rarr;
+                    </span>
+                  </div>
+
+                  {/* BACK FACE: 180° Turned Content */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-[#12225E] text-white rounded-xl p-6 border-2 border-primary-orange shadow-xl flex flex-col items-center justify-center text-center">
+                    <div className=" flex items-center justify-center mb-3">
+                      <Icon className="w-15 h-15 text-primary-orange" aria-hidden />
+                    </div>
+                    <h3 className="text-base font-serif font-bold text-white mb-2">
+                      {h.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                      {h.description}
+                    </p>
                   </div>
                 </div>
-
-                <h3 className="text-lg font-serif font-bold text-slate-900 mb-2">
-                  {h.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {h.description}
-                </p>
               </div>
             );
           })}
         </div>
 
-        {/* Trust ribbon */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#203A96]">
-            Authorized Partner: Adani Solar &amp; Polycab
-          </span>
-          <span className="text-slate-400 text-sm hidden sm:inline">•</span>
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-primary-orange">
-            1-Box Ready Turnkey Solar KITs
-          </span>
-          <span className="text-slate-400 text-sm hidden sm:inline">•</span>
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-[#12225E]">
-            25-Year Linear Power Warranty
-          </span>
-        </div>
 
         {/* Action Button */}
         <div className="mt-8 flex justify-center">
@@ -110,7 +136,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md hover:shadow-lg transition-colors cursor-pointer"
           >
             <span>Get A Free Turnkey Solar Estimate</span>
             <ArrowRight size={15} />

@@ -6,10 +6,7 @@ import Header from './Component/Header';
 import Footer from './Component/Footer';
 import ContactPopup from './Component/ContactPopup';
 import WhatsAppWidget from './Component/WhatsAppWidget';
-// import ScrollToTop from './Component/ScrollToTop';
-import ScrollProgressBar from './Component/Common/ScrollProgressBar';
 import ErrorBoundary from './Component/ErrorBoundary';
-import SEO from './Component/SEO';
 
 // Dynamic imports for code splitting
 const HomeMain = lazy(() => import('./Component/Home/HomeMain'));
@@ -23,10 +20,9 @@ function App() {
   return (
     <ErrorBoundary>
       <ToastContainer position="top-right" autoClose={3000} theme="colored" />
-      <ScrollProgressBar />
+
       
       <div className="flex flex-col min-h-screen">
-        <SEO />
         <Header onOpenContact={() => setIsContactOpen(true)} />
         
         <div className="grow">
@@ -50,7 +46,7 @@ function App() {
         <Footer onOpenContact={() => setIsContactOpen(true)} />
         <ContactPopup isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
         <WhatsAppWidget />
-        {/* <ScrollToTop /> */}
+   
       </div>
     </ErrorBoundary>
   );

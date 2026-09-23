@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'react-toastify';
 import logo from '../assets/logo.webp';
 
@@ -22,7 +22,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Our Services', href: '#services' },
-    { name: 'Recent Projects', href: '#projects' },
     { name: 'Why Us', href: '#why-us' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact Us', href: '#contact' },
@@ -37,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
   ];
 
   return (
-    <footer className="relative bg-[#020617] text-gray-300 pt-1 pb-8 font-sans border-t border-white/5 overflow-hidden selection:bg-primary-orange selection:text-white">
+    <footer className="relative bg-[#000000] text-gray-300 pt-1 pb-8 font-sans border-t border-white/5 overflow-hidden selection:bg-primary-orange selection:text-white">
 
       {/* Background ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-primary-blue/5 rounded-full blur-[140px] pointer-events-none" />
@@ -62,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
                     href="https://maps.google.com/?q=Amrit+Electricals+PG+Road+Secunderabad"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-primary-orange text-xs sm:text-sm leading-relaxed transition-colors block"
+                    className="text-gray-100 hover:text-primary-orange text-xs sm:text-sm leading-relaxed transition-colors block"
                   >
                     Ground Floor, Mecleodguda, Backside Mamta sweets, No 1, H, 8-107, PG Road, beside Marwadi School, Secunderabad, Telangana 500003
                   </a>
@@ -73,24 +72,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
                 <div className="bg-white/5 p-2 rounded-lg text-primary-orange shrink-0">
                   <Phone size={18} />
                 </div>
-                <a href="tel:+919700705020" className="text-gray-400 hover:text-primary-orange transition-colors text-sm font-medium">
+                <a href="tel:+919700705020" className="text-gray-100 hover:text-primary-orange transition-colors text-sm font-medium">
                   +91 97007 05020
                 </a>
               </div>
 
-              {/* Footer Quote CTA */}
-              <div className="pt-2">
-                <button
-                  onClick={onOpenContact ? onOpenContact : () => {
-                    const el = document.getElementById('contact');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-colors cursor-pointer"
-                >
-                  <span>Request A Quote</span>
-                  <ArrowRight size={14} />
-                </button>
-              </div>
             </div>
           </div>
 
@@ -99,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Quick Links
             </h3>
-            <ul className="space-y-3 font-medium text-gray-400">
+            <ul className="space-y-3 font-medium text-gray-100">
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <a
@@ -126,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Our Services
             </h3>
-            <ul className="space-y-3 font-medium text-gray-400">
+            <ul className="space-y-3 font-medium text-gray-100">
               {serviceLinks.map((item) => (
                 <li key={item.name}>
                   <a
@@ -157,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <h3 className="text-lg font-serif font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
               Stay Updated
             </h3>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-100 text-sm mb-4">
               Subscribe to our newsletter for the latest solar energy insights and offers.
             </p>
             <form onSubmit={handleSubmit} className="relative group">

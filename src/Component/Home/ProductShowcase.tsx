@@ -126,8 +126,8 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenContact 
             <div className="lg:col-span-6 flex flex-col justify-center">
 
               {/* Product Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-4 w-fit shadow-2xs">
-                <ActiveIcon size={14} className="text-primary-orange" />
+              <div className="inline-flex items-center gap-2 text-primary-blue text-lg font-bold uppercase tracking-wider mb-4 w-fit ">
+                <ActiveIcon size={24} className="text-primary-blue" />
                 <span>{activeProduct.highlight}</span>
               </div>
 
@@ -157,7 +157,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenContact 
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="tel:+919700705020"
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg"
                 >
                   <PhoneCall size={15} className="text-primary-orange animate-pulse" />
                   <span>Call For Inquiry: +91 97007 05020</span>
@@ -168,7 +168,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onOpenContact 
                     const el = document.getElementById('contact');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-950 text-white  font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg hover:shadow-orange-500/25"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg hover:shadow-blue-500/25"
                 >
                   <span>Request Price Quote</span>
                   <ArrowRight size={15} />

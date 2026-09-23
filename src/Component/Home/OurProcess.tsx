@@ -41,7 +41,7 @@ const steps: ProcessStep[] = [
       "Consumption audit & system sizing",
       "Net-metering feasibility report"
     ],
-    image: "/images/process_1.webp"
+    image: "/images/process_step_1.jpg"
   },
   {
     id: 1,
@@ -57,7 +57,7 @@ const steps: ProcessStep[] = [
       "Factory flash test & warranty reports",
       "Pre-wired IP65 distribution panels"
     ],
-    image: "/images/process_2.webp"
+    image: "/images/process_step_2.jpg"
   },
   {
     id: 2,
@@ -73,7 +73,7 @@ const steps: ProcessStep[] = [
       "CITEL Type 1+2 surge protection",
       "Low-impedance chemical grounding"
     ],
-    image: "/images/process_3.webp"
+    image: "/images/process_step_3.jpg"
   },
   {
     id: 3,
@@ -89,7 +89,7 @@ const steps: ProcessStep[] = [
       "Statutory DISCOM joint clearance",
       "25-year manufacturer warranty handover"
     ],
-    image: "/images/process_4.webp"
+    image: "/images/process_step_4.jpg"
   }
 ];
 
@@ -107,8 +107,8 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
 
         {/* Section Header */}
         <div className="text-center max-w-6xl mx-auto mb-14 lg:mb-18">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-            <Sparkles size={13} className="text-primary-orange" />
+          <div className="inline-flex items-center gap-2  text-primary-blue text-lg font-bold uppercase tracking-wider mb-3 ">
+            <Sparkles size={23} className="text-primary-orange animate-pulse" />
             <span>Turnkey Execution Roadmap</span>
           </div>
 
@@ -186,7 +186,7 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
                           const el = document.getElementById('contact');
                           if (el) el.scrollIntoView();
                         }}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-primary-orange text-white text-xs font-bold uppercase tracking-wider rounded-lg cursor-pointer shadow-xs"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#203A96] hover:bg-[#12225E] text-white text-xs font-bold uppercase tracking-wider rounded-lg cursor-pointer shadow-xs"
                       >
                         <span>Inquire Step</span>
                         <ArrowRight size={14} />
@@ -225,7 +225,7 @@ export const OurProcess: React.FC<OurProcessProps> = ({ onOpenContact }) => {
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView();
             }}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-orange-500/25 cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer"
           >
             <span>Book Free Site Assessment &amp; System Sizing</span>
             <ArrowRight size={16} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Award,
   ShieldCheck,
@@ -72,7 +72,18 @@ interface CertificationsProps {
 }
 
 export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact }) => {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [activeFlippedIndex, setActiveFlippedIndex] = useState<number>(0);
+  const [userHoveredIndex, setUserHoveredIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (userHoveredIndex !== null) return;
+
+    const interval = setInterval(() => {
+      setActiveFlippedIndex((prev) => (prev + 1) % certificates.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [userHoveredIndex]);
 
   return (
     <section id="certifications" className="py-14 lg:py-14 bg-slate-50/70 border-t-2 border-b-2 border-primary-orange relative overflow-hidden  ">
@@ -86,9 +97,9 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
 
         {/* Section Header */}
         <div className="text-center max-w-6xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3.5 shadow-2xs">
-            <Sparkles size={13} className="text-primary-orange animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2  text-primary-blue mb-3.5 ">
+            <Sparkles size={23} className="text-primary-orange animate-pulse" />
+            <span className="text-lg font-bold uppercase tracking-wider">
               Statutory Compliance &amp; Standards
             </span>
           </div>
@@ -138,65 +149,86 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
             <div className="absolute -inset-1 bg-linear-to-r from-primary-orange/20 to-primary-blue/20 rounded-3xl blur-xl -z-10 opacity-70 group-hover:opacity-100 transition-opacity" />
           </div>
 
-          {/* RIGHT: 4 ACCREDITATION CARDS GRID */}
+          {/* RIGHT: 4 ACCREDITATION CARDS GRID WITH AUTO 180° FLIP */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {certificates.map((cert) => {
+            {certificates.map((cert, index) => {
               const Icon = cert.icon;
-              const isHovered = hoveredCard === cert.id;
+              const isFlipped = userHoveredIndex !== null ? userHoveredIndex === index : activeFlippedIndex === index;
 
               return (
                 <div
                   key={cert.id}
-                  onMouseEnter={() => setHoveredCard(cert.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className={`relative bg-white rounded-lg p-5 sm:p-6 border-2 transition-all duration-300 flex flex-col justify-between   shadow-lg shadow-black/50 group cursor-pointer  ${isHovered
-                      ? 'border-2 border-primary-orange shadow-xl shadow-orange-500/10 '
-                      : 'border-blue-600 hover:border-slate-300 hover:shadow-md'
-                    }`}
+                  className="group perspective-1000 h-64 sm:h-68 cursor-pointer"
+                  onMouseEnter={() => setUserHoveredIndex(index)}
+                  onMouseLeave={() => setUserHoveredIndex(null)}
+                  onClick={() => setActiveFlippedIndex(index)}
                 >
-                  {/* Top Gradient Accent Strip */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary-orange via-amber-400 to-primary-blue rounded-t-2xl" />
+                  {/* 3D Flipping Card Container */}
+                  <div
+                    className={`relative w-full h-full duration-700 transform-style-3d transition-transform ${
+                      isFlipped ? "rotate-y-180" : ""
+                    }`}
+                  >
+                    {/* FRONT FACE: Big Icon & Tag & Name */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden bg-white rounded-xl p-5 border-2 border-blue-600 shadow-lg shadow-black/30 flex flex-col items-center justify-center text-center transition-all">
+                      {/* Top Gradient Stripe */}
+                      <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-primary-orange via-amber-400 to-primary-blue rounded-t-xl" />
 
-                  <div>
-                    {/* Top Row: Icon & Tag */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-orange-50 text-primary-orange border border-orange-200/80 flex items-center justify-center shadow-2xs group-hover:bg-primary-orange group-hover:text-white transition-colors">
-                        <Icon size={22} />
+                      <div className=" text-primary-blue flex items-center justify-center shadow-xs mb-3 transition-transform duration-300 group-hover:scale-110">
+                        <Icon size={88} className="text-primary-orange" />
                       </div>
 
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3 py-0.5 rounded-full border border-orange-200 mb-2">
                         {cert.tag}
+                      </span>
+
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug px-2 line-clamp-1">
+                        {cert.name}
+                      </h3>
+
+                      <span className="mt-2 text-[10px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        Hover to view compliance &rarr;
                       </span>
                     </div>
 
-                    {/* Certificate Name */}
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1 group-hover:text-primary-orange transition-colors leading-snug">
-                      {cert.name}
-                    </h3>
+                    {/* BACK FACE: 180° Turned Content */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-[#12225E] text-white rounded-xl p-5 border-2 border-primary-orange shadow-xl flex flex-col justify-between text-left">
+                      <div>
+                        {/* Top Row: Mini Icon & Authority */}
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-primary-orange">
+                            <Icon size={18} />
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-white/10 px-2.5 py-0.5 rounded-full">
+                            {cert.tag}
+                          </span>
+                        </div>
 
-                    {/* Authority Subtitle */}
-                    <p className="text-[11px] font-bold uppercase tracking-wide text-primary-blue mb-2.5">
-                      {cert.authority}
-                    </p>
+                        <h3 className="text-base font-bold text-white mb-1 leading-snug">
+                          {cert.name}
+                        </h3>
 
-                    {/* Description */}
-                    <p className="text-slate-600 text-xs leading-relaxed">
-                      {cert.desc}
-                    </p>
-                  </div>
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-primary-orange mb-2">
+                          {cert.authority}
+                        </p>
 
-                  {/* Footer Status */}
-                  <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-1.5 text-emerald-700 font-semibold text-[11px]">
-                      <CheckCircle2 size={13} className="text-emerald-600 shrink-0" />
-                      <span>{cert.validity}</span>
+                        <p className="text-xs text-slate-200 leading-relaxed line-clamp-3">
+                          {cert.desc}
+                        </p>
+                      </div>
+
+                      {/* Footer Status */}
+                      <div className="pt-2 border-t border-white/15 flex items-center justify-between text-xs">
+                        <div className="flex items-center gap-1.5 text-emerald-300 font-semibold text-[11px]">
+                          <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                          <span>{cert.validity}</span>
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-0.5">
+                          Verified <ArrowRight size={11} />
+                        </span>
+                      </div>
                     </div>
-
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-primary-orange transition-colors flex items-center gap-0.5">
-                      Compliance <ArrowRight size={11} />
-                    </span>
                   </div>
-
                 </div>
               );
             })}
@@ -209,8 +241,8 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
 
             <div className="flex items-center gap-3 justify-center sm:justify-start">
-              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-primary-blue shrink-0">
-                <Building2 size={20} />
+              <div className="w-15 h-15 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-primary-blue shrink-0">
+                <Building2 size={45} />
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-900 uppercase tracking-wide">
@@ -223,8 +255,8 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
             </div>
 
             <div className="flex items-center gap-3 justify-center sm:justify-start sm:border-l sm:border-slate-200 sm:pl-4">
-              <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-primary-orange shrink-0">
-                <Lock size={20} />
+              <div className="w-15 h-15 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-primary-orange shrink-0">
+                <Lock size={45} />
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-900 uppercase tracking-wide">
@@ -237,8 +269,8 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
             </div>
 
             <div className="flex items-center gap-3 justify-center sm:justify-start sm:border-l sm:border-slate-200 sm:pl-4">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
-                <FileText size={20} />
+              <div className="w-15 h-15 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                <FileText size={45} />
               </div>
               <div>
                 <p className="text-xs font-bold text-slate-900 uppercase tracking-wide">
@@ -260,7 +292,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 hover:bg-primary-orange text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-orange-500/25 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md hover:shadow-lg hover:shadow-blue-500/25 transition-all cursor-pointer"
           >
             <span>Request Official Compliance &amp; License Dossier</span>
             <ArrowRight size={14} />

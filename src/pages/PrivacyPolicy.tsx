@@ -8,7 +8,10 @@ export const PrivacyPolicy: React.FC = () => {
 
   return (
     <>
-      <SEO title="Privacy Policy - Amrit Electricals" />
+      <SEO 
+        title="Privacy Policy | Amrit Electricals - Data Protection & Compliance"
+        description="Learn how Amrit Electricals protects your personal information and safeguards client privacy in accordance with data protection regulations."
+      />
       <div className="py-10 min-h-screen">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="">

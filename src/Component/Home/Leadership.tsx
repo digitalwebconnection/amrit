@@ -10,32 +10,36 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
     <section id="leadership" className="py-16 bg-white border-b border-slate-200">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          {/* LEFT: Clean Executive Profile Card */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="w-full max-w-sm rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-white p-2 mb-4">
-              <img
-                src="/images/amritpal_singh.webp"
-                alt="Amritpal Singh - Founder & CEO, Amrit Electricals"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-80 sm:h-96 object-cover object-top rounded-md"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/images/leadership_director.webp';
-                }}
-              />
-            </div>
 
-            <div className="w-full max-w-sm">
-              <h3 className="text-2xl font-bold text-slate-900 mb-1">
-                Amritpal Singh
-              </h3>
-              <p className="text-sm font-semibold text-primary-orange uppercase tracking-wide mb-3">
-                Founder &amp; Managing Director
-              </p>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-md text-xs font-medium text-slate-700">
-                <Award size={14} className="text-primary-orange shrink-0" />
-                <span>20+ Years Electrical &amp; Solar EPC Experience</span>
+          {/* LEFT: Clean Executive Profile Card */}
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+            <div className="w-full max-w-sm bg-slate-50/80 border border-blue-600 rounded-xl  shadow-sm hover:shadow-md transition-shadow">
+              {/* Profile Image */}
+              <div className="relative rounded-t-xl overflow-hidden bg-slate-200 border border-slate-200/80">
+                <img
+                  src="/images/amritpal_singh.webp"
+                  alt="Amritpal Singh - Founder & CEO, Amrit Electricals"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-80 sm:h-84 object-cover object-top"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/leadership_director.webp';
+                  }}
+                />
+              </div>
+
+              {/* Name & Title Details */}
+              <div className="mt-4 text-center  p-4 lg:text-left">
+                <h3 className="text-2xl font-serif font-bold text-slate-900 mb-1">
+                  Amritpal Singh
+                </h3>
+                <p className="text-xs font-bold text-primary-orange uppercase tracking-wide mb-3">
+                  Founder &amp; Managing Director
+                </p>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium text-slate-700 shadow-2xs">
+                  <Award size={14} className="text-primary-orange shrink-0" />
+                  <span>20+ Years Electrical &amp; Solar EPC Experience</span>
+                </div>
               </div>
             </div>
           </div>
@@ -43,7 +47,7 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
           {/* RIGHT: Leadership Message */}
           <div className="lg:col-span-8 flex flex-col justify-center">
             <div className="mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
+              <span className="text-lg font-bold uppercase tracking-wider text-primary-blue inline-block mb-3">
                 Leadership Message
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4 leading-tight">
@@ -84,7 +88,7 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white  font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#203A96] hover:bg-[#12225E] text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm hover:shadow-md transition-colors cursor-pointer"
               >
                 <span>Connect with Leadership Desk</span>
                 <ArrowRight size={14} />

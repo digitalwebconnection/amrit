@@ -229,7 +229,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                       const el = document.getElementById('contact');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-900 group-hover:bg-primary-orange text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#203A96] hover:bg-[#12225E] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   >
                     <span>Inquire Now</span>
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

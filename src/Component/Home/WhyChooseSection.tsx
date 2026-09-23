@@ -127,8 +127,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
 
             {/* Section Header */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-                <Sparkles size={13} className="text-primary-orange animate-pulse" />
+              <div className="inline-flex items-center gap-2  text-primary-blue text-lg font-bold uppercase tracking-wider mb-3 ">
+                <Sparkles size={23} className="text-primary-orange animate-pulse" />
                 <span>The Amrit Advantage</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">

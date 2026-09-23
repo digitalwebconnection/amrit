@@ -87,9 +87,9 @@ export const ChannelPatner: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-5xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3.5 shadow-2xs">
-            <Sparkles size={13} className="text-primary-orange animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2  text-primary-blue mb-3.5 ">
+            <Sparkles size={23} className="text-primary-orange animate-pulse" />
+            <span className="text-lg font-bold uppercase tracking-wider">
               Direct OEM Alliances // 100% Certified Supply
             </span>
           </div>

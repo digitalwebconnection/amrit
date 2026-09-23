@@ -8,8 +8,8 @@ const NotFound: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Page Not Found - Amrit Electricals" 
-        description="The page you are looking for does not exist." 
+        title="404 - Page Not Found | Amrit Electricals" 
+        description="The requested page could not be found. Return to the Amrit Electricals home page for solar products, turnkey EPC services, and distributor quotes." 
       />
       <div className="min-h-[80vh] flex flex-col items-center justify-center bg-slate-50 px-6 text-center">
         <motion.div

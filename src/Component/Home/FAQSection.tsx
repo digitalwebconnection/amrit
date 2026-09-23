@@ -41,9 +41,9 @@ export const FAQSection: React.FC<FAQSectionProps> = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3 shadow-2xs">
-            <Sparkles size={13} className="text-primary-orange" />
-            <span className="text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2  text-primary-blue mb-3 ">
+            <Sparkles size={23} className="text-primary-orange" />
+            <span className="text-lg font-bold uppercase tracking-wider">
               Got Questions?
             </span>
           </div>
