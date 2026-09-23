@@ -21,7 +21,7 @@ const services: ServiceItem[] = [
     num: "01",
     title: "Solar Rooftop EPC",
     category: "Residential & Commercial",
-    description: "Turnkey rooftop and captive solar power plants engineered for maximum yield with statutory DISCOM net-metering sanctions.",
+    description: "Turnkey rooftop solar plants engineered for maximum yield with statutory DISCOM net-metering.",
     image: "/images/services/solar_rooftop.webp",
     tags: ["Up to 80% Savings", "25-Yr Performance"]
   },
@@ -30,7 +30,7 @@ const services: ServiceItem[] = [
     num: "02",
     title: "Turnkey Solar KITs",
     category: "1-Box Complete Solution",
-    description: "Pre-engineered all-in-one solar packages with panels, inverter, distribution boxes, and cables ready for fast dispatch.",
+    description: "Complete 1 kW to 25 kW solar packages with panels, inverters, and BOS ready for dispatch.",
     image: "/images/services/solar_kits.webp",
     tags: ["1 kW – 25 kW Ready", "Zero Sourcing Delays"]
   },
@@ -39,7 +39,7 @@ const services: ServiceItem[] = [
     num: "03",
     title: "Polycab Solar Inverters",
     category: "Grid-Tie & Hybrid",
-    description: "Authorized high-yield on-grid string inverters featuring 98.8% MPPT efficiency and built-in wireless SCADA cloud telemetry.",
+    description: "High-efficiency on-grid string inverters with 98.8% MPPT yield and cloud telemetry.",
     image: "/images/services/solar_inverters.webp",
     tags: ["98.8% MPPT Yield", "PM KUSUM Approved"]
   },
@@ -48,7 +48,7 @@ const services: ServiceItem[] = [
     num: "04",
     title: "DLMS Net-Meters & CTs",
     category: "DISCOM Statutory Sync",
-    description: "Class 0.5S bi-directional smart net-meters and precision current transformers for utility solar grid synchronization.",
+    description: "Utility-approved Class 0.5S bi-directional meters and precision current transformers.",
     image: "/images/services/energy_meters.webp",
     tags: ["Utility Pre-Approved", "Class 0.5S Accuracy"]
   },
@@ -57,7 +57,7 @@ const services: ServiceItem[] = [
     num: "05",
     title: "Balance of System (BOS)",
     category: "Electrical Protection",
-    description: "Custom IP65 ACDB/DCDB protection boxes, TUV certified flame-retardant DC cables, and CITEL Type 1+2 surge arresters.",
+    description: "IP65 ACDB/DCDB boxes, flame-retardant DC cables, and CITEL Type 1+2 surge arresters.",
     image: "/images/services/bos_protection.webp",
     tags: ["IP65 Weatherproof", "CITEL Type 1+2 SPD"]
   },
@@ -66,7 +66,7 @@ const services: ServiceItem[] = [
     num: "06",
     title: "EPC Engineering Support",
     category: "Turnkey Technical Support",
-    description: "In-house team of certified solar engineers providing system sizing, single-line diagrams (SLD), and testing verification.",
+    description: "Dedicated certified engineers providing system sizing, SLD design, and testing support.",
     image: "/images/services/solar_engineering.webp",
     tags: ["SLD & System Sizing", "Dedicated Engineers"]
   }
@@ -131,9 +131,9 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
   // Scroll directly to a specific slide dot
 
   return (
-    <section 
-      id="services" 
-      className="py-16 lg:py-20 bg-white border-b border-slate-200 relative overflow-hidden select-none"
+    <section
+      id="services"
+      className="py-16 lg:py-14 bg-white border-b border-slate-200 relative overflow-hidden  "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -143,11 +143,11 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
-        
+
         {/* Section Header with Slider Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div className="max-w-2xl">
-            
+
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
               Our Business Verticals
             </h2>
@@ -189,15 +189,15 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                 className="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group relative border border-blue-800 bg-white rounded-xl shadow-lg shadow-black  overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 hover:border-primary-orange/60 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Top Visual Graphic Image */}
-                <div className="relative w-full h-44 sm:h-48 overflow-hidden bg-slate-100">
+                <div className="relative w-full h-44 sm:h-56 overflow-hidden bg-slate-100">
                   <img
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-106"
+                    className="w-full h-full object-fill object-center transition-transform duration-700 group-hover:scale-106"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Category Pill Tag */}
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-xs border border-slate-200">
                     {service.category}
@@ -220,7 +220,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
                       {service.description}
                     </p>
 
-                    
+
                   </div>
 
                   {/* Sleek Action Button */}
@@ -240,7 +240,7 @@ export const BusinessVerticals: React.FC<BusinessVerticalsProps> = ({ onOpenCont
           })}
         </div>
 
-       
+
 
       </div>
     </section>

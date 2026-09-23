@@ -189,7 +189,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <div className="hidden lg:block">
               <CorporateButton
                 onClick={onOpenContact}
-                className="bg-primary-orange hover:bg-orange-600 text-white rounded-lg px-7 py-2.5 shadow-sm text-sm"
+                className="bg-primary-blue hover:bg-primary-orange text-white rounded-md px-7 py-2.5 shadow-lg shadow-black/50 text-sm"
               >
                 Get A Free Quote
               </CorporateButton>
@@ -224,12 +224,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           {/* Right Side Phone + Quote Button */}
           <div className="hidden lg:flex items-center gap-5">
             <a href="tel:+919700705020" className="flex items-center gap-2 text-slate-800 hover:text-primary-orange transition-colors">
-              <PhoneCall className="w-4 h-4 text-primary-orange" />
+              <PhoneCall className="w-5 h-5 text-primary-blue" />
               <span className="font-bold text-sm">+91 97007 05020</span>
             </a>
             <CorporateButton
               onClick={onOpenContact}
-              className="bg-primary-orange hover:bg-orange-600 text-white rounded-lg px-5 py-2 text-xs"
+              className="bg-primary-blue hover:bg-primary-orange text-white rounded-md px-5 py-2 text-xs shadow-lg shadow-black/50"
             >
               Get A Quote
             </CorporateButton>
@@ -289,7 +289,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                   setIsMobileMenuOpen(false);
                   onOpenContact();
                 }}
-                className="w-full bg-primary-orange hover:bg-orange-600 text-white py-3.5 rounded-xl text-base shadow-md"
+                className="w-full bg-[#203A96] hover:bg-orange-600 text-white py-3.5 rounded-xl text-base shadow-md"
               >
                 Get a Free Quote
               </CorporateButton>

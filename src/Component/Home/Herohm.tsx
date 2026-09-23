@@ -80,7 +80,7 @@ export const Herohm: React.FC<HeroProps> = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-[55vh] sm:h-[68vh] md:h-[78vh] lg:h-[88vh] overflow-hidden bg-slate-950 select-none group"
+      className="relative w-full h-[55vh] sm:h-[68vh] md:h-[78vh] lg:h-[88vh] overflow-hidden bg-slate-950   group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -89,9 +89,8 @@ export const Herohm: React.FC<HeroProps> = () => {
         {banners.map((item, idx) => (
           <div
             key={item.id}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              idx === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-            }`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${idx === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
           >
             <img
               src={item.image}
@@ -120,7 +119,7 @@ export const Herohm: React.FC<HeroProps> = () => {
         <ChevronRight size={24} />
       </button>
 
-      
+
     </section>
   );
 };

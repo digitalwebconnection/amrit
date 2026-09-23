@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Sparkles } from 'lucide-react';
 
 interface FAQSectionProps {
   onOpenContact?: () => void;
 }
 
-export const FAQSection: React.FC<FAQSectionProps> = ({ }) => {
+export const FAQSection: React.FC<FAQSectionProps> = () => {
   const faqs = [
     {
       question: "What products and brands does Amrit Electricals supply?",
-      answer: "We are an authorised channel partner supplying Adani Solar PV Panels (Mono PERC & TOPCon), Polycab Inverters (On-Grid & Hybrid), ACDB & DCDB Distribution Panels, DLMS Class 0.5S Energy Meters (Secure & L&T), Ashmor CTs, Polycab DC Cables, CITEL SPDs, and maintenance-free Chemical Earthing."
+      answer: "We are an authorized partner supplying Adani Solar panels, Polycab inverters, ACDB/DCDB boxes, DLMS net-meters (Secure & L&T), Ashmor CTs, Polycab DC cables, and CITEL SPDs."
     },
     {
       question: "What is the 1-Box Solar KIT and who is it for?",
-      answer: "Our pre-packaged Solar KITs (available from 1 kW to 25 kW) are designed for solar installers and system integrators. You get all required components—panels, inverter, ACDB/DCDB, DC cables, and protection devices—in one single delivery ready for instant installation."
+      answer: "Pre-engineered 1 kW to 25 kW packages containing panels, inverter, distribution boxes, and cables—delivered together for instant rooftop installation."
     },
     {
       question: "How much can I cut my electricity bills with rooftop solar?",
-      answer: "With a high-efficiency Adani Solar rooftop system and Polycab on-grid inverter, residential and commercial clients typically cut their electricity bills by up to 80% with quick 3 to 4-year capital payback."
+      answer: "High-efficiency Adani systems with Polycab inverters typically reduce electricity bills by up to 80%, with a rapid 3 to 4-year capital payback."
     },
     {
       question: "What performance warranties are provided?",
-      answer: "All Adani Solar PV modules carry a 25-Year Linear Performance Warranty. Polycab inverters include comprehensive 5 to 10-year OEM warranties, supported by our in-house team of trained solar engineers."
+      answer: "Adani Solar PV modules carry a 25-Year Linear Performance Warranty. Polycab inverters include 5 to 10-year OEM warranties supported by our team."
     },
     {
       question: "Do you supply DISCOM-approved net-metering equipment?",
-      answer: "Yes, we supply DISCOM-compliant 3-Phase HT TOD Class 0.5S DLMS Net-Meters (Secure & L&T) along with Ashmor CTs, ensuring smooth statutory testing and bidirectional grid export clearance."
+      answer: "Yes, we supply DISCOM-approved 3-Phase DLMS Class 0.5S smart net-meters (Secure & L&T) with Ashmor CTs for seamless grid synchronization."
     }
   ];
 
@@ -36,56 +36,69 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ }) => {
   };
 
   return (
-    <section className="py-16 bg-slate-50 border-b border-slate-200">
+    <section id="faq" className="py-14 lg:py-14 bg-white border-b border-slate-200">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
-            FAQs
-          </span>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3 shadow-2xs">
+            <Sparkles size={13} className="text-primary-orange" />
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Got Questions?
+            </span>
+          </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
-            Frequently Asked Questions
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+            Frequently Asked <span className="text-primary-blue">Questions</span>
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Find answers to common questions about our solar equipment, turnkey kits, warranties, and DISCOM net-metering.
+            Quick answers about our solar equipment, turnkey kits, DISCOM net-metering, and product warranties.
           </p>
         </div>
 
-        {/* FAQs List */}
+        {/* FAQs List: Simple, Plain & Bordered */}
         <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-xs"
+                className={`bg-white rounded-xl border transition-all duration-200 overflow-hidden ${
+                  isOpen
+                    ? 'border-primary-orange shadow-xs'
+                    : 'border-slate-200 hover:border-slate-300'
+                }`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-5 text-left cursor-pointer transition-colors"
+                  aria-expanded={isOpen}
                 >
-                  <span className={`font-semibold text-base sm:text-lg transition-colors pr-4 ${
-                    isOpen ? 'text-primary-orange' : 'text-slate-900'
-                  }`}>
+                  <span
+                    className={`font-semibold text-base sm:text-lg pr-4 transition-colors ${
+                      isOpen ? 'text-primary-orange' : 'text-slate-900'
+                    }`}
+                  >
                     {faq.question}
                   </span>
                   
-                  <ChevronDown
-                    size={20}
-                    className={`text-slate-500 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-primary-orange' : ''
+                  <span
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-all duration-200 ${
+                      isOpen
+                        ? 'border-primary-orange/30 bg-orange-50 text-primary-orange rotate-180'
+                        : 'border-slate-200 bg-slate-50 text-slate-500'
                     }`}
-                  />
+                  >
+                    <ChevronDown size={16} />
+                  </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 sm:px-5 pb-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                    <div className="pt-3">
+                  <div className="px-4 sm:px-5 pb-5 pt-0 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100">
+                    <p className="pt-3.5">
                       {faq.answer}
-                    </div>
+                    </p>
                   </div>
                 )}
               </div>
@@ -93,10 +106,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ }) => {
           })}
         </div>
 
-
       </div>
     </section>
   );
 };
 
 export default FAQSection;
+

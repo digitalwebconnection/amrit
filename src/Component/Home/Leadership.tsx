@@ -51,12 +51,9 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenContact }) => {
               </h2>
             </div>
 
-            <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+            <div className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
               <p>
-                As an authorized partner of <strong className="text-slate-900 font-semibold">Adani Solar &amp; Polycab</strong>, Amrit Electricals delivers comprehensive solar solutions and turnkey 1 kW to 25 kW Solar KITs to empower small and medium system integrators, EPC contractors, and business owners.
-              </p>
-              <p>
-                With over two decades of electrical industry excellence and a dedicated in-house team of certified solar engineers, we ensure precision sizing, seamless DISCOM net-metering sanctions, and long-term 25-year linear performance warranties on every installation.
+                As an authorized partner of <strong className="text-slate-900 font-semibold">Adani Solar &amp; Polycab</strong>, Amrit Electricals delivers Tier-1 solar equipment and turnkey 1–25 kW Solar KITs backed by 20+ years of electrical expertise, in-house engineers, and 25-year manufacturer warranties.
               </p>
             </div>
 

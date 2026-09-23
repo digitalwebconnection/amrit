@@ -86,7 +86,7 @@ export const ChannelPatner: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <div className="text-center max-w-5xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3.5 shadow-2xs">
             <Sparkles size={13} className="text-primary-orange animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-wider">
@@ -98,7 +98,7 @@ export const ChannelPatner: React.FC = () => {
             Authorised <span className="text-primary-blue">Channel Partners</span>
           </h2>
 
-          <p className="text-slate-600 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base max-w-6xl mx-auto leading-relaxed">
             Direct wholesale factory tie-ups with India's foremost Tier-1 solar manufacturers and statutory DISCOM equipment OEMs.
           </p>
         </div>
@@ -164,7 +164,7 @@ export const ChannelPatner: React.FC = () => {
                   className={`group relative rounded-lg p-5 sm:p-4 transition-all duration-300 cursor-pointer bg-white border ${
                     isActive
                       ? 'border-2 border-primary-orange shadow-xl shadow-orange-500/15 scale-[1.015]'
-                      : 'border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-md'
+                      : 'border-blue-600 shadow-xs hover:border-slate-300 hover:shadow-md'
                   }`}
                 >
                   {/* Top Gradient Stripe for Active Card */}

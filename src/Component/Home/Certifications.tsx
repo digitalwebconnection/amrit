@@ -75,24 +75,24 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section id="certifications" className="py-14 lg:py-20 bg-slate-50/70 border-t-2 border-b-2 border-primary-orange relative overflow-hidden select-none">
-      
+    <section id="certifications" className="py-14 lg:py-14 bg-slate-50/70 border-t-2 border-b-2 border-primary-orange relative overflow-hidden  ">
+
       {/* Background Graphic Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-size-[24px_24px] opacity-40 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-6xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-primary-orange mb-3.5 shadow-2xs">
             <Sparkles size={13} className="text-primary-orange animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-wider">
               Statutory Compliance &amp; Standards
             </span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-black text-slate-900 tracking-tight leading-tight mb-3">
             Our Certifications &amp; <span className="text-primary-blue">Accreditations</span>
           </h2>
@@ -104,11 +104,11 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
 
         {/* 3D GRAPHIC HERO SHOWCASE + CERTIFICATE CARDS GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
-          
+
           {/* LEFT: 3D PHOTOREALISTIC CERTIFICATION SHOWCASE GRAPHIC */}
           <div className="lg:col-span-5 relative group flex flex-col">
             <div className="relative rounded-xl overflow-hidden border-2 border-primary-orange/50 bg-slate-950 shadow-xl shadow-orange-500/10 group-hover:border-primary-orange transition-all duration-500 flex-1 min-h-95 lg:min-h-115 flex flex-col justify-between">
-              
+
               {/* Cover 3D Render Image */}
               <img
                 src="/images/certifications_showcase.webp"
@@ -131,7 +131,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
                 </span>
               </div>
 
-        
+
             </div>
 
             {/* Ambient Glow */}
@@ -149,11 +149,10 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
                   key={cert.id}
                   onMouseEnter={() => setHoveredCard(cert.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`relative bg-white rounded-lg p-5 sm:p-6 border transition-all duration-300 flex flex-col justify-between group cursor-pointer shadow-xs ${
-                    isHovered
+                  className={`relative bg-white rounded-lg p-5 sm:p-6 border-2 transition-all duration-300 flex flex-col justify-between   shadow-lg shadow-black/50 group cursor-pointer  ${isHovered
                       ? 'border-2 border-primary-orange shadow-xl shadow-orange-500/10 '
-                      : 'border-slate-200 hover:border-slate-300 hover:shadow-md'
-                  }`}
+                      : 'border-blue-600 hover:border-slate-300 hover:shadow-md'
+                    }`}
                 >
                   {/* Top Gradient Accent Strip */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary-orange via-amber-400 to-primary-blue rounded-t-2xl" />
@@ -206,9 +205,9 @@ export const Certifications: React.FC<CertificationsProps> = ({ onOpenContact })
         </div>
 
         {/* BOTTOM STATUTORY PILLARS BAR */}
-        <div className="bg-white border-2 border-primary-orange/40 rounded-2xl p-5 sm:p-6 shadow-md mb-8">
+        <div className="bg-white border-2 border-primary-orange/40 rounded-xl p-3 sm:p-4 shadow-md mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
-            
+
             <div className="flex items-center gap-3 justify-center sm:justify-start">
               <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-primary-blue shrink-0">
                 <Building2 size={20} />

@@ -11,25 +11,25 @@ const highlights = [
   {
     icon: Shield,
     title: "Adani & Polycab Partner",
-    description: "Authorized partner delivering Tier-1 PV modules and world-class on-grid solar inverters.",
+    description: "Authorized distributor of Tier-1 PV modules and high-yield solar inverters.",
     iconColor: BRAND.primaryOrange,
   },
   {
     icon: Building,
     title: "1-Box Solar KIT (1-25 kW)",
-    description: "Complete turnkey box with all components ready for fast rooftop solar PV installation.",
+    description: "Turnkey pre-engineered packages ready for immediate rooftop installation.",
     iconColor: BRAND.primaryBlue,
   },
   {
     icon: Award,
     title: "Trained In-House Engineers",
-    description: "Dedicated team of certified engineers supporting solar installers and system integrators.",
+    description: "Certified engineering team supporting installers with sizing, SLD, and design.",
     iconColor: BRAND.primaryOrange,
   },
   {
     icon: TrendingUp,
     title: "DISCOM Net-Metering",
-    description: "Sanctioned net-metering & generation meters (Secure & L&T DLMS Class 0.5S) with CTs.",
+    description: "Utility-approved DLMS Class 0.5S net-meters and precision CTs.",
     iconColor: BRAND.primaryBlue,
   },
 ];
@@ -41,7 +41,7 @@ interface CompanyOverviewProps {
 export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact }) => {
   return (
     <section
-      className="py-12 lg:py-16 bg-white border-b border-slate-200"
+      className="py-12 lg:py-14 bg-white border-b border-slate-200"
       id="about"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -59,7 +59,7 @@ export const CompanyOverview: React.FC<CompanyOverviewProps> = ({ onOpenContact 
         </h2>
 
         <p className="text-center text-sm md:text-base text-slate-700 max-w-6xl mx-auto mb-12 leading-relaxed">
-          Amrit Electricals is an Authorised channel partner for Polycab Inverters and Solar Panels, Adani Solar, Secure &amp; L&amp;T Energy Meters, Ashmor CTs, Polycab DC Cables &amp; MCBs, Citel SPDs, and Excel make earthing. We provide complete solar solutions tailored to your energy needs.
+          Authorized distributor for Adani Solar, Polycab, Secure, and L&amp;T, delivering end-to-end solar equipment and turnkey rooftop solutions.
         </p>
 
         {/* Highlights grid */}

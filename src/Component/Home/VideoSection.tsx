@@ -44,11 +44,11 @@ export const VideoSection: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 bg-slate-50 border-b border-slate-200">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+    <section ref={sectionRef} className="pt-14 bg-slate-50">
+      <div className="">
 
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
+        <div className="text-center max-w-5xl mx-auto mb-8">
           <span className="text-xs font-bold uppercase tracking-wider text-primary-orange bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 inline-block mb-3">
             Corporate Film
           </span>
@@ -63,7 +63,7 @@ export const VideoSection: React.FC = () => {
         {/* Video Player */}
         <div
           onClick={togglePlay}
-          className="relative w-full aspect-video md:aspect-21/9 bg-slate-950 group cursor-pointer overflow-hidden rounded-xl shadow-md border border-slate-200"
+          className="relative w-full aspect-video md:aspect-26/9 bg-slate-950 group cursor-pointer overflow-hidden  border border-slate-200"
         >
           <video
             ref={videoRef}

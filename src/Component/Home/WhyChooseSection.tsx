@@ -13,7 +13,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
     {
       num: "01",
       title: "One-Stop Solar Solution",
-      description: "All rooftop BOS components under one roof – Tier-1 modules, inverters, distribution boxes, and net-meters.",
+      description: "Complete rooftop BOS supply under one roof – Tier-1 modules, inverters, and net-meters.",
       thumbnail: "/images/products/solar_acdb_dcdb.webp",
       previewImage: "/images/why_choose_advantage.webp",
       tag: "All-in-One Supply",
@@ -22,7 +22,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
     {
       num: "02",
       title: "1-Box Ready Solar KITs",
-      description: "Pre-engineered 1 kW to 25 kW turnkey rooftop packages that eliminate multi-vendor procurement delays.",
+      description: "Pre-engineered 1 kW to 25 kW rooftop packages eliminating multi-vendor procurement delays.",
       thumbnail: "/images/products/solar_turnkey_kit.webp",
       previewImage: "/images/products/solar_turnkey_kit.webp",
       tag: "Ready Dispatch",
@@ -31,7 +31,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
     {
       num: "03",
       title: "In-House Solar Engineers",
-      description: "Certified in-house engineering team supporting installers with system sizing, SLD design, and utility sanctions.",
+      description: "Certified in-house engineers supporting system sizing, SLD design, and utility sanctions.",
       thumbnail: "/images/services/solar_engineering.webp",
       previewImage: "/images/services/solar_engineering.webp",
       tag: "Certified Team",
@@ -40,7 +40,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
     {
       num: "04",
       title: "25-Year Linear Warranty",
-      description: "Direct OEM manufacturer backed 25-year performance warranties on solar modules and replacement on inverters.",
+      description: "Manufacturer-backed 25-year performance warranties on modules and inverters.",
       thumbnail: "/images/products/solar_panel_mono.webp",
       previewImage: "/images/products/solar_panel_mono.webp",
       tag: "Direct OEM Backed",
@@ -62,9 +62,9 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
   const activeReason = reasons[activeIdx];
 
   return (
-    <section 
-      id="why-us" 
-      className="py-16 lg:py-14 bg-white border-b border-slate-500 relative overflow-hidden select-none"
+    <section
+      id="why-us"
+      className="py-16 lg:py-14 bg-white border-b border-slate-500 relative overflow-hidden  "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -75,15 +75,15 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* ================= LEFT COLUMN: DYNAMIC 3D GRAPHIC DISPLAY ================= */}
           <div className="lg:col-span-5 relative">
             {/* Ambient Background Aura */}
             <div className="absolute -inset-2 bg-linear-to-tr from-orange-400/20 via-amber-300/20 to-blue-500/20 rounded-3xl blur-xl -z-10 pointer-events-none" />
 
-            <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl shadow-slate-200/60 p-2 sm:p-2.5 group">
-              <div className="relative rounded-2xl overflow-hidden h-80 sm:h-96 lg:h-112 bg-slate-100">
-                
+            <div className="relative rounded-xl overflow-hidden bg-white border border-slate-200 shadow-xl shadow-slate-200/60 p-2 sm:p-2.5 group">
+              <div className="relative rounded-xl overflow-hidden h-80 sm:h-96 lg:h-112 bg-slate-100">
+
                 {/* Crossfading Feature Graphics */}
                 {reasons.map((reason, idx) => (
                   <img
@@ -91,9 +91,8 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
                     src={reason.previewImage}
                     alt={reason.title}
                     loading={idx === 0 ? "eager" : "lazy"}
-                    className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-in-out ${
-                      idx === activeIdx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-103 z-0 pointer-events-none'
-                    }`}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-in-out ${idx === activeIdx ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-103 z-0 pointer-events-none'
+                      }`}
                   />
                 ))}
 
@@ -125,7 +124,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
 
           {/* ================= RIGHT COLUMN: AUTO-CHANGING BORDER CARDS ================= */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            
+
             {/* Section Header */}
             <div className="mb-8">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-primary-orange text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
@@ -136,7 +135,7 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
                 Why Solar Integrators &amp; Clients Choose Us
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Direct authorized distributor pricing, pre-tested turnkey equipment, and dedicated technical engineering support for every installation.
+                Direct authorized distributor pricing, pre-tested turnkey packages, and dedicated engineering support.
               </p>
             </div>
 
@@ -149,28 +148,25 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
                   <div
                     key={reason.num}
                     onClick={() => setActiveIdx(index)}
-                    className={`group relative p-4 rounded-2xl transition-all duration-300 flex items-start gap-3.5 overflow-hidden cursor-pointer ${
-                      isActive
-                        ? 'border-2 border-primary-orange shadow-lg shadow-orange-500/15 bg-linear-to-br from-orange-50/70 via-white to-white scale-[1.02]'
-                        : 'border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs'
-                    }`}
+                    className={`group relative p-2 rounded-xl transition-all duration-300 flex items-start gap-3.5 overflow-hidden cursor-pointer ${isActive
+                        ? 'border-2 border-primary-orange shadow-lg shadow-black/50 bg-linear-to-br from-orange-50/70 via-white to-white scale-[1.02]'
+                        : 'border border-blue-600 bg-white hover:border-slate-300 hover:shadow-xs'
+                      }`}
                   >
                     {/* Top Animated Graphic Accent Line */}
                     <div
-                      className={`absolute top-0 left-0 right-0 transition-all duration-300 ${
-                        isActive
+                      className={`absolute top-0 left-0 right-0 transition-all duration-300 ${isActive
                           ? 'h-1 bg-linear-to-r from-primary-orange to-amber-400'
                           : 'h-0.5 bg-transparent group-hover:bg-primary-orange/40'
-                      }`}
+                        }`}
                     />
 
                     {/* Left Graphic Image Thumbnail */}
                     <div
-                      className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-xl overflow-hidden shrink-0 bg-slate-50 transition-all duration-300 shadow-2xs ${
-                        isActive
+                      className={`relative w-16 h-16 sm:w-18 sm:h-21 overflow-hidden shrink-0 bg-slate-50 transition-all duration-300 shadow-2xs ${isActive
                           ? 'border-2 border-primary-orange ring-2 ring-primary-orange/30 scale-105'
                           : 'border border-slate-200 group-hover:border-slate-300'
-                      }`}
+                        }`}
                     >
                       <img
                         src={reason.thumbnail}
@@ -179,11 +175,10 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
                         className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                       />
                       <div
-                        className={`absolute top-1 left-1 px-1.5 py-0.5 rounded-md font-mono text-[9px] font-bold transition-colors ${
-                          isActive
+                        className={`absolute top-1 left-1 px-1.5 py-0.5 rounded-md font-mono text-[9px] font-bold transition-colors ${isActive
                             ? 'bg-primary-orange text-white'
                             : 'bg-slate-900/80 backdrop-blur-2xs text-white'
-                        }`}
+                          }`}
                       >
                         {reason.num}
                       </div>
@@ -192,16 +187,14 @@ export const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ }) => {
                     {/* Right Card Text */}
                     <div className="grow">
                       <span
-                        className={`text-[10px] font-bold uppercase tracking-wider block mb-1 transition-colors ${
-                          isActive ? 'text-primary-orange' : 'text-slate-500'
-                        }`}
+                        className={`text-[10px] font-bold uppercase tracking-wider block mb-1 transition-colors ${isActive ? 'text-primary-orange' : 'text-slate-500'
+                          }`}
                       >
                         {reason.tag}
                       </span>
                       <h3
-                        className={`text-sm sm:text-base font-bold mb-1 leading-snug transition-colors ${
-                          isActive ? 'text-slate-900' : 'text-slate-800 group-hover:text-primary-orange'
-                        }`}
+                        className={`text-sm sm:text-base font-bold mb-1 leading-snug transition-colors ${isActive ? 'text-slate-900' : 'text-slate-800 group-hover:text-primary-orange'
+                          }`}
                       >
                         {reason.title}
                       </h3>

@@ -167,7 +167,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
   const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
 
   return (
-    <section id="projects" className="relative py-12 lg:py-16 bg-slate-50/70 border-t border-slate-200/80">
+    <section id="projects" className="relative py-12 lg:py-14 bg-slate-50/70 border-t border-slate-200/80">
       
       {/* Background Subtle Accents */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
@@ -176,7 +176,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpenContact })
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-2xs mb-3">
             <Sparkles size={13} className="text-primary-orange" />
             <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
