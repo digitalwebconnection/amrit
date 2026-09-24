@@ -13,7 +13,7 @@ interface HeroBannerItem {
 
 export const Herohm: React.FC<HeroProps> = () => {
   const banners: HeroBannerItem[] = [
-    {
+   {
       id: "adani-panels",
       image: "/hero/products/panel_adani.webp",
       alt: "Adani Solar PV Panels Banner"
